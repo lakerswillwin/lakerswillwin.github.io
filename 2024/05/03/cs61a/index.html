@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html 
+	lang="CH-zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> cs61a -  Laneのhome</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="https://kira.host/assets/Pictures/Others/116359b4ccf19917.jpg"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 6.3.0"></head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('https://s21.ax1x.com/2024/08/08/pkzljdH.jpg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="Laneのhome">
+        <img
+			src="https://s21.ax1x.com/2024/08/08/pkzljdH.jpg"
+			alt="Lane"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a target="_blank" rel="noopener" href="https://s21.ax1x.com/2024/08/08/pkzljdH.jpg" title="Lane">
+			<img
+				src="https://s21.ax1x.com/2024/08/08/pkzljdH.jpg"
+				alt="Lane"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>18</div>
+		<div><span>标签</span>12</div>
+		<div><span>分类</span>4</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/friends.html"
+			title="友链"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				友链
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="https://wx.mail.qq.com/home/index?sid=zRxMToxhT2suJFZaALhEUwAA#/list/1/1"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/3537107830179843?spm_id_from=333.1007.0.0"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/lakerswillwin/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="/null"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+  <div class="kira-widget-wrap">
+    <h3 class="kira-widget-title">分类</h3>
+    <div class="kira-widget">
+      <ul class="category-list">
+        
+        
+
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/cs课程/">
+              cs课程
+            </a>
+            <span class="category-list-count">6</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/技术/">
+              技术
+            </a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数理课程/">
+              数理课程
+            </a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/随笔/">
+              随笔
+            </a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">C++语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 15px;">C语言</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/math/" style="font-size: 15px;">math</a> <a href="/tags/nihao/" style="font-size: 10px;">nihao</a> <a href="/tags/physics/" style="font-size: 10px;">physics</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 10px;">建站</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a>
+		</div>
+		
+	</div>
+
+
+		
+			
+	<div class="kira-widget-wrap">
+		<h3 class="kira-widget-title">
+			文章归档
+		</h3>
+		<div class="kira-widget">
+			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">18</span></li></ul>
+		</div>
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2024
+		<a href="/">Lane</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<center> 浏览量：<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>| 访客数：<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> </center>
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="https://s21.ax1x.com/2024/05/04/pkAJAHO.jpg"
+				data-sizes="auto"
+				alt="cs61a"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>cs61a</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2024年05月03日</a>
+			<a><i class="kirafont icon-edit-fill"></i>4.7k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 28 分钟</a>
+		</div>
+		<meting-js server="netease" type="song" id="411314659" mode="circulation" autoplay="false" mutex="false" listmaxheight="340px" preload="none" theme="#ad7a86">
+</meting-js>
+
+<h1><span id="introduction">introduction</span></h1><p>cs61a-one of the best choices for cs biginners</p>
+<p>:tent:invigation<a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61a/su22/">https://inst.eecs.berkeley.edu/~cs61a/su22/</a></p>
+<h2><span id="week1">week1</span></h2><h3><span id="lectrue-1-functions">lectrue 1-functions</span></h3><h4><span id="lesson-1-names-assignment-and-user-defined-functions">lesson 1-Names, Assignment, and User-Defined Functions</span></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>pi<br>Traceback (most recent call last):<br>  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;<br>NameError: name <span class="hljs-string">&#x27;pi&#x27;</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> defined<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> pi<br><span class="hljs-meta">&gt;&gt;&gt; </span>pi<br><span class="hljs-number">3.141592653589793</span><br></code></pre></td></tr></table></figure>
+
+<p>这同样适用于函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> sin<br><span class="hljs-meta">&gt;&gt;&gt; </span>sin<br>&lt;built-<span class="hljs-keyword">in</span> function sin&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span>sin(pi/<span class="hljs-number">2</span>)<br><span class="hljs-number">1.0</span><br></code></pre></td></tr></table></figure>
+
+<p>自定义</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>httt=<span class="hljs-number">99</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>httt<br><span class="hljs-number">99</span><br></code></pre></td></tr></table></figure>
+
+<p>将两者相结合进行多元定义与计算</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; area,cnt=<span class="hljs-number">299</span>*pi,sin(pi/<span class="hljs-number">4</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>area<br><span class="hljs-number">939.3362034233481</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>cnt<br><span class="hljs-number">0.7071067811865476</span><br></code></pre></td></tr></table></figure>
+
+<p>函数的定义</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">max</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)<br><span class="hljs-number">3</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>f=<span class="hljs-built_in">max</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>f<br>&lt;built-<span class="hljs-keyword">in</span> function <span class="hljs-built_in">max</span>&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">max</span><br>&lt;built-<span class="hljs-keyword">in</span> function <span class="hljs-built_in">max</span>&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span>f(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">6</span>)<br><span class="hljs-number">6</span> <br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> operator <span class="hljs-keyword">import</span> add,mul<br><span class="hljs-meta">&gt;&gt;&gt; </span>add<br>&lt;built-<span class="hljs-keyword">in</span> function add&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span>mul<br>&lt;built-<span class="hljs-keyword">in</span> function mul&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">def</span> <span class="hljs-title function_">square</span>(<span class="hljs-params">x</span>):<br><span class="hljs-meta">... </span>  <span class="hljs-keyword">return</span> mul(x,x)<br>...<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">def</span> <span class="hljs-title function_">ttt</span>(<span class="hljs-params">x</span>):<br><span class="hljs-meta">... </span> <span class="hljs-keyword">return</span> add(x,x)<br>...<br><span class="hljs-meta">&gt;&gt;&gt; </span>square(<span class="hljs-number">11</span>)<br><span class="hljs-number">121</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>ttt(<span class="hljs-number">11</span>)<br><span class="hljs-number">22</span><br>&gt;&gt;&gt;<br></code></pre></td></tr></table></figure>
+
+<p>函数与定义名的区别</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>tt = <span class="hljs-number">12</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>ttt =<span class="hljs-number">2</span>*tt<br><span class="hljs-meta">&gt;&gt;&gt; </span>ttt<br><span class="hljs-number">24</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>tt=<span class="hljs-number">11</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>ttt<br><span class="hljs-number">24</span>  \\自定义名<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">def</span> <span class="hljs-title function_">ttt</span>():<br><span class="hljs-meta">... </span> <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>*tt<br>...<br><span class="hljs-meta">&gt;&gt;&gt; </span>ttt<br>&lt;function ttt at <span class="hljs-number">0x0000023B0E7A3910</span>&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span>ttt<br>&lt;function ttt at <span class="hljs-number">0x0000023B0E7A3910</span>&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span>ttt()<br><span class="hljs-number">22</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>tt=<span class="hljs-number">12</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>ttt()<br><span class="hljs-number">24</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>\\定义函数<br></code></pre></td></tr></table></figure>
+
+<p>discussion question1</p>
+<blockquote>
+<p>what is the value of the final expression</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>f=<span class="hljs-built_in">min</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>f=<span class="hljs-built_in">max</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>g,h=<span class="hljs-built_in">min</span>,<span class="hljs-built_in">max</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">max</span>=g<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">max</span>(f(<span class="hljs-number">2</span>,g(h(<span class="hljs-number">1</span>,<span class="hljs-number">5</span>),<span class="hljs-number">3</span>)),<span class="hljs-number">4</span>)<br></code></pre></td></tr></table></figure>
+
+<details>
+<summary>answer</summary>
+3
+</details>
+
+<h4><span id="lession-2-environment-diagrams">lession 2-Environment Diagrams</span></h4><p>learn to use python online tutor</p>
+<p>这个网站好用咧<a target="_blank" rel="noopener" href="https://pythontutor.com/python-compiler.html#mode=edit">https://pythontutor.com/python-compiler.html#mode=edit</a></p>
+<p>同样地该网站也方便c的调试</p>
+<p>:tent:插入一条广告 功能强大的python shell——ipython</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs terminal"><br>pip install ipython<br></code></pre></td></tr></table></figure>
+
+<p>使用时（这对windows用户）windows+r 输入ipython即可</p>
+<h4><span id="lession-3-defining-functions">lession 3-Defining Functions</span></h4><h3><span id="lectrue-2-control-and-iteration">lectrue 2-Control and Iteration</span></h3><h4><span id="lession-1-print-and-none">lession 1-Print and None</span></h4><p>打印</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>),<span class="hljs-built_in">print</span>(<span class="hljs-number">2</span>))<br><span class="hljs-number">1</span><br><span class="hljs-number">2</span><br><span class="hljs-literal">None</span> <span class="hljs-literal">None</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-literal">None</span>,<span class="hljs-literal">None</span>)<br><span class="hljs-literal">None</span> <span class="hljs-literal">None</span><br></code></pre></td></tr></table></figure>
+
+<p>expression:<br>None represents nothing in python.a function that does not explicitly return a value will return None in python</p>
+<p> careful:None is not displayed by the interpreter as the value of an expression</p>
+<h4><span id="lession-2-miscellaneous-python-features">lession 2-Miscellaneous Python Features</span></h4><p>division</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">213</span>/<span class="hljs-number">10</span><br><span class="hljs-number">21.3</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">213</span>//<span class="hljs-number">10</span><br><span class="hljs-number">21</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> operator <span class="hljs-keyword">import</span> truediv,floordiv<br><span class="hljs-meta">&gt;&gt;&gt; </span>truediv(<span class="hljs-number">213</span>,<span class="hljs-number">10</span>)<br><span class="hljs-number">21.3</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>floordiv(<span class="hljs-number">213</span>,<span class="hljs-number">10</span>)<br><span class="hljs-number">21</span><br>&gt;&gt;&gt;<br></code></pre></td></tr></table></figure>
+
+<p>function can return multiple values</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">def</span> <span class="hljs-title function_">haveatry</span>(<span class="hljs-params">n,d</span>):<br><span class="hljs-meta">... </span>  <span class="hljs-keyword">return</span> n/d,n//d,n%d<br>...<br><span class="hljs-meta">&gt;&gt;&gt; </span>haveatry(<span class="hljs-number">7</span>,<span class="hljs-number">3</span>)<br>(<span class="hljs-number">2.3333333333333335</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>t,tt,ttt=haveatry(<span class="hljs-number">7</span>,<span class="hljs-number">3</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>t<br><span class="hljs-number">2.3333333333333335</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>tt<br><span class="hljs-number">2</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>ttt<br><span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p>some python featrues</p>
+<ul>
+<li><p>kill process</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> sys<br>sys.exit()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>in control of terminal</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">python  ex.py  <span class="hljs-string">&quot;&quot;&quot;execute the code&quot;&quot;&quot;</span><br>python -i ex.py <span class="hljs-string">&quot;&quot;&quot;execute the code and enter the python process    More important you can use functions in python process which are defined in this code&quot;&quot;&quot;</span><br>python -m doctest ex.py<br>python -m doctext -v ex.py<br><span class="hljs-string">&quot;&quot;&quot;very important in code by python.it is a way to debug in case of the next situation&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<blockquote>
+<p>for example</p>
+</blockquote>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">haveatry</span>(<span class="hljs-params">n,d</span>):<br> <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    &gt;&gt;&gt; a</span><br><span class="hljs-string">    289.1285714285717</span><br><span class="hljs-string">    &gt;&gt;&gt; b</span><br><span class="hljs-string">    289</span><br><span class="hljs-string">    &gt;&gt;&gt; c</span><br><span class="hljs-string">    1</span><br><span class="hljs-string"> &quot;&quot;&quot;</span><br>  <span class="hljs-keyword">return</span> n/d,n//d,n%d<br></code></pre></td></tr></table></figure>
+
+<h4><span id="lession-3-conditional-statements">lession 3-Conditional statements</span></h4><ul>
+<li>if statement</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">def</span> <span class="hljs-title function_">fabex</span>(<span class="hljs-params">x</span>):<br><span class="hljs-meta">... </span>  <span class="hljs-keyword">if</span>(x&lt;<span class="hljs-number">0</span>):<br><span class="hljs-meta">... </span>    <span class="hljs-keyword">return</span> -x<br><span class="hljs-meta">... </span>  <span class="hljs-keyword">elif</span>(x==<span class="hljs-number">0</span>):<br><span class="hljs-meta">... </span>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br><span class="hljs-meta">... </span>  <span class="hljs-keyword">else</span>:<br><span class="hljs-meta">... </span>    <span class="hljs-keyword">return</span> x<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>boolean context</li>
+</ul>
+<p>‘True’ ‘False’ belong to boolean context,which are like ‘1’ ‘0’ in language C</p>
+<ul>
+<li>boolean operator<br>‘and’ ‘or’ ‘not’ ,which are like ‘&amp;&amp;’ ‘||’ ‘!’ in language C</li>
+</ul>
+<h4><span id="lession-4-iteration">lession 4-Iteration</span></h4><p>to beign with let us show a basic statement</p>
+<blockquote>
+<p>for example</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>i,total=<span class="hljs-number">0</span>,<span class="hljs-number">0</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">while</span>(i&lt;<span class="hljs-number">3</span>):<br><span class="hljs-meta">... </span> i+=<span class="hljs-number">1</span><br><span class="hljs-meta">... </span> total+=i<br>...<br><span class="hljs-meta">&gt;&gt;&gt; </span>i<br><span class="hljs-number">3</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>total<br><span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
+
+<p>then we will give an iteration example</p>
+<p>:smile: dang dang dang</p>
+<p>the fibonacci sequence</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">feb</span>(<span class="hljs-params">n</span>):<br>   ...:     pred,curr=<span class="hljs-number">0</span>,<span class="hljs-number">1</span><br>   ...:     k=<span class="hljs-number">1</span><br>   ...:     <span class="hljs-keyword">while</span>(k&lt;=n):<br>   ...:         pred,curr=curr,pred+curr<br>   ...:         k+=<span class="hljs-number">1</span><br>   ...:     <span class="hljs-keyword">return</span> curr<br></code></pre></td></tr></table></figure>
+
+<p>note: :smile: previous code is written by ipython which is much better than python.Strong recommend</p>
+<h4><span id="lession-5-return-and-lambda-expression">lession 5-return and lambda expression</span></h4><ul>
+<li>a return statement completes the evaluation of a call expression and provides its value</li>
+<li>only one return statement is ever executed while executing the body of the function</li>
+</ul>
+<p>next i will introduce a function—lambda</p>
+<ul>
+<li><p>lambda 在Python编程中使用的频率非常高，我们通常提及的lambda表达式其实是python中的一类特殊的定义函数的形式，使用它可以定义一个匿名函数。即当你需要一个函数，但又不想费神去命名一个函数，这时候，就可以使用 lambda了。</p>
+</li>
+<li><p>the role of function lambda</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">lambda</span> [arg1 [,arg2,.....argn]]:expression<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>here is some typical examples:</p>
+<ul>
+<li><p>Anonymous functions without parameters:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>t = <span class="hljs-keyword">lambda</span> : <span class="hljs-literal">True</span> <br><span class="hljs-meta">&gt;&gt;&gt; </span>t()<br><span class="hljs-literal">True</span><br><span class="hljs-string">&quot;&quot;&quot;which is equal to the next code &quot;&quot;&quot;</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(): <br>  <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>func()<br><span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>Anonymous functions with parameters:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">lambda</span> x: x**<span class="hljs-number">3</span>  <span class="hljs-comment"># 带有一个参数</span><br> <br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">lambda</span> x, y, z: x+y+z <span class="hljs-comment"># 带有多个参数</span><br> <br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">lambda</span> x, y=<span class="hljs-number">3</span>: x*y  <span class="hljs-comment"># 存在默认值的参数</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>Enter any number of parameters:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">lambda</span> *z: z  <span class="hljs-comment"># *z传入的是任意个数的参数</span><br></code></pre></td></tr></table></figure>
+
+<p>here are some useful examples by using lambda functions:</p>
+<blockquote>
+<p>for example</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>f = <span class="hljs-keyword">lambda</span> x, y, z: x*y*z<br><span class="hljs-meta">&gt;&gt;&gt; </span>f(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)<br><span class="hljs-number">24</span><br><br><span class="hljs-meta">&gt;&gt;&gt; </span>(<span class="hljs-keyword">lambda</span> x, y: x <span class="hljs-keyword">if</span> x&gt;y <span class="hljs-keyword">else</span> y)(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)<br><span class="hljs-number">2</span><br><span class="hljs-comment"># 判断字符串是否以某个字母开头</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>((<span class="hljs-keyword">lambda</span> x:x.startswith(<span class="hljs-string">&#x27;B&#x27;</span>))(<span class="hljs-string">&#x27;Bob&#x27;</span>))<br>  <span class="hljs-literal">True</span><br><span class="hljs-comment"># 将lambda嵌套到普通函数中，lambda函数本身做为return的值</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">n</span>):<br><span class="hljs-meta">... </span>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">lambda</span> x: x+n<br>...<br><span class="hljs-meta">&gt;&gt;&gt; </span>f = add(<span class="hljs-number">1</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>f(<span class="hljs-number">2</span>)<br>    <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3><span id="lab1">lab1</span></h3><ul>
+<li><p>example 1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">how_big</span>(<span class="hljs-params">x</span>):<br> ...: ...     <span class="hljs-keyword">if</span> x &gt; <span class="hljs-number">10</span>:<br> ...: ...         <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;huge&#x27;</span>)<br> ...: ...     <span class="hljs-keyword">elif</span> x &gt; <span class="hljs-number">5</span>:<br> ...: ...         <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;big&#x27;</span><br> ...: ...     <span class="hljs-keyword">elif</span> x &gt; <span class="hljs-number">0</span>:<br> ...: ...         <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;small&#x27;</span>)<br> ...: ...     <span class="hljs-keyword">else</span>:<br> ...: ...         <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;nothin&#x27;&quot;</span>)<br> ...:<br></code></pre></td></tr></table></figure></li>
+</ul>
+<blockquote>
+<p>question: how_big(12)<br>  <details></details></p>
+</blockquote>
+<summary>answer</summary>
+huge
+
+analyse: in python print can be used as a return statement in language C
+  
+<ul>
+<li>example 2</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">   &gt;&gt;&gt; positive = <span class="hljs-number">28</span><br>   &gt;&gt;&gt; <span class="hljs-keyword">while</span> positive: <span class="hljs-comment"># If this loops forever, just type Infinite Loop</span><br><span class="hljs-meta">... </span>   <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;positive?&quot;</span>)<br><span class="hljs-meta">... </span>   positive -= <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+ <details>
+<summary>answer</summary>
+infinite loop
+</details>
+analyse: this is a typical example to distinguish python and C.That's because in C '1' and '0' are used as 'True' and 'False' in python
+
+<p>but what should be noted that if ‘0’ in python is treated as False only ‘0’</p>
+<h3><span id="lectrue3-higher-older-functions">lectrue3-higher-older functions</span></h3><h4><span id="lession1-description">lession1-description</span></h4><ul>
+<li>generalizing patterns with arguments</li>
+</ul>
+<p>to bigin with,let us introduce assert statement</p>
+<blockquote>
+<p>for example</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python">    In [<span class="hljs-number">1</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">square</span>(<span class="hljs-params">r</span>):<br>   ...:     <span class="hljs-keyword">return</span> r*r<br>    In [<span class="hljs-number">2</span>]: square(<span class="hljs-number">11</span>)<br>    Out[<span class="hljs-number">2</span>]: <span class="hljs-number">121</span><br>    In [<span class="hljs-number">3</span>]: square(-<span class="hljs-number">11</span>)<br>    Out[<span class="hljs-number">3</span>]: <span class="hljs-number">121</span><br>    <span class="hljs-comment"># let us introduce assert statement</span><br>    In [<span class="hljs-number">4</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">square</span>(<span class="hljs-params">r</span>):<br>   ...:     <span class="hljs-keyword">assert</span>(r&gt;<span class="hljs-number">0</span>),<span class="hljs-string">&#x27;r should be positive&#x27;</span><br>   ...:     <span class="hljs-keyword">return</span> r*r<br>      Cell In[<span class="hljs-number">4</span>], line <span class="hljs-number">2</span>, <span class="hljs-keyword">in</span> square(r)<br>      <span class="hljs-number">1</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">square</span>(<span class="hljs-params">r</span>):<br>----&gt; <span class="hljs-number">2</span>     <span class="hljs-keyword">assert</span>(r&gt;<span class="hljs-number">0</span>),<span class="hljs-string">&#x27;r should be positive&#x27;</span><br>      <span class="hljs-number">3</span>     <span class="hljs-keyword">return</span> r*r<br><br>     AssertionError: r should be positive<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>the common structrue among functions may be a computational process,rather than a number</p>
+</li>
+<li><p>we can use a high-older function to describe some funtcions which have similarities(just like swich-case statement in language C)</p>
+<blockquote>
+<p>for example</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">6</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">cobe</span>(<span class="hljs-params">k</span>):<br>   ...:     <span class="hljs-keyword">return</span> <span class="hljs-built_in">pow</span>(k,<span class="hljs-number">3</span>)<br>   <span class="hljs-keyword">def</span> <span class="hljs-title function_">summin</span>(<span class="hljs-params">k,term</span>):<br>   ...:     total,n=<span class="hljs-number">0</span>,<span class="hljs-number">1</span><br>   ...:     <span class="hljs-keyword">while</span>(n&lt;=k):<br>   ...:         total,n=total+term(n),n+<span class="hljs-number">1</span><br>   ...:     <span class="hljs-keyword">return</span> total<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>return a function</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">    In [<span class="hljs-number">12</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">makeaddr</span>(<span class="hljs-params">n</span>):<br>    ...:     <span class="hljs-keyword">def</span> <span class="hljs-title function_">adder</span>(<span class="hljs-params">k</span>):<br>    ...:         <span class="hljs-keyword">return</span> k+n<br>    ...:     <span class="hljs-keyword">return</span> adder<br>    ...:<br><br>In [<span class="hljs-number">13</span>]: tt=makeaddr(<span class="hljs-number">3</span>)<br><br>In [<span class="hljs-number">14</span>]: tt(<span class="hljs-number">2</span>)<br>Out[<span class="hljs-number">14</span>]: <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4><span id="lession2-function-example-sound">lession2-Function Example: Sound</span></h4><p>the code is saved in cs61a courses</p>
+<h4><span id="lession3-array">lession3-array</span></h4><p>在python中我们用列表实现其他语言的数组结构</p>
+<ul>
+<li>append</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"> fruits = [<span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;banana&quot;</span>, <span class="hljs-string">&quot;cherry&quot;</span>]<br> fruits.append(<span class="hljs-string">&quot;orange&quot;</span>)  <span class="hljs-comment"># Adds &quot;orange&quot; to the end of the list</span><br> <span class="hljs-built_in">print</span>(fruits)  <span class="hljs-comment"># Outputs: [&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;cherry&#x27;, &#x27;orange&#x27;]</span><br>```  <br>* extend<br>  <br>``` python<br><br>fruits = [<span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;banana&quot;</span>, <span class="hljs-string">&quot;cherry&quot;</span>]<br>more_fruits = [<span class="hljs-string">&quot;orange&quot;</span>, <span class="hljs-string">&quot;mango&quot;</span>, <span class="hljs-string">&quot;grapes&quot;</span>]<br>fruits.extend(more_fruits)<br><span class="hljs-built_in">print</span>(fruits)  <span class="hljs-comment"># Outputs: [&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;cherry&#x27;, &#x27;orange&#x27;, &#x27;mango&#x27;, &#x27;grapes&#x27;]</span><br><span class="hljs-comment">### homework</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>sum</li>
+</ul>
+<p>sum can calculate all members in list</p>
+<ul>
+<li><p>len<br>len can calculate the lenth in list</p>
+</li>
+<li><p>to sum two arrays</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"> In [<span class="hljs-number">2</span>]: haveatry=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]<br><br>In [<span class="hljs-number">3</span>]: haveatry1=[<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br><br>In [<span class="hljs-number">4</span>]: haveatry1*<span class="hljs-number">2</span>+haveatry<br>Out[<span class="hljs-number">4</span>]: [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>getitem</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"> <br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3><span id="homework">homework</span></h3><p>Q3: Make Repeater</p>
+<p>Implement the function make_repeater so that make_repeater(func, n)(x) returns func(func(…func(x)…)), where func is applied n times. That is, make_repeater(func, n) returns another function that can then be applied to another argument. For example, make_repeater(square, 3)(42) evaluates to square(square(square(42))).</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">compose1</span>(<span class="hljs-params">func1, func2</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;Return a function f, such that f(x) = func1(func2(x)).&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">f</span>(<span class="hljs-params">x</span>):<br>        <span class="hljs-keyword">return</span> func1(func2(x))<br>    <span class="hljs-keyword">return</span> f<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">make_repeater</span>(<span class="hljs-params">func, n</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;Return the function that computes the nth application of func.</span><br><span class="hljs-string"></span><br><span class="hljs-string">    &gt;&gt;&gt; add_three = make_repeater(increment, 3)</span><br><span class="hljs-string">    &gt;&gt;&gt; add_three(5)</span><br><span class="hljs-string">    8</span><br><span class="hljs-string">    &gt;&gt;&gt; make_repeater(triple, 5)(1) # 3 * 3 * 3 * 3 * 3 * 1</span><br><span class="hljs-string">    243</span><br><span class="hljs-string">    &gt;&gt;&gt; make_repeater(square, 2)(5) # square(square(5))</span><br><span class="hljs-string">    625</span><br><span class="hljs-string">    &gt;&gt;&gt; make_repeater(square, 4)(5) # square(square(square(square(5))))</span><br><span class="hljs-string">    152587890625</span><br><span class="hljs-string">    &gt;&gt;&gt; make_repeater(square, 0)(5) # Yes, it makes sense to apply the function zero times!</span><br><span class="hljs-string">    5</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br>    <span class="hljs-string">&quot;*** YOUR CODE HERE ***&quot;</span><br>    f = func<br>    <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>:<br>        <span class="hljs-keyword">return</span> identity<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n-<span class="hljs-number">1</span>):<br>        f = compose1(func, f)<br>    <span class="hljs-keyword">return</span> f<br></code></pre></td></tr></table></figure>
+
+<p>analyse:<br>在 Python 中，当我们谈论 “return identity” 的时候，我们通常是在谈论这样一个函数：它的输出（返回值）与输入完全相同。也就是说，对于任何输入值 x，这个函数都返回 x 自身。这样的函数在函数式编程中也被称为 “恒等函数” 或 “identity function</p>
+<h2><span id="week2">week2</span></h2><h3><span id="lectrue1-environment-diagrammes">lectrue1-environment diagrammes</span></h3><h4><span id="lession1-multiple-environment">lession1-multiple environment</span></h4><blockquote>
+<p>example</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">1</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">square</span>(<span class="hljs-params">square</span>):<br> ...:     <span class="hljs-keyword">return</span> square*square<br> ...:<br><br>In [<span class="hljs-number">2</span>]: square(<span class="hljs-number">11</span>)<br>Out[<span class="hljs-number">2</span>]: <span class="hljs-number">121</span><br></code></pre></td></tr></table></figure>
+
+<h4><span id="lession2-environments-for-higher-order-functions">lession2-Environments for Higher-Order Functions</span></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">1</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">haveatry</span>(<span class="hljs-params">f,x</span>):<br>   ...:     <span class="hljs-keyword">return</span> f(f(x))<br>   ...:<br><br>In [<span class="hljs-number">2</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">square</span>(<span class="hljs-params">x</span>):<br>   ...:     <span class="hljs-keyword">return</span> x*x<br>   ...:<br><br>In [<span class="hljs-number">3</span>]: haveatry(square,<span class="hljs-number">3</span>)<br>Out[<span class="hljs-number">3</span>]: <span class="hljs-number">81</span><br></code></pre></td></tr></table></figure>
+
+<h4><span id="lession3-environment-for-nested-definitions">lession3-environment for nested definitions</span></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">4</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">make_adder</span>(<span class="hljs-params">k</span>):<br>   ...:     <span class="hljs-keyword">def</span> <span class="hljs-title function_">adder</span>(<span class="hljs-params">x</span>):<br>   ...:         <span class="hljs-keyword">return</span> x+k<br>   ...:     <span class="hljs-keyword">return</span> adder<br>   ...:<br><br>In [<span class="hljs-number">5</span>]: tt=make_adder(<span class="hljs-number">3</span>)<br><br>In [<span class="hljs-number">6</span>]: tt(<span class="hljs-number">2</span>)<br>Out[<span class="hljs-number">6</span>]: <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>local name causes error</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">7</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">g</span>(<span class="hljs-params">a</span>):<br>   ...:     <span class="hljs-keyword">return</span> y+a<br>   ...:<br><br>In [<span class="hljs-number">8</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">f</span>(<span class="hljs-params">x,y</span>):<br>   ...:     <span class="hljs-keyword">return</span> g(x)<br>   ...:<br><br>In [<span class="hljs-number">9</span>]: f(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)<br>---------------------------------------------------------------------------<br>NameError                                 Traceback (most recent call last)<br>Cell In[<span class="hljs-number">9</span>], line <span class="hljs-number">1</span><br>----&gt; <span class="hljs-number">1</span> f(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)<br><br>Cell In[<span class="hljs-number">8</span>], line <span class="hljs-number">2</span>, <span class="hljs-keyword">in</span> f(x, y)<br>      <span class="hljs-number">1</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">f</span>(<span class="hljs-params">x,y</span>):<br>----&gt; <span class="hljs-number">2</span>     <span class="hljs-keyword">return</span> g(x)<br><br>Cell In[<span class="hljs-number">7</span>], line <span class="hljs-number">2</span>, <span class="hljs-keyword">in</span> g(a)<br>      <span class="hljs-number">1</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">g</span>(<span class="hljs-params">a</span>):<br>----&gt; <span class="hljs-number">2</span>     <span class="hljs-keyword">return</span> y+a<br><br>NameError: name <span class="hljs-string">&#x27;y&#x27;</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> defined<br></code></pre></td></tr></table></figure>
+
+<h4><span id="lession4-self-refrence">lession4-self refrence</span></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">19</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">printall</span>(<span class="hljs-params">x</span>):<br>    ...:     <span class="hljs-built_in">print</span>(x)<br>    ...:     <span class="hljs-keyword">return</span> printall<br>    ...:<br><br>In [<span class="hljs-number">20</span>]: printall(<span class="hljs-number">2</span>)<br><span class="hljs-number">2</span><br>Out[<span class="hljs-number">20</span>]: &lt;function __main__.printall(x)&gt;<br><br>In [<span class="hljs-number">21</span>]: printall(<span class="hljs-number">2</span>)(<span class="hljs-number">3</span>)<br><span class="hljs-number">2</span><br><span class="hljs-number">3</span><br>Out[<span class="hljs-number">21</span>]: &lt;function __main__.printall(x)&gt;<br>In [<span class="hljs-number">22</span>]: printall(<span class="hljs-number">2</span>)(<span class="hljs-number">3</span>)(<span class="hljs-number">4</span>)<br><span class="hljs-number">2</span><br><span class="hljs-number">3</span><br><span class="hljs-number">4</span><br>Out[<span class="hljs-number">22</span>]: &lt;function __main__.printall(x)&gt;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">23</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">sum_print</span>(<span class="hljs-params">x</span>):<br>   ...:     <span class="hljs-built_in">print</span>(x)<br>   ...:     <span class="hljs-keyword">def</span> <span class="hljs-title function_">next_sum</span>(<span class="hljs-params">y</span>):<br>   ...:         <span class="hljs-keyword">return</span> sum_print(x+y)<br>   ...:     <span class="hljs-keyword">return</span> next_sum<br>   ...: sum_print(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>)(<span class="hljs-number">3</span>)<br>   <span class="hljs-number">1</span><br>   <span class="hljs-number">3</span><br>   <span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
+
+<h4><span id="lession5-decorator">lession5-decorator</span></h4><p>usually used to trace process</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">def</span> <span class="hljs-title function_">trace1</span>(<span class="hljs-params">fn</span>):<br><span class="hljs-meta">... </span>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">traced</span>(<span class="hljs-params">x</span>):<br><span class="hljs-meta">... </span>      <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;nihao&#x27;</span>,fn,x)<br><span class="hljs-meta">... </span>      <span class="hljs-keyword">return</span> fn(x)<br><span class="hljs-meta">... </span>  <span class="hljs-keyword">return</span> traced<br><span class="hljs-meta">&gt;&gt;&gt; </span>@trace1<br><span class="hljs-meta">... </span><span class="hljs-keyword">def</span> <span class="hljs-title function_">square</span>(<span class="hljs-params">x</span>):<br><span class="hljs-meta">... </span>   <span class="hljs-keyword">return</span> x*x<br>...<br><span class="hljs-meta">&gt;&gt;&gt; </span>square(<span class="hljs-number">11</span>)<br>nihao &lt;function square at <span class="hljs-number">0x00000218E20539A0</span>&gt; <span class="hljs-number">11</span><br><span class="hljs-number">121</span><br></code></pre></td></tr></table></figure>
+
+<h3><span id="lectrue2-recursion">lectrue2-Recursion</span></h3><h4><span id="lession1-recursive-functions">lession1-recursive functions</span></h4><blockquote>
+<p>for example to calculate sum without a while statement</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">32</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">sum_digits</span>(<span class="hljs-params">x</span>):<br>    ...:     <span class="hljs-keyword">if</span>(x&lt;<span class="hljs-number">10</span>):<br>    ...:         <span class="hljs-keyword">return</span> x<br>    ...:     <span class="hljs-keyword">else</span>:<br>    ...:         <span class="hljs-keyword">return</span> sum_digits(x//<span class="hljs-number">10</span>)+x%<span class="hljs-number">10</span><br>    ...:<br><br>In [<span class="hljs-number">33</span>]: sum_digits(<span class="hljs-number">2023</span>)<br>Out[<span class="hljs-number">33</span>]: <span class="hljs-number">7</span><br></code></pre></td></tr></table></figure>
+
+<h4><span id="lession2-mutual-recursion">lession2-mutual recursion</span></h4><ul>
+<li>example luhn algorithm <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/%E5%8D%A2%E6%81%A9%E7%AE%97%E6%B3%95">https://zh.wikipedia.org/zh-cn/%E5%8D%A2%E6%81%A9%E7%AE%97%E6%B3%95</a></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python">  In [<span class="hljs-number">34</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">luhn_sum</span>(<span class="hljs-params">x</span>):<br>    ...:     <span class="hljs-keyword">if</span>(x&lt;<span class="hljs-number">10</span>):<br>    ...:         <span class="hljs-keyword">return</span> x<br>    ...:     <span class="hljs-keyword">else</span>:<br>    ...:         <span class="hljs-keyword">return</span> doubleluhn(x//<span class="hljs-number">10</span>)+x%<span class="hljs-number">10</span><br>    ...:<br><br>In [<span class="hljs-number">35</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">doubleluhn</span>(<span class="hljs-params">x</span>):<br>    ...:     <span class="hljs-keyword">if</span>(x&lt;<span class="hljs-number">10</span>):<br>    ...:         <span class="hljs-keyword">return</span> x<br>    ...:     <span class="hljs-keyword">else</span>:<br>    ...:         <span class="hljs-keyword">return</span> luhn_sum(x//<span class="hljs-number">10</span>)+sum_digits(<span class="hljs-number">2</span>*(x%<span class="hljs-number">10</span>))<br>    ...:<br><br>In [<span class="hljs-number">36</span>]: luhn_sum(<span class="hljs-number">4</span>)<br>Out[<span class="hljs-number">36</span>]: <span class="hljs-number">4</span><br><br>In [<span class="hljs-number">37</span>]: luhn_sum(<span class="hljs-number">94</span>)<br>Out[<span class="hljs-number">37</span>]: <span class="hljs-number">13</span><br></code></pre></td></tr></table></figure>
+
+<h4><span id="lession3-recursion-and-iteration">lession3-recursion and iteration</span></h4><p>we can convert iteration statement to recursion statement</p>
+<blockquote>
+<p>next we will introduce a example of recrusive calls</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python"> In [<span class="hljs-number">1</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">haveatry</span>(<span class="hljs-params">x</span>):<br>   ...:     <span class="hljs-keyword">if</span>(x&lt;<span class="hljs-number">10</span>):<br>   ...:         <span class="hljs-built_in">print</span>(x)<br>   ...:     <span class="hljs-keyword">else</span>:<br>   ...:         <span class="hljs-built_in">print</span>(x)<br>   ...:         haveatry(x//<span class="hljs-number">10</span>)<br>   ...:         <span class="hljs-built_in">print</span>(x)<br>   <span class="hljs-comment">#which is equal to the next code</span><br>   In [<span class="hljs-number">4</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">haveatry</span>(<span class="hljs-params">x</span>):<br>   ...:     <span class="hljs-built_in">print</span>(x)<br>   ...:     <span class="hljs-keyword">if</span>(x&gt;=<span class="hljs-number">10</span>):<br>   ...:         haveatry(x//<span class="hljs-number">10</span>)<br>   ...:         <span class="hljs-built_in">print</span>(x)In [<span class="hljs-number">6</span>]: haveatry(<span class="hljs-number">12345</span>)<br><span class="hljs-number">12345</span><br><span class="hljs-number">1234</span><br><span class="hljs-number">123</span><br><span class="hljs-number">12</span><br><span class="hljs-number">1</span><br><span class="hljs-number">12</span><br><span class="hljs-number">123</span><br><span class="hljs-number">1234</span><br><span class="hljs-number">12345</span><br><br></code></pre></td></tr></table></figure>
+
+<h3><span id="lectrue3-tree-recrusion">lectrue3-tree recrusion</span></h3><blockquote>
+<p>fb array is a typical example</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">10</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">feb</span>(<span class="hljs-params">n</span>):<br>    ...:     <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>):<br>    ...:         <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>    ...:     <span class="hljs-keyword">elif</span>(n==<span class="hljs-number">1</span>):<br>    ...:         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    ...:     <span class="hljs-keyword">else</span>:<br>    ...:         <span class="hljs-keyword">return</span> feb(n-<span class="hljs-number">1</span>)+feb(n-<span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>Counting Partitions<blockquote>
+<p>a typical example:count_partition(6,4):2+4&#x3D;6;1+1+4&#x3D;6;<br>3+3&#x3D;6;1+2+3&#x3D;6;1+1+1+3&#x3D;6;2+2+2&#x3D;6;1+1+2+2&#x3D;6;1+1+1+1+2&#x3D;6;<br>1+1+1+1+1+1&#x3D;6</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python">      <span class="hljs-keyword">def</span> <span class="hljs-title function_">count_part</span>(<span class="hljs-params">n,m</span>):<br>          <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>)<br>..:         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br> ...:     <span class="hljs-keyword">elif</span>(n&lt;<span class="hljs-number">0</span>):<br> ...:         <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br> ...:     <span class="hljs-keyword">elif</span>(m==<span class="hljs-number">0</span>):<br> ...:         <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br> ...:     <span class="hljs-keyword">else</span>:<br> ...:         with_m=count_part(n-m,m)<br> ...:         without_m=count_part(n,m-<span class="hljs-number">1</span>)<br> ...:         <span class="hljs-keyword">return</span> with_m+without_m<br> ...:<br><br>    In [<span class="hljs-number">16</span>]: count_part(<span class="hljs-number">6</span>,<span class="hljs-number">4</span>)<br>    Out[<span class="hljs-number">16</span>]: <span class="hljs-number">9</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3><span id="lectrue4-containers-and-sequences">lectrue4-containers and sequences</span></h3><ul>
+<li>containers</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">7</span>]: kkk=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]<br><br>In [<span class="hljs-number">8</span>]: <span class="hljs-number">1</span> <span class="hljs-keyword">in</span> kkk<br>Out[<span class="hljs-number">8</span>]: <span class="hljs-literal">True</span><br><br>In [<span class="hljs-number">9</span>]: <span class="hljs-string">&#x27;1&#x27;</span> <span class="hljs-keyword">in</span> kkk<br>Out[<span class="hljs-number">9</span>]: <span class="hljs-literal">False</span><br><br>In [<span class="hljs-number">10</span>]: <span class="hljs-number">1</span>==<span class="hljs-string">&#x27;1&#x27;</span><br>Out[<span class="hljs-number">10</span>]: <span class="hljs-literal">False</span><br><br>In [<span class="hljs-number">11</span>]: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>] <span class="hljs-keyword">in</span> kkk<br>Out[<span class="hljs-number">11</span>]: <span class="hljs-literal">False</span><br><br>In [<span class="hljs-number">12</span>]: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>] <span class="hljs-keyword">in</span> [<span class="hljs-number">1</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]]<br>Out[<span class="hljs-number">12</span>]: <span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>for statement</li>
+</ul>
+<p>for ‘name’ in ‘expression’:</p>
+<p>   ‘suite’</p>
+<blockquote>
+<p>for example</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">15</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">count_same</span>(<span class="hljs-params">s,value</span>):<br>    ...:     result=<span class="hljs-number">0</span><br>    ...:     <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> tryfor:<br>    ...:         <span class="hljs-keyword">if</span> k==value:<br>    ...:             result=result+<span class="hljs-number">1</span><br>    ...:     <span class="hljs-keyword">return</span> result<br>    ...:<br><br>In [<span class="hljs-number">16</span>]: count_same(tryfor,<span class="hljs-number">4</span>)<br>Out[<span class="hljs-number">16</span>]: <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>ranges</li>
+</ul>
+<p>a range is a sequence of consequtive integers</p>
+<p>here are range statement characteristics</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">17</span>]: <span class="hljs-built_in">list</span>(<span class="hljs-built_in">range</span>(-<span class="hljs-number">2</span>,<span class="hljs-number">6</span>))<br>Out[<span class="hljs-number">17</span>]: [-<span class="hljs-number">2</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]<br><br>In [<span class="hljs-number">18</span>]: <span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>)<br>Out[<span class="hljs-number">18</span>]: <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>)<br><br>In [<span class="hljs-number">21</span>]: <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>):<br>    ...:     <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;lakerswillwin&#x27;</span>)<br>    ...:<br>lakerswillwin<br>lakerswillwin<br>lakerswillwin<br>lakerswillwin<br>lakerswillwin<br><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>list comprehensions</li>
+</ul>
+<p>powerful way to use array in language python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">22</span>]: odds=[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>,<span class="hljs-number">9</span>]<br><br>In [<span class="hljs-number">23</span>]: [x+<span class="hljs-number">1</span> <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> odds]<br>Out[<span class="hljs-number">23</span>]: [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>]<br>In [<span class="hljs-number">26</span>]: [x <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> odds <span class="hljs-keyword">if</span> <span class="hljs-number">25</span>%x==<span class="hljs-number">0</span>]<br>Out[<span class="hljs-number">26</span>]: [<span class="hljs-number">1</span>, <span class="hljs-number">5</span>]<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>strings</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">28</span>]: <span class="hljs-string">&#x27;hello&#x27;</span><br>Out[<span class="hljs-number">28</span>]: <span class="hljs-string">&#x27;hello&#x27;</span><br><br>In [<span class="hljs-number">29</span>]: sth=<span class="hljs-string">&#x27;lakerswillwin&#x27;</span><br><br>In [<span class="hljs-number">30</span>]: <span class="hljs-built_in">len</span>(sth)<br>Out[<span class="hljs-number">30</span>]: <span class="hljs-number">13</span><br><br>In [<span class="hljs-number">31</span>]: sth[<span class="hljs-number">0</span>]<br>Out[<span class="hljs-number">31</span>]: <span class="hljs-string">&#x27;l&#x27;</span><br><br>In [<span class="hljs-number">35</span>]: <span class="hljs-string">&#x27;laker&#x27;</span> <span class="hljs-keyword">in</span> sth<br>Out[<span class="hljs-number">35</span>]: <span class="hljs-literal">True</span> <span class="hljs-comment">#here is a diffrence between number array and string array</span><br></code></pre></td></tr></table></figure>
+
+<h2><span id="week3">week3</span></h2><h3><span id="lectrue1-mutability">lectrue1-mutability</span></h3><ul>
+<li>objects</li>
+</ul>
+<p>in python every value is a object</p>
+<blockquote>
+<p>date</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">36</span>]: <span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> date<br><br>In [<span class="hljs-number">37</span>]: date<br>Out[<span class="hljs-number">37</span>]: datetime.date<br><br>In [<span class="hljs-number">38</span>]: today=date(<span class="hljs-number">2024</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)<br><br>In [<span class="hljs-number">39</span>]: today.year<br>Out[<span class="hljs-number">39</span>]: <span class="hljs-number">2024</span><br><br>In [<span class="hljs-number">40</span>]: today.month<br>Out[<span class="hljs-number">40</span>]: <span class="hljs-number">2</span><br><br>In [<span class="hljs-number">41</span>]: today.day<br>Out[<span class="hljs-number">41</span>]: <span class="hljs-number">1</span><br>In [<span class="hljs-number">43</span>]: today.strftime(<span class="hljs-string">&#x27;%A %B %d&#x27;</span>)<br>Out[<span class="hljs-number">43</span>]: <span class="hljs-string">&#x27;Thursday February 01&#x27;</span><br>In [<span class="hljs-number">47</span>]: freedom=date(<span class="hljs-number">2027</span>,<span class="hljs-number">3</span>,<span class="hljs-number">12</span>)<br><br>In [<span class="hljs-number">48</span>]: <span class="hljs-built_in">str</span>(freedom-today)<br>Out[<span class="hljs-number">48</span>]: <span class="hljs-string">&#x27;1135 days, 0:00:00&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>strings are objects so they have attributes</p>
+<p>here are another characteristics</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">49</span>]: haveatry=<span class="hljs-string">&#x27;lakerswiillwin&#x27;</span><br><br>In [<span class="hljs-number">50</span>]: haveatry.upper<br>Out[<span class="hljs-number">50</span>]: &lt;function <span class="hljs-built_in">str</span>.upper()&gt;<br><br>In [<span class="hljs-number">51</span>]: haveatry.upper()<br>Out[<span class="hljs-number">51</span>]: <span class="hljs-string">&#x27;LAKERSWIILLWIN&#x27;</span><br><br>In [<span class="hljs-number">52</span>]: haveatry.lower()<br>Out[<span class="hljs-number">52</span>]: <span class="hljs-string">&#x27;lakerswiillwin&#x27;</span><br><br>In [<span class="hljs-number">53</span>]: haveatry.swapcase()<br>Out[<span class="hljs-number">53</span>]: <span class="hljs-string">&#x27;LAKERSWIILLWIN&#x27;</span><br><br>In [<span class="hljs-number">54</span>]: haveatry<br>Out[<span class="hljs-number">54</span>]: <span class="hljs-string">&#x27;lakerswiillwin&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>next introduce ascii code</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">55</span>]: <span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;a&#x27;</span>)<br>Out[<span class="hljs-number">55</span>]: <span class="hljs-number">97</span><br><br>In [<span class="hljs-number">56</span>]: <span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;A&#x27;</span>)<br>Out[<span class="hljs-number">56</span>]: <span class="hljs-number">65</span><br><br>In [<span class="hljs-number">57</span>]: <span class="hljs-built_in">hex</span>(<span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;a&#x27;</span>))<br>Out[<span class="hljs-number">57</span>]: <span class="hljs-string">&#x27;0x61&#x27;</span> <span class="hljs-comment">#convert tenth into sixth</span><br></code></pre></td></tr></table></figure>
+
+<p>and ascii expand into the unicode standard</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">62</span>]: <span class="hljs-keyword">from</span> unicodedata <span class="hljs-keyword">import</span> name,lookup<br><br>In [<span class="hljs-number">63</span>]: name(<span class="hljs-string">&#x27;a&#x27;</span>)<br>Out[<span class="hljs-number">63</span>]: <span class="hljs-string">&#x27;LATIN SMALL LETTER A&#x27;</span><br><br>In [<span class="hljs-number">64</span>]: name(<span class="hljs-string">&#x27;L&#x27;</span>)<br>Out[<span class="hljs-number">64</span>]: <span class="hljs-string">&#x27;LATIN CAPITAL LETTER L&#x27;</span><br><br>In [<span class="hljs-number">65</span>]: lookup(<span class="hljs-string">&#x27;snowman&#x27;</span>)<br>Out[<span class="hljs-number">65</span>]: <span class="hljs-string">&#x27;☃&#x27;</span><br><br>In [<span class="hljs-number">70</span>]: lookup(<span class="hljs-string">&#x27;soccer ball&#x27;</span>).encode()<br>Out[<span class="hljs-number">70</span>]: <span class="hljs-string">b&#x27;\xe2\x9a\xbd&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>mutation operation</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">71</span>]: suits=[<span class="hljs-string">&#x27;lakers&#x27;</span>,<span class="hljs-string">&#x27;heat&#x27;</span>,<span class="hljs-string">&#x27;wirrors&#x27;</span>]<br><br>In [<span class="hljs-number">72</span>]: original_suits=suits<br><br>In [<span class="hljs-number">73</span>]: suits.pop()<br>Out[<span class="hljs-number">73</span>]: <span class="hljs-string">&#x27;wirrors&#x27;</span><br><br>In [<span class="hljs-number">74</span>]: suits<br>Out[<span class="hljs-number">74</span>]: [<span class="hljs-string">&#x27;lakers&#x27;</span>, <span class="hljs-string">&#x27;heat&#x27;</span>]<br><br>In [<span class="hljs-number">75</span>]: suits.remove(<span class="hljs-string">&#x27;lakers&#x27;</span>)<br><br>In [<span class="hljs-number">76</span>]: suits<br>Out[<span class="hljs-number">76</span>]: [<span class="hljs-string">&#x27;heat&#x27;</span>]<br><br>In [<span class="hljs-number">77</span>]: suits.append(<span class="hljs-string">&#x27;bears&#x27;</span>)<br><br>In [<span class="hljs-number">78</span>]: suits.extend([<span class="hljs-string">&#x27;tigers&#x27;</span>,<span class="hljs-string">&#x27;suns&#x27;</span>])<br><br>In [<span class="hljs-number">79</span>]: suits<br>Out[<span class="hljs-number">79</span>]: [<span class="hljs-string">&#x27;heat&#x27;</span>, <span class="hljs-string">&#x27;bears&#x27;</span>, <span class="hljs-string">&#x27;tigers&#x27;</span>, <span class="hljs-string">&#x27;suns&#x27;</span>]<br><br>In [<span class="hljs-number">80</span>]: suits[<span class="hljs-number">0</span>:<span class="hljs-number">2</span>]<br>Out[<span class="hljs-number">80</span>]: [<span class="hljs-string">&#x27;heat&#x27;</span>, <span class="hljs-string">&#x27;bears&#x27;</span>]<br><br>In [<span class="hljs-number">81</span>]: original_suits<br>Out[<span class="hljs-number">81</span>]: [<span class="hljs-string">&#x27;heat&#x27;</span>, <span class="hljs-string">&#x27;bears&#x27;</span>, <span class="hljs-string">&#x27;tigers&#x27;</span>, <span class="hljs-string">&#x27;suns&#x27;</span>]<br><span class="hljs-comment">#we can see not only change different name but also change numbers in list which is different from language C</span><br></code></pre></td></tr></table></figure>
+
+<p>here introduce a special dictionary in python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">1</span>]: haveatry=&#123;<span class="hljs-string">&#x27;t&#x27;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&#x27;pp&#x27;</span>:<span class="hljs-number">98</span>,<span class="hljs-string">&#x27;fuck&#x27;</span>:<span class="hljs-number">69</span>&#125;<br><br>In [<span class="hljs-number">2</span>]: haveatry[<span class="hljs-string">&#x27;fuck&#x27;</span>]<br>Out[<span class="hljs-number">2</span>]: <span class="hljs-number">69</span><br><br>In [<span class="hljs-number">3</span>]: haveatry[<span class="hljs-string">&#x27;cao&#x27;</span>]=<span class="hljs-number">96</span><br><br>In [<span class="hljs-number">4</span>]: haveatry.pop(<span class="hljs-string">&#x27;pp&#x27;</span>)<br>Out[<span class="hljs-number">4</span>]: <span class="hljs-number">98</span><br><br>In [<span class="hljs-number">5</span>]: haveatry<br>Out[<span class="hljs-number">5</span>]: &#123;<span class="hljs-string">&#x27;t&#x27;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;fuck&#x27;</span>: <span class="hljs-number">69</span>, <span class="hljs-string">&#x27;cao&#x27;</span>: <span class="hljs-number">96</span>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>tuples</li>
+</ul>
+<p>it means it can’t be changed in python language</p>
+<p>but two tuples can add to creat a new tuple</p>
+<ul>
+<li>mutation</li>
+</ul>
+<p>distinguish idetity and equality:</p>
+<p>identity:#exp0# is #exp1#</p>
+<p>if result is true both two expression evaluate to the same object</p>
+<p>equality:#exp0# &#x3D;&#x3D; #exp1#</p>
+<p>if result is true both two expression evaluate to equal value</p>
+<h3><span id="lecture2-objects">lecture2-objects</span></h3><ul>
+<li>Class</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ClassName</span>:<br>    <span class="hljs-comment"># 类的属性和方法定义在这里</span><br><span class="hljs-comment"># example</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span>:<br>    <span class="hljs-comment"># 类的属性</span><br>    company = <span class="hljs-string">&quot;ABC Corp&quot;</span><br>    <br>    <span class="hljs-comment"># 类的方法</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello, Employee&quot;</span><br><span class="hljs-comment"># 创建类的实例</span><br>emp = Employee()<br><br><span class="hljs-comment"># 访问类的属性</span><br><span class="hljs-built_in">print</span>(emp.company)  <span class="hljs-comment"># 输出：&quot;ABC Corp&quot;</span><br><br><span class="hljs-comment"># 调用类的方法</span><br><span class="hljs-built_in">print</span>(emp.greet())  <span class="hljs-comment"># 输出：&quot;Hello, Employee&quot;</span><br><span class="hljs-comment">#moreover</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, department</span>):<span class="hljs-comment"># 双下划线</span><br>        self.name = name<br>        self.department = department<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">info</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">f&#x27;Employee Name: <span class="hljs-subst">&#123;self.name&#125;</span>, Department: <span class="hljs-subst">&#123;self.department&#125;</span>&#x27;</span><br><br><span class="hljs-comment"># 创建类的实例</span><br>emp = Employee(<span class="hljs-string">&#x27;John Doe&#x27;</span>, <span class="hljs-string">&#x27;HR&#x27;</span>)<br><br><span class="hljs-comment"># 调用类的方法</span><br><span class="hljs-built_in">print</span>(emp.info())  <span class="hljs-comment"># 输出：&quot;Employee Name: John Doe, Department: HR&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h3><span id="lectrue3-inheritance-and-string-representation">lectrue3-inheritance and string representation</span></h3><ul>
+<li>attributes</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">14</span>]: <span class="hljs-keyword">class</span> <span class="hljs-title class_">account</span>:<br>    ...:     intrest=<span class="hljs-number">0.02</span><br>    ...:     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,holder</span>):<br>    ...:         self.holder=holder<br>    ...:         self.balance=<span class="hljs-number">0</span><br>    ...:<br><br>In [<span class="hljs-number">15</span>]: my_account=account(<span class="hljs-string">&#x27;LAKERs&#x27;</span>)<br><br>In [<span class="hljs-number">16</span>]: my_account.intrest=<span class="hljs-number">0.08</span>  <span class="hljs-comment">#instance attribute assignment</span><br><br>In [<span class="hljs-number">17</span>]: <span class="hljs-built_in">print</span>(my_account.intrest)<br><span class="hljs-number">0.08</span><br><br>In [<span class="hljs-number">18</span>]: <span class="hljs-built_in">print</span>(my_account.balance)<br><span class="hljs-number">0</span><br><br>In [<span class="hljs-number">19</span>]: account.intrest=<span class="hljs-number">0.04</span> <span class="hljs-comment"># class attribute assignment but don&#x27;t change the result which has completed instance attribute assignment</span><br>In [<span class="hljs-number">20</span>]: <span class="hljs-built_in">print</span>(my_account.intrest)<br><span class="hljs-number">0.08</span><br><br>In [<span class="hljs-number">21</span>]: her_account=account(<span class="hljs-string">&#x27;jj&#x27;</span>)<br><br>In [<span class="hljs-number">22</span>]: her_account.intrest<br>Out[<span class="hljs-number">22</span>]: <span class="hljs-number">0.04</span><br>In [<span class="hljs-number">23</span>]: account.intrest=<span class="hljs-number">0.05</span><br><br>In [<span class="hljs-number">24</span>]: her_account.intrest<br>Out[<span class="hljs-number">24</span>]: <span class="hljs-number">0.05</span> <br></code></pre></td></tr></table></figure>
+
+<p>analyse:all these result from ‘intrest’ in class structrue which is diffrent from ‘folder’ and ‘balance’ in class structrue</p>
+<ul>
+<li>inheritance</li>
+</ul>
+<p>inheritance is a method for relating classes together</p>
+<blockquote>
+<p>most behavior next is shared with the base calss account which means inheritance</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">checkingaccount</span>(<span class="hljs-title class_ inherited__">account</span>):<br> withdraw_fee=<span class="hljs-number">1</span><br> intrest=<span class="hljs-number">0.01</span><br> <span class="hljs-keyword">def</span> <span class="hljs-title function_">withdraw</span>(<span class="hljs-params">self,account</span>):<br>  <span class="hljs-keyword">return</span> account.withdraw(self,account+self.withdraw_fee)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>object-oriented design</li>
+</ul>
+<p>designing for inheritance</p>
+<ul>
+<li>attribute look-up practice</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span>:<br>  z=-<span class="hljs-number">1</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">f</span>(<span class="hljs-params">self,x</span>):<br>    <span class="hljs-keyword">return</span> B(x-<span class="hljs-number">1</span>)<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">B</span>(<span class="hljs-title class_ inherited__">A</span>):<br>  n=<span class="hljs-number">4</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,y</span>):<br>    <span class="hljs-keyword">if</span> y:<br>      self.z=self.f(y)<br>    <span class="hljs-keyword">else</span>:<br>      self.z=C(y+<span class="hljs-number">1</span>)<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">C</span>(<span class="hljs-title class_ inherited__">B</span>):<br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">f</span>(<span class="hljs-params">self,x</span>):<br>    <span class="hljs-keyword">return</span> x<br><span class="hljs-meta">&gt;&gt;&gt; </span>a=A()<br><span class="hljs-meta">&gt;&gt;&gt; </span>b=B(<span class="hljs-number">1</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>b.n=<span class="hljs-number">5</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>C(<span class="hljs-number">2</span>).n<br><span class="hljs-number">4</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>a.z==C.z <span class="hljs-comment">#because of inheitance</span><br><span class="hljs-literal">True</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>a.z==b.z<br><span class="hljs-literal">False</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>multiple inheritance</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">exampleaccount</span>(checkingaccount,savingaccount):<br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,account_holder</span>):<br>    self.holder=account.holder<br>    self.balance=<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p>analyse:both checkingaccount and savingaccoujnt base on account</p>
+<h2><span id="week4">week4</span></h2><h3><span id="lecture1-iterators-and-generators">lecture1-iterators and generators</span></h3><ul>
+<li>iterator</li>
+</ul>
+<p>iter(iterable) :return an iterator over the elements of an iterable value</p>
+<p>next(iterator):return the next element in an iterator</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">1</span>]: s=[[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br><br>In [<span class="hljs-number">2</span>]: <span class="hljs-built_in">next</span>(s)<br>---------------------------------------------------------------------------<br>TypeError                                 Traceback (most recent call last)<br>Cell In[<span class="hljs-number">2</span>], line <span class="hljs-number">1</span><br>----&gt; <span class="hljs-number">1</span> <span class="hljs-built_in">next</span>(s)<br><br>TypeError: <span class="hljs-string">&#x27;list&#x27;</span> <span class="hljs-built_in">object</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> an iterator<br><br>In [<span class="hljs-number">3</span>]: t=<span class="hljs-built_in">iter</span>(s)<br><br>In [<span class="hljs-number">4</span>]: <span class="hljs-built_in">next</span>(t)<br>Out[<span class="hljs-number">4</span>]: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]<br><br>In [<span class="hljs-number">5</span>]: <span class="hljs-built_in">list</span>(t)<br>Out[<span class="hljs-number">5</span>]: [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]<br><br>In [<span class="hljs-number">6</span>]: <span class="hljs-built_in">next</span>(t)<br>---------------------------------------------------------------------------<br>StopIteration                             Traceback (most recent call last)<br>Cell In[<span class="hljs-number">6</span>], line <span class="hljs-number">1</span><br>----&gt; <span class="hljs-number">1</span> <span class="hljs-built_in">next</span>(t)<br><br>StopIteration:<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>dictionary iteration</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">13</span>]: p=&#123;<span class="hljs-string">&#x27;one&#x27;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&#x27;two&#x27;</span>:<span class="hljs-number">2</span>&#125;<br>n [<span class="hljs-number">15</span>]: k=<span class="hljs-built_in">iter</span>(p.values())<br><br>In [<span class="hljs-number">16</span>]: <span class="hljs-built_in">next</span>(k)<br>Out[<span class="hljs-number">16</span>]: <span class="hljs-number">1</span><br>In [<span class="hljs-number">18</span>]: p[<span class="hljs-string">&#x27;zero&#x27;</span>]=<span class="hljs-number">0</span><br><br>In [<span class="hljs-number">19</span>]: k1=<span class="hljs-built_in">iter</span>(p.keys())<br><br>In [<span class="hljs-number">20</span>]: <span class="hljs-built_in">next</span>(k1)<br>Out[<span class="hljs-number">20</span>]: <span class="hljs-string">&#x27;one&#x27;</span><br><br>In [<span class="hljs-number">21</span>]: <span class="hljs-built_in">next</span>(k1)<br>Out[<span class="hljs-number">21</span>]: <span class="hljs-string">&#x27;two&#x27;</span><br><br>In [<span class="hljs-number">22</span>]: p<br>Out[<span class="hljs-number">22</span>]: &#123;<span class="hljs-string">&#x27;one&#x27;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;two&#x27;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;zero&#x27;</span>: <span class="hljs-number">0</span>&#125;<br><br>In [<span class="hljs-number">23</span>]: <span class="hljs-built_in">next</span>(k1)<br>Out[<span class="hljs-number">23</span>]: <span class="hljs-string">&#x27;zero&#x27;</span><br>In [<span class="hljs-number">24</span>]: k2=<span class="hljs-built_in">iter</span>(p)<br><br>In [<span class="hljs-number">25</span>]: <span class="hljs-built_in">next</span>(k2)<br>Out[<span class="hljs-number">25</span>]: <span class="hljs-string">&#x27;one&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>for statement</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">27</span>]: r=<span class="hljs-built_in">range</span>(<span class="hljs-number">3</span>,<span class="hljs-number">6</span>)<br><br>In [<span class="hljs-number">28</span>]: r<br>Out[<span class="hljs-number">28</span>]: <span class="hljs-built_in">range</span>(<span class="hljs-number">3</span>, <span class="hljs-number">6</span>)<br><br>In [<span class="hljs-number">29</span>]: ri=<span class="hljs-built_in">iter</span>(r)<br><br>In [<span class="hljs-number">30</span>]: <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> ri:<br>    ...:     <span class="hljs-built_in">print</span>(k)<br>    ...:<br><span class="hljs-number">3</span><br><span class="hljs-number">4</span><br><span class="hljs-number">5</span><br><br>In [<span class="hljs-number">31</span>]: <span class="hljs-built_in">next</span>(ri)<br>---------------------------------------------------------------------------<br>StopIteration                             Traceback (most recent call last)<br>Cell In[<span class="hljs-number">31</span>], line <span class="hljs-number">1</span><br>----&gt; <span class="hljs-number">1</span> <span class="hljs-built_in">next</span>(ri)<br><br>StopIteration:<br>In [<span class="hljs-number">34</span>]: ri=<span class="hljs-built_in">iter</span>(r)<br><br>In [<span class="hljs-number">35</span>]: <span class="hljs-built_in">next</span>(ri)<br>Out[<span class="hljs-number">35</span>]: <span class="hljs-number">3</span><br><br>In [<span class="hljs-number">36</span>]: <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> ri:<br>    ...:     <span class="hljs-built_in">print</span>(k)<br>    ...:<br><span class="hljs-number">4</span><br><span class="hljs-number">5</span><br><br></code></pre></td></tr></table></figure>
+
+<p>analyse:when we take some tips to treat iterator as list or dictionary,they will convert to which and we should reaptedly do iter.</p>
+<ul>
+<li>built-in fuctions for iteration</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">map</span>(fuc,iterable): iterate over func(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> iterator<br><span class="hljs-built_in">filter</span>(func,iterable): iterate over x <span class="hljs-keyword">in</span> iterable <span class="hljs-keyword">if</span> func(x)<br><span class="hljs-built_in">zip</span>(first_iter,second_iter):iterate over co-indexed (x,y)pairs<br><span class="hljs-built_in">reversed</span>(sequence):iterate over x <span class="hljs-keyword">in</span> a sequence <span class="hljs-keyword">in</span> reversed_order<br><span class="hljs-built_in">list</span>(iterable):craet a <span class="hljs-built_in">list</span> containing <span class="hljs-built_in">all</span> x <span class="hljs-keyword">in</span> iterable<br><span class="hljs-built_in">tuple</span>(iterable:):craet a <span class="hljs-built_in">tuple</span> containing <span class="hljs-built_in">all</span> x <span class="hljs-keyword">in</span> iterable<br><span class="hljs-built_in">sorted</span>(iterable):craet a <span class="hljs-built_in">sorted</span> <span class="hljs-built_in">list</span> containing  x <span class="hljs-keyword">in</span> iterable<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>for example</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># map</span><br>In [<span class="hljs-number">37</span>]: bcd=[<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>]<br><br>In [<span class="hljs-number">38</span>]: m=<span class="hljs-built_in">map</span>(<span class="hljs-keyword">lambda</span> x:x.upper(),bcd)<br><br>In [<span class="hljs-number">39</span>]: <span class="hljs-built_in">next</span>(m)<br>Out[<span class="hljs-number">39</span>]: <span class="hljs-string">&#x27;B&#x27;</span><br>In [<span class="hljs-number">52</span>]: c=<span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>)<br><span class="hljs-comment"># filter</span><br>In [<span class="hljs-number">53</span>]: f=<span class="hljs-keyword">lambda</span> x:x&gt;<span class="hljs-number">2</span><br><br>In [<span class="hljs-number">54</span>]: t=<span class="hljs-built_in">filter</span>(f,c)<br><br>In [<span class="hljs-number">55</span>]: <span class="hljs-built_in">next</span>(t)<br>Out[<span class="hljs-number">55</span>]: <span class="hljs-number">3</span><br><br>In [<span class="hljs-number">56</span>]: <span class="hljs-built_in">next</span>(t)<br>Out[<span class="hljs-number">56</span>]: <span class="hljs-number">4</span><br><span class="hljs-comment"># reversed</span><br>In [<span class="hljs-number">57</span>]: t=<span class="hljs-built_in">reversed</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>))<br><br>In [<span class="hljs-number">58</span>]: <span class="hljs-built_in">next</span>(t)<br>Out[<span class="hljs-number">58</span>]: <span class="hljs-number">4</span><br><span class="hljs-comment"># zip</span><br><span class="hljs-built_in">list</span>(<span class="hljs-built_in">zip</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>),<span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">8</span>))<br>    ...:<br>    ...: )<br>Out[<span class="hljs-number">59</span>]: [(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>), (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>), (<span class="hljs-number">2</span>, <span class="hljs-number">3</span>), (<span class="hljs-number">3</span>, <span class="hljs-number">4</span>), (<span class="hljs-number">4</span>, <span class="hljs-number">5</span>)]<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>generators</li>
+</ul>
+<p>a generator function is a function that yields values intead of returning them</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">60</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">haveatry</span>(<span class="hljs-params">x</span>):<br>    ...:     <span class="hljs-keyword">yield</span> x<br>    ...:     <span class="hljs-keyword">yield</span> -x<br>    ...:     <br><span class="hljs-meta">&gt;&gt;&gt; </span>c=haveatry(<span class="hljs-number">4</span>)<br>In [<span class="hljs-number">64</span>]: <span class="hljs-built_in">next</span>(c)<br>Out[<span class="hljs-number">64</span>]: <span class="hljs-number">4</span><br><br>In [<span class="hljs-number">65</span>]: <span class="hljs-built_in">next</span>(c)<br>Out[<span class="hljs-number">65</span>]: -<span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>generator and iterator</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">a <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> statement <span class="hljs-keyword">yield</span> <span class="hljs-built_in">all</span> values <span class="hljs-keyword">from</span> an iterator <span class="hljs-keyword">or</span> iterable<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>generator function with return statemennt</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># upon executing a return statement,a generator function exits and cannot yield any values</span><br>In [<span class="hljs-number">9</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">f</span>(<span class="hljs-params">x</span>):<br>   ...:     <span class="hljs-keyword">yield</span> x<br>   ...:     <span class="hljs-keyword">yield</span> x+<span class="hljs-number">1</span><br>   ...:     <span class="hljs-keyword">return</span><br>   ...:     <span class="hljs-keyword">yield</span> x+<span class="hljs-number">2</span><br>   ...:<br><br>In [<span class="hljs-number">10</span>]: <span class="hljs-built_in">list</span>(f(<span class="hljs-number">4</span>))<br>Out[<span class="hljs-number">10</span>]: [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>]<br><span class="hljs-comment"># providing a value to be returned is allowed,but this value is not yielded</span><br>In [<span class="hljs-number">11</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">f</span>(<span class="hljs-params">x</span>):<br>    ...:     <span class="hljs-keyword">yield</span> x<br>    ...:     <span class="hljs-keyword">yield</span> x+<span class="hljs-number">1</span><br>    ...:     <span class="hljs-keyword">return</span> x+<span class="hljs-number">2</span><br>    ...:     <span class="hljs-keyword">yield</span> x+<span class="hljs-number">3</span><br>    ...:<br><br>In [<span class="hljs-number">12</span>]: <span class="hljs-built_in">list</span>(f(<span class="hljs-number">4</span>))<br>Out[<span class="hljs-number">12</span>]: [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>]<br><span class="hljs-comment"># it is possible to access the returned value </span><br><br>In [<span class="hljs-number">13</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">g</span>(<span class="hljs-params">x</span>):<br>    ...:     y=<span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> f(x)<br>    ...:     <span class="hljs-keyword">yield</span> y<br>    ...:<br><br>In [<span class="hljs-number">14</span>]: <span class="hljs-built_in">list</span>(g(<span class="hljs-number">4</span>))<br>Out[<span class="hljs-number">14</span>]: [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]<br></code></pre></td></tr></table></figure>
+
+<h3><span id="lectrue2-efficiency">lectrue2-efficiency</span></h3><ul>
+<li><p>measuring efficiency</p>
+</li>
+<li><p>exponentiation</p>
+</li>
+</ul>
+<blockquote>
+<p>fast exp</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">36</span>]: <span class="hljs-keyword">def</span> <span class="hljs-title function_">fast_exp</span>(<span class="hljs-params">b,n</span>):<br>    ...:          <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>):<br>    ...:              <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    ...:          <span class="hljs-keyword">elif</span>(n%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>):<br>    ...:             <span class="hljs-keyword">return</span> square(fast_exp(b,n//<span class="hljs-number">2</span>))<br>    ...:          <span class="hljs-keyword">else</span>:<br>    ...:              <span class="hljs-keyword">return</span> fast_exp(b,n-<span class="hljs-number">1</span>)*b<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>orders of growth</p>
+</li>
+<li><p>memo(a way to imporve efficiency)</p>
+</li>
+</ul>
+<blockquote>
+<p>for example of fib</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">fibonacci</span>(<span class="hljs-params">n, memo = &#123;&#125;</span>):<br>   ...:     <span class="hljs-keyword">if</span> n &lt;= <span class="hljs-number">0</span>:<br>   ...:         <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>   ...:     <span class="hljs-keyword">elif</span> n == <span class="hljs-number">1</span>:<br>   ...:         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>   ...:     <span class="hljs-keyword">elif</span> n <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> memo:<br>   ...:         memo[n] = fibonacci(n-<span class="hljs-number">1</span>, memo) + fibonacci(n-<span class="hljs-number">2</span>, memo)<br>   ...:     <span class="hljs-keyword">return</span> memo[n]<br></code></pre></td></tr></table></figure>
+
+<h2><span id="week5">week5</span></h2><h3><span id="lecture1-tree">lecture1-tree</span></h3><ul>
+<li>tree class</li>
+</ul>
+<p>recursive description:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">a tree has a root label <span class="hljs-keyword">and</span> a <span class="hljs-built_in">list</span> of branches<br>each branch <span class="hljs-keyword">is</span> a tree<br>a tree <span class="hljs-keyword">with</span> zero branches <span class="hljs-keyword">is</span> called a leaf<br>a tree starts at the root<br></code></pre></td></tr></table></figure>
+
+<p>tree class:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">TreeNode</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, value</span>):<br>        self.value = value  <span class="hljs-comment"># 当前节点的值</span><br>        self.children = []  <span class="hljs-comment"># 列表，包含子节点</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">add_child</span>(<span class="hljs-params">self, child_node</span>):<br>        self.children.append(child_node)  <span class="hljs-comment"># 添加子节点</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">remove_child</span>(<span class="hljs-params">self, child_node</span>):<br>        self.children.remove(child_node)  <span class="hljs-comment"># 移除子节点</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">traverse</span>(<span class="hljs-params">self</span>):<br>        nodes_to_visit = [self]<br>        <span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(nodes_to_visit) &gt; <span class="hljs-number">0</span>:<br>            current_node = nodes_to_visit.pop()<br>            <span class="hljs-built_in">print</span>(current_node.value)<br>            nodes_to_visit += current_node.children<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>tree mutation</li>
+</ul>
+<blockquote>
+<p>example:pruning tree</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">prune</span>(<span class="hljs-params">t,n</span>):<br>  t.branches=[b <span class="hljs-keyword">for</span> b <span class="hljs-keyword">in</span> t.branches <span class="hljs-keyword">if</span> b.label!=b]<br>  <span class="hljs-keyword">for</span> b <span class="hljs-keyword">in</span> t.branches:<br>    prune(b,n)<br></code></pre></td></tr></table></figure>
+
+<details>
+<summary> <p style="color:red">观众老爷能赏口饭吃吗</p></summary>
+
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./photos2/shoukuan.jpg" alt="图片的替代文字" class="lazyload"></p>
+</details>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>Lane<br>
+        <strong>本文链接：</strong><a href="https://lakerswillwin.github.io/2024/05/03/cs61a/" title="https:&#x2F;&#x2F;lakerswillwin.github.io&#x2F;2024&#x2F;05&#x2F;03&#x2F;cs61a&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;lakerswillwin.github.io&#x2F;2024&#x2F;05&#x2F;03&#x2F;cs61a&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			      
+			<!-- 先找到与当前文字相同的目录 -->
+			   
+			<!-- 在找到当前文章所在的 index -->
+			       
+			<!-- 下一篇文章 -->
+			<div class="new">
+				<span>下一章</span>
+				<a href="/2024/05/03/homeworkofcs61a/"> homework of cs61a</a>
+			</div>
+			                                                     
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/python/" rel="tag">python</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>
