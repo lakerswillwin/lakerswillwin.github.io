@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html 
+	lang="CH-zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 概率论与数理统计 -  Laneのhome</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="https://kira.host/assets/Pictures/Others/116359b4ccf19917.jpg"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 6.3.0"></head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('https://s21.ax1x.com/2024/08/08/pkzljdH.jpg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="Laneのhome">
+        <img
+			src="https://s21.ax1x.com/2024/08/08/pkzljdH.jpg"
+			alt="Lane"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a target="_blank" rel="noopener" href="https://s21.ax1x.com/2024/08/08/pkzljdH.jpg" title="Lane">
+			<img
+				src="https://s21.ax1x.com/2024/08/08/pkzljdH.jpg"
+				alt="Lane"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>22</div>
+		<div><span>标签</span>14</div>
+		<div><span>分类</span>4</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/friends.html"
+			title="友链"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				友链
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="https://wx.mail.qq.com/home/index?sid=zRxMToxhT2suJFZaALhEUwAA#/list/1/1"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/3537107830179843?spm_id_from=333.1007.0.0"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/lakerswillwin/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="/null"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+  <div class="kira-widget-wrap">
+    <h3 class="kira-widget-title">分类</h3>
+    <div class="kira-widget">
+      <ul class="category-list">
+        
+        
+
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/cs课程/">
+              cs课程
+            </a>
+            <span class="category-list-count">9</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/技术/">
+              技术
+            </a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数理课程/">
+              数理课程
+            </a>
+            <span class="category-list-count">4</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/随笔/">
+              随笔
+            </a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/C/" style="font-size: 13.33px;">C</a> <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">C++语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.33px;">C语言</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/math/" style="font-size: 16.67px;">math</a> <a href="/tags/nihao/" style="font-size: 10px;">nihao</a> <a href="/tags/physics/" style="font-size: 10px;">physics</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/verilog/" style="font-size: 10px;">verilog</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 10px;">建站</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a>
+		</div>
+		
+	</div>
+
+
+		
+			
+	<div class="kira-widget-wrap">
+		<h3 class="kira-widget-title">
+			文章归档
+		</h3>
+		<div class="kira-widget">
+			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">22</span></li></ul>
+		</div>
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2024
+		<a href="/">Lane</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<center> 浏览量：<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>| 访客数：<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> </center>
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="https://s21.ax1x.com/2024/06/10/pkN6A39.png"
+				data-sizes="auto"
+				alt="概率论与数理统计"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>概率论与数理统计</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2024年09月13日</a>
+			<a><i class="kirafont icon-edit-fill"></i>573 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 2 分钟</a>
+		</div>
+		<h2><span id="introduction">introduction</span></h2><p>本笔记是基于修佬笔记的补充（再次感谢修佬bushi）</p>
+<p><a target="_blank" rel="noopener" href="https://note.isshikih.top/cour_note/D1CX_ProbabilityAndStatistics/Chap01/">给一个修佬的链接叭</a></p>
+<h2><span id="补充介绍">补充介绍</span></h2><ul>
+<li>测验：一共三次测验，取最好的两次成绩作为最终成绩（秋学期七周（到第二章）、冬学期第三周（到第四章）、冬学期第七周（到第七章））<br>  每一次测验2个多选题，8个单选题（多选题选错和少选都不得分）<br>  测验的地点不限，但是只能用电脑作答</li>
+<li>期末范围到第八章</li>
+</ul>
+<h2><span id="notes">notes</span></h2><h3><span id="chapter1-概率论的基本概念">chapter1-概率论的基本概念</span></h3><h4><span id="样本空间与随机事件">样本空间与随机事件</span></h4><ul>
+<li><p>集合分为:<br>有限<br>无限(可数集（与N一一对应），不可数集)</p>
+</li>
+<li><p>每一个事件都抽象为子集，若试验点落在了这个子集中<br>就说明这个随机事件发生</p>
+</li>
+<li><p>(AB&#x3D;\varnothing),则称两事件不相容（或互斥）</p>
+</li>
+<li><p>其中，和、交、逆事件有如下运算规律：</p>
+</li>
+</ul>
+<p>交换律：(A\cup B&#x3D;B\cup A;,;A\cap B&#x3D;B\cap A)；<br>结合律：(A\cup(B\cup C)&#x3D;(A\cup B)\cup C;,;A(BC)&#x3D;(AB)C)；<br>分配律：(A(B\cup C)&#x3D;(AB)\cup(AC);,;(AB)\cup C&#x3D;(A\cup C)(B\cup C))；<br>对偶律 &#x2F; 德摩根定律(De Morgan’s law)：(\overline{\bigcup\limits^n_{j&#x3D;1}A_j}&#x3D;\bigcap\limits^n_{j&#x3D;1}\overline{A_j};,;\overline{\bigcap\limits^n_{j&#x3D;1}A_j}&#x3D;\bigcup\limits^n_{j&#x3D;1}\overline{A_j})；</p>
+<h4><span id="频率与概率">频率与概率</span></h4><ul>
+<li>概率满足条件：</li>
+</ul>
+<ol>
+<li>大于或等于零</li>
+<li>规范性，样本空间概率为1</li>
+<li>可列可加性（基于两两互斥）</li>
+</ol>
+<ul>
+<li>概率的性质：</li>
+</ul>
+<ol>
+<li><p>对于有限个两两不相容的事件的和事件，有 (P(\bigcup\limits^n_{j&#x3D;1}A_j)&#x3D;\sum\limits_{j&#x3D;1}^nP(A_j))；</p>
+</li>
+<li><p>(P(A)&#x3D;1-P(\overline A))；特别的，可以得到 (P(\varnothing)&#x3D;0)；</p>
+</li>
+<li><p>当 (A\supset B) 时，(P(A-B) &#x3D; P(A)-P(B)) 且 (P(A)\geq P(B))；否则(P(A-B)&#x3D;P(A)-P(AB))</p>
+</li>
+<li><p>概率的加法公式：(P(A\cup B)&#x3D;P(A)+P(B)-P(AB))；推广即容斥原理；（亦可推广到三个事件……）<br>可以通过迭代的方式进行证明，也就是讲(P(A\cup B))看作整体<br>|A1 ∪ A2 ∪ … ∪ An| &#x3D; Σ(|Ai|) - Σ( |Ai ∩ Aj| ) + Σ( |Ai ∩ Aj ∩ Ak| ) - … + (-1)^(n+1) |A1 ∩ A2 ∩ … ∩ An|</p>
+</li>
+<li><p>加法公式的推论：(P(A\cup B)\leq P(A)+P(B))；</p>
+</li>
+</ol>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>Lane<br>
+        <strong>本文链接：</strong><a href="https://lakerswillwin.github.io/2024/09/13/probablytheory/" title="https:&#x2F;&#x2F;lakerswillwin.github.io&#x2F;2024&#x2F;09&#x2F;13&#x2F;probablytheory&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;lakerswillwin.github.io&#x2F;2024&#x2F;09&#x2F;13&#x2F;probablytheory&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			              
+			<!-- 先找到与当前文字相同的目录 -->
+			            
+			<!-- 在找到当前文章所在的 index -->
+			            
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2024/06/10/shuxuefenxi/"> 数学分析二</a>
+			</div>
+			          
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/%E6%95%B0%E7%90%86%E8%AF%BE%E7%A8%8B/">数理课程</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/math/" rel="tag">math</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>
