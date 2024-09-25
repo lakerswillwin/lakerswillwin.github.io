@@ -91,7 +91,7 @@
 	</div>
 	<div class="kira-count">
 		<div><span>文章</span>22</div>
-		<div><span>标签</span>14</div>
+		<div><span>标签</span>13</div>
 		<div><span>分类</span>4</div>
 	</div>
 	<div class="kira-list">
@@ -275,7 +275,7 @@
 			
 	<div class="kira-widget-wrap">
 		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
-			<a href="/tags/C/" style="font-size: 13.33px;">C</a> <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">C++语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.33px;">C语言</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/math/" style="font-size: 16.67px;">math</a> <a href="/tags/nihao/" style="font-size: 10px;">nihao</a> <a href="/tags/physics/" style="font-size: 10px;">physics</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/verilog/" style="font-size: 10px;">verilog</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 10px;">建站</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a>
+			<a href="/tags/C/" style="font-size: 13.33px;">C</a> <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">C++语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.33px;">C语言</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/math/" style="font-size: 16.67px;">math</a> <a href="/tags/nihao/" style="font-size: 10px;">nihao</a> <a href="/tags/physics/" style="font-size: 10px;">physics</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 10px;">建站</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 13.33px;">硬件</a>
 		</div>
 		
 	</div>
@@ -375,7 +375,7 @@
 		
 		<div class="kira-post-cover">
 			<img
-				data-src="https://s21.ax1x.com/2024/06/07/pktFvoq.jpg"
+				data-src="https://s21.ax1x.com/2024/09/25/pAQbpgP.jpg"
 				data-sizes="auto"
 				alt="计算机组成"
 				class="lazyload kira-post-cover-image disabled-kira-image"
@@ -385,8 +385,8 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2024年09月25日</a>
-			<a><i class="kirafont icon-edit-fill"></i>453 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 2 分钟</a>
+			<a><i class="kirafont icon-edit-fill"></i>711 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 3 分钟</a>
 		</div>
 		<h2><span id="chapter2-instructionslanguage-of-the-computer">chapter2 instructions:language of the computer</span></h2><h2><span id="chapter3-arithmetic-for-computers">chapter3 arithmetic for computers</span></h2><h3><span id="31-introduction">3.1 introduction</span></h3><ul>
 <li>there are 32bit&#x2F;word(默认) or 64bit&#x2F;word in RISC-V</li>
@@ -411,11 +411,25 @@
 </ul>
 <h5><span id="alu总体设计">alu总体设计</span></h5><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/alu.png" alt="alu" class="lazyload"></p>
 <p>需要注意：Less 和 Set 共同使用，是为了实现 slt rd, rs1, rs2 这个操作（即实现比较操作）（SLT 即 Set Less Than）的。这个操作的含义是，如果 rs1 &lt; rs2 ，那么将 rd 置为 1 ，否则置为 0 。如何进行这一判断呢？很简单，rs1 &lt; rs2 即 rs1 - rs2 &lt; 0，也就是说如果 rs1 - rs2 结果的最高位是 1 ，那么就说明 rs1 &lt; rs2 。所以对于 slt 这个操作，我们只需要计算 rs1 - rs2，而后将 ALU63 中加法器的结果（即最终结果的符号位）赋值给 Result[0] ，即运算结果的 Least Significant Bit，而将其他位的结果 Result[1:63] 都设成 0，就可以完成 slt 操作了。</p>
+<ul>
+<li>常见的alu选择数对应的功能如下</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/function.png" alt="function" class="lazyload"></p>
 <h5><span id="verilog设计">verilog设计</span></h5><ul>
 <li>检测overflow:增加一位观察其位数，并根据alu operation再根据原来的a和b的最高位三者<br>进行综合来判断是否发生溢出。</li>
 </ul>
 <h5><span id="更快的方法">更快的方法</span></h5><ul>
-<li>超前进位加法器</li>
+<li><p>超前进位加法器<br>思路：对于普通加法器而言，运行缓慢的重要因素是因为在我们进行计算的时候，我们需要等待前面的部件<br>计算完成产生进位后再来计算。而超前进位加法器则是通过假想所有进位可能产生的情况，提前对每一位进行<br>与操作和或操作，大大减少了进行加法需要的时间</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/chaoqian.png" alt="chaoqian" class="lazyload"></p>
+<p>详细的数学推导如下</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/chaoqian2.png" alt="chaoqian2" class="lazyload"></p>
+<p>如果想要将运算的位数扩展为16位即原来的四倍，一种可能实现的方法如下：<br>也就是对于每四位用之前所说的超前加法器，然后这四位产生的结果之间又存在一个<br>迭代关系。</p>
+</li>
+</ul>
+<p>carry select adder</p>
+<p>  <img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/16bit.png" alt="16bit" class="lazyload"></p>
+<ul>
+<li>carry select adder<br>思路：这就是体现了在chapter中提到的设计中的冗余的思想，将carry为0或1的情况都列出来<br>再从中选择符合实际的情况</li>
 </ul>
 <h4><span id="乘法">乘法</span></h4><h5><span id="v1">V1</span></h5><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/cheng.png" alt="multiple" class="lazyload"></p>
 <h5><span id="v2">V2</span></h5><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/V2.png" alt="V2" class="lazyload"></p>
@@ -456,7 +470,7 @@
 			<a class="kirafont icon-container-fill -link" href="/categories/cs%E8%AF%BE%E7%A8%8B/">cs课程</a>
 		
 		
-			<a class="kirafont icon-tag-fill -none-link" href="/tags/verilog/" rel="tag">verilog</a>
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a>
 		
 	</div>
 	
