@@ -385,10 +385,24 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2024年09月25日</a>
-			<a><i class="kirafont icon-edit-fill"></i>711 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 3 分钟</a>
+			<a><i class="kirafont icon-edit-fill"></i>1.6k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 7 分钟</a>
 		</div>
-		<h2><span id="chapter2-instructionslanguage-of-the-computer">chapter2 instructions:language of the computer</span></h2><h2><span id="chapter3-arithmetic-for-computers">chapter3 arithmetic for computers</span></h2><h3><span id="31-introduction">3.1 introduction</span></h3><ul>
+		<h2><span id="chapter2-instructionslanguage-of-the-computer">chapter2 instructions:language of the computer</span></h2><h3><span id="21-introduction">2.1 introduction</span></h3><h3><span id="22-operations-of-computer-hardware">2.2 operations of computer hardware</span></h3><h4><span id="算术">算术</span></h4><blockquote>
+<p>ex</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp">f=(h+g)-(i+j);<br>Risc-v code:<br>add t0,g,h<br>add t1,i,j<br>sub f,t0,t1<br></code></pre></td></tr></table></figure>
+
+<h3><span id="23-operands-of-computer-hardware">2.3 operands of computer hardware</span></h3><ul>
+<li>64-bit data call doubleword</li>
+<li>32-bit data call word</li>
+<li>Risc-v 有32个64位寄存器</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/regster.png" alt="regster" class="lazyload"></p>
+<ul>
+<li>Risc-V 是小端模式（小端模式下，数据的低位存储在低地址，高位在高地址；而大端模式则相反，高位存储在低地址。在读取数据时，无论哪种模式，都是从低地址开始）</li>
+</ul>
+<h2><span id="chapter3-arithmetic-for-computers">chapter3 arithmetic for computers</span></h2><h3><span id="31-introduction">3.1 introduction</span></h3><ul>
 <li>there are 32bit&#x2F;word(默认) or 64bit&#x2F;word in RISC-V</li>
 <li>数的表示二进制，有符号数与无符号数</li>
 </ul>
@@ -432,11 +446,44 @@
 <li>carry select adder<br>思路：这就是体现了在chapter中提到的设计中的冗余的思想，将carry为0或1的情况都列出来<br>再从中选择符合实际的情况</li>
 </ul>
 <h4><span id="乘法">乘法</span></h4><h5><span id="v1">V1</span></h5><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/cheng.png" alt="multiple" class="lazyload"></p>
+<ul>
+<li>解释：最简单的乘法装置就是用一个64位寄存器用来存储乘数，然后每一次进行移位，并同时对被乘数进行移位，如果判断为1，则将现在移位的被乘数加到最终的结果上面（128位alu操作）.</li>
+</ul>
 <h5><span id="v2">V2</span></h5><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/V2.png" alt="V2" class="lazyload"></p>
-<h5><span id="v3">V3</span></h5><h5><span id="faster-multiplication">faster multiplication</span></h5><ul>
+<ul>
+<li>解释：进行第一次优化，将 Multiplicand 寄存器换为了 64 位，而将位移操作转移到了 Product 寄存器中进行。这里最重要的一点就是，64 位加法只影响 Product 寄存器左侧的 64 位，而之后的右移操作则是 128 位。这样，虽然最低位的结果一开始会被放在 Product 寄存器的第 65 位里，但是在经过 64 次右移之后，它就出现在第一位了。于是，所有的 128 位加法都被 64 位加法替代，实现了加速。</li>
+</ul>
+<h5><span id="v3">V3</span></h5><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/V3.png" alt="V3" class="lazyload"></p>
+<ul>
+<li>解释：直接将 Multiplier 存在了 Product 的低 64 位中。当我们从中取出最低位并经过一次判断后，这一位就不重要了，而恰好 Product 需要右移，就将这一位消除，方便我们下一次从最低位拿出下一个比特。首先，少了一个寄存器，节省了空间；其次，原本需要 Multiplier 寄存器和 Product 寄存器都做右移，现在只需要 Product 寄存器右移即可，减少了一个 64 位右移操作。</li>
+</ul>
+<h5><span id="faster-multiplication">faster multiplication</span></h5><ul>
 <li>将乘数与被乘数展开转化为加法</li>
 </ul>
-<h4><span id="signed-multiplication">signed multiplication</span></h4>
+<h4><span id="signed-multiplication">signed multiplication</span></h4><h4><span id="除法">除法</span></h4><h5><span id="v1-division">V1-division</span></h5><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/DV1.png" alt="DV1" class="lazyload"></p>
+<ul>
+<li>解释：最基本的竖式计算。最开始除数放在寄存器的左半部分，被除数放在寄存器的右半部分。然后对除数与被除数作减法，如果结果大于0，则此时的商取1，商移位，被除数也需要移位并且除数继续移位；否则商取0，商移位并且除数继续移位。</li>
+</ul>
+<h5><span id="v2-division">V2-division</span></h5><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/DV2.png" alt="DV2" class="lazyload"></p>
+<ul>
+<li>解释：想要优化我们上述的除法结构，我们联想到上述加法的V3模式。我们采用类似的结构，64位除数不进行移位操作，而储存被除数的寄存器先放置在左侧，将被除数向左移，（空出来的位置用来放置商），与除数再进行减法。</li>
+</ul>
+<h4><span id="floating-point-numbers">floating point numbers</span></h4><ul>
+<li>下面给出一个浮点数换算的具体例子</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/float.png" alt="float" class="lazyload"></p>
+<h5><span id="floating-point-addition">floating point addition</span></h5><ul>
+<li>对齐：小对大进行对齐：为什么是小对大？首先，小对大的过程是在小指数的 fraction 前补 0，可能导致末尾数据丢失；大对小的过程是在大指数的 fraction 后补 0，可能导致前面的数据丢失。在计算过程中，我们保持的精确位数是有限的，而在迫不得已丢去精度的过程中，让小的那个数的末几位被丢掉的代价比大的前几位丢失要小太多了。</li>
+<li>相加</li>
+<li>将结果归一化</li>
+<li>进行舍入操作（可能结果还需要进行归一化）</li>
+</ul>
+<h5><span id="multiplication">multiplication</span></h5><ul>
+<li>将两个 Exponent 相加并 减去一个 bias，因为 bias 加了 2 次</li>
+<li>将两个 (1 + Fraction) 相乘，并将其规格化；此时同样要考虑 overflow 和 underflow；然后舍入，如果还需要规格化则重复执行</li>
+<li>根据两个操作数的符号决定结果的符号</li>
+</ul>
+
 	</article>
 
 	 
