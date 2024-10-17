@@ -385,8 +385,8 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2024年09月25日</a>
-			<a><i class="kirafont icon-edit-fill"></i>1.6k 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 7 分钟</a>
+			<a><i class="kirafont icon-edit-fill"></i>2.9k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 12 分钟</a>
 		</div>
 		<h2><span id="chapter2-instructionslanguage-of-the-computer">chapter2 instructions:language of the computer</span></h2><h3><span id="21-introduction">2.1 introduction</span></h3><h3><span id="22-operations-of-computer-hardware">2.2 operations of computer hardware</span></h3><h4><span id="算术">算术</span></h4><blockquote>
 <p>ex</p>
@@ -400,8 +400,78 @@
 </ul>
 <p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/regster.png" alt="regster" class="lazyload"></p>
 <ul>
-<li>Risc-V 是小端模式（小端模式下，数据的低位存储在低地址，高位在高地址；而大端模式则相反，高位存储在低地址。在读取数据时，无论哪种模式，都是从低地址开始）</li>
+<li>Risc-V 是小端模式（小端模式下，数据的低位存储在低地址，高位在高地址；而大端模式则相反，高位存储在低地址。在读取数据时，无论哪种模式，都是从低地址开始）即这个word的第0个byte放在最低的位置（least address of a word）</li>
+<li>Risc-V 不需要aligned</li>
 </ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/aligned.png" alt="aligned" class="lazyload"></p>
+<ul>
+<li>下面举一个memory的Risc-V编译例子</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/operand.png" alt="operand" class="lazyload"></p>
+<p>解释：ld和sd是对memory的指令，其中的数字代表对应的地址。</p>
+<h4><span id="register和memory">register和memory</span></h4><ul>
+<li>Registers are faster to access than memory</li>
+<li>进行操作时将memory load到register或者被store</li>
+<li>Compiler must use registers for variables as<br>much as possible</li>
+</ul>
+<h4><span id="make-common-case-fast">make common case fast</span></h4><ul>
+<li>对于常见的命令，例如immeidate add，当我们把它们变作一个命令以后，就舍去了load操作，大大提升了编译时间。</li>
+</ul>
+<h3><span id="24-有符号数和无符号数">2.4 有符号数和无符号数</span></h3><h3><span id="25-representing-instructions-in-the-computer">2.5 representing instructions in the computer</span></h3><ul>
+<li>指令在计算机中的表示方法（如下例）</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/represent.png" alt="represent" class="lazyload"></p>
+<p>这个表示方法就是RISC-V R-Format：<br>funct7(7 bits) rs2(5 bits) rs1(5 bits) funct3(3 bits) rd(5 bits) opcode(7 bits)</p>
+<p>但是有些指令的相关寄存器只有两个（Risc-V I-Format Instructions）<br>immediate</p>
+<h4><span id="encoding">encoding</span></h4><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/encoding.png" alt="encoding" class="lazyload"></p>
+<h4><span id="format">format</span></h4><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/format.png" alt="format" class="lazyload"></p>
+<ul>
+<li>解释：sb指令与UJ指令的immed的特殊位置排序的原因：功能不同并且尽可能多地位数相互对应。</li>
+</ul>
+<h3><span id="26-logical-operations">2.6 logical operations</span></h3><h4><span id="shift-operations">shift operations</span></h4><ul>
+<li>I-format 但是immediate只有六位（因为能够最多表示移63位已经满足所有情况</li>
+</ul>
+<h4><span id="若是logical对应的immediate操作">若是logical对应的immediate操作</span></h4><ul>
+<li>因为我们的寄存器处理的数据为64位，但是immeidate为12位，所以对immediate作有符号数扩展</li>
+</ul>
+<h3><span id="27-instructions-for-making-decisions">2.7 instructions for making decisions</span></h3><h4><span id="branch">branch</span></h4><ul>
+<li>branch instructions<br>beq register1,register2,L1（若&#x3D;&#x3D;则执行）<br>bne register1,register2,L2(若!&#x3D;则执行)</li>
+</ul>
+<h4><span id="loop">loop</span></h4><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/loop.png" alt="loop" class="lazyload"></p>
+<ul>
+<li>解释：首先进行读取，因为是double word所以每次的地址都是i乘上8，所以在开头进行移位操作。再算出地址，利用地址进行load操作（需要注意这里load到一个常数则编译地址immediate为0），接着进入判断条件，若满足进入循环。</li>
+</ul>
+<h4><span id="most-popular-compare-operand">most popular compare operand</span></h4><ul>
+<li><p>slt<br>If the first reg. is less than second reg. then sets third reg to 1<br>slt x5,x19,x20(x5&#x3D;1 if x19 &lt; x20)</p>
+</li>
+<li><p>more conditional operations<br>blt rs1, rs2, L1<br> if (rs1 &lt; rs2) branch to instruction labeled L1<br>bge rs1, rs2, L1<br> if (rs1 &gt;&#x3D; rs2) branch to instruction labeled L1</p>
+</li>
+<li><p>signed and unsigned<br>Signed comparison: blt, bge<br>Unsigned comparison: bltu, bgeu</p>
+</li>
+</ul>
+<h4><span id="jump-register">jump register</span></h4><ul>
+<li>jalr<br>jalr rd,imm(rs1)<br>解释：rd是要保存返回地址的目标寄存器。<br>rs1是包含要跳转到的地址的源寄存器。<br>imm是一个偏移量，用于相对于rs1寄存器的计算（可选字段）。</li>
+</ul>
+<h3><span id="28-supporting-procedures-in-computer-hardware">2.8 supporting procedures in computer hardware</span></h3><h4><span id="procedure-call-instruction">procedure call instruction</span></h4><ul>
+<li>jal x1,procedureaddress(UJ)<br>Address of following instruction put in x1<br>Jumps to target address</li>
+<li>jalr x0,0(x1)(I)<br>Like jal, but jumps to 0 + address in x1<br>Use x0 as rd (x0 cannot be changed)<br>Can also be used for computed jumps</li>
+</ul>
+<h4><span id="using-more-registers">Using more registers</span></h4><ul>
+<li><p>采用堆栈操作<br>push:sp&#x3D;sp-8<br>pop:sp&#x3D;sp+8</p>
+</li>
+<li><p>example</p>
+</li>
+<li><p>sp在压栈前应该指向最后一个word</p>
+</li>
+</ul>
+<h4><span id="risc-v规定">RISC-V规定</span></h4><ol>
+<li>x5 - x7 以及 x28 - x31 是 temp reg，如果需要的话 caller 保存；也就是说，不保证在经过过程调用之后这些寄存器的值不变。</li>
+<li>x8 - x9 和 x18 - x27 是 saved reg，callee 需要保证调用前后这些寄存器的值不变；也就是说，如果 callee 要用到这些寄存器，必须保存一份，返回前恢复。</li>
+<li>x10 - x17 是 8 个参数寄存器，函数调用的前 8 个参数会放在这些寄存器中；如果参数超过 8 个的话就需要放到栈上（放在 fp 上方， fp + 8 是第 9 个参数， fp + 16 的第 10 个，以此类推）。同时，过程的结果也会放到这些寄存器中（当然，对于 C 语言这种只能有一个返回值的语言，可能只会用到 x10 ）。</li>
+<li>x1 用来保存返回地址，所以也叫 ra 。因此，伪指令 ret 其实就是 jalr x0, 0(x1) 。</li>
+<li>栈指针是 x2 ，也叫 sp ；始终指向 栈顶元素。栈从高地址向低地址增长。</li>
+<li>addi sp, sp, -24 , sd x5, 16(sp) , sd x6, 8(sp) , sd x20, 0(sp) 可以实现将 x5, x6, x20 压栈。<br>一些 RISC-V 编译器保留寄存器 x3 用来指向静态变量区，称为 global pointer gp 。<br>一些 RISC-V 编译器使用 x8 指向 activation record 的第一个 dword，方便访问局部变量；因此 x8 也称为 frame pointer fp 。在进入函数时，用 sp 将 fp 初始化。<br>fp 的方便性在于在整个过程中对局部变量的所有引用相对于 fp 的偏移都是固定的，但是对 sp 不一定。当然，如果过程中没有什么栈的变化或者根本没有局部变量，那就没有必要用 fp 了。</li>
+</ol>
 <h2><span id="chapter3-arithmetic-for-computers">chapter3 arithmetic for computers</span></h2><h3><span id="31-introduction">3.1 introduction</span></h3><ul>
 <li>there are 32bit&#x2F;word(默认) or 64bit&#x2F;word in RISC-V</li>
 <li>数的表示二进制，有符号数与无符号数</li>
@@ -469,6 +539,10 @@
 <li>解释：想要优化我们上述的除法结构，我们联想到上述加法的V3模式。我们采用类似的结构，64位除数不进行移位操作，而储存被除数的寄存器先放置在左侧，将被除数向左移，（空出来的位置用来放置商），与除数再进行减法。</li>
 </ul>
 <h4><span id="floating-point-numbers">floating point numbers</span></h4><ul>
+<li>对于不同的取值范围对应的表达方式(尤其注意零和正负无穷的表达)</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/f.png" alt="f" class="lazyload"></p>
+<ul>
 <li>下面给出一个浮点数换算的具体例子</li>
 </ul>
 <p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/float.png" alt="float" class="lazyload"></p>
@@ -482,6 +556,10 @@
 <li>将两个 Exponent 相加并 减去一个 bias，因为 bias 加了 2 次</li>
 <li>将两个 (1 + Fraction) 相乘，并将其规格化；此时同样要考虑 overflow 和 underflow；然后舍入，如果还需要规格化则重复执行</li>
 <li>根据两个操作数的符号决定结果的符号</li>
+</ul>
+<h5><span id="准确计算">准确计算</span></h5><ul>
+<li>一般的浮点位数后面跟两个bit(guard、round)，其目的是让舍入更加精确，所以加减法一般只考虑guard即可。但是对于乘法，如果存在前导零的情况，需要把结果左移的时候，round就会起作用（成为有效位）。</li>
+<li>一个位叫 sticky bit，其定义是：只要 round 右边出现过非零位，就将 sticky 置 1，这一点可以用在加法的右移中，可以记住是否有 1 被移出，从而能够实现 “round to nearest even”。</li>
 </ul>
 
 	</article>
