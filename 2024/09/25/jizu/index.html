@@ -385,8 +385,8 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2024年09月25日</a>
-			<a><i class="kirafont icon-edit-fill"></i>2.9k 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 12 分钟</a>
+			<a><i class="kirafont icon-edit-fill"></i>3.5k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 15 分钟</a>
 		</div>
 		<h2><span id="chapter2-instructionslanguage-of-the-computer">chapter2 instructions:language of the computer</span></h2><h3><span id="21-introduction">2.1 introduction</span></h3><h3><span id="22-operations-of-computer-hardware">2.2 operations of computer hardware</span></h3><h4><span id="算术">算术</span></h4><blockquote>
 <p>ex</p>
@@ -452,27 +452,76 @@
 <h4><span id="jump-register">jump register</span></h4><ul>
 <li>jalr<br>jalr rd,imm(rs1)<br>解释：rd是要保存返回地址的目标寄存器。<br>rs1是包含要跳转到的地址的源寄存器。<br>imm是一个偏移量，用于相对于rs1寄存器的计算（可选字段）。</li>
 </ul>
-<h3><span id="28-supporting-procedures-in-computer-hardware">2.8 supporting procedures in computer hardware</span></h3><h4><span id="procedure-call-instruction">procedure call instruction</span></h4><ul>
-<li>jal x1,procedureaddress(UJ)<br>Address of following instruction put in x1<br>Jumps to target address</li>
-<li>jalr x0,0(x1)(I)<br>Like jal, but jumps to 0 + address in x1<br>Use x0 as rd (x0 cannot be changed)<br>Can also be used for computed jumps</li>
+<h3><span id="28-supporting-procedures-in-computer-hardware">2.8 supporting procedures in computer hardware</span></h3><h4><span id="procedure-call-instruction">procedure call instruction</span></h4><p>instructions of procedure</p>
+<ul>
+<li>jal x1,procedureaddress(UJ)<br>跳转到绝对的地址，同时将返回地址（PC+4）保存到寄存器<br>Address of following instruction put in x1<br>Jumps to target address</li>
+</ul>
+<p>procedure return</p>
+<ul>
+<li>jalr x0,0(x1)(I)<br>跳转到一个寄存器中指定的地址，同时将返回地址保存到寄存器<br>Like jal, but jumps to 0 + address in x1<br>Use x0 as rd (x0 cannot be changed)<br>Can also be used for computed jumps</li>
 </ul>
 <h4><span id="using-more-registers">Using more registers</span></h4><ul>
 <li><p>采用堆栈操作<br>push:sp&#x3D;sp-8<br>pop:sp&#x3D;sp+8</p>
 </li>
 <li><p>example</p>
 </li>
-<li><p>sp在压栈前应该指向最后一个word</p>
-</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/stack.png" alt="stack" class="lazyload"></p>
+<ul>
+<li>sp在压栈前应该指向最后一个word</li>
 </ul>
 <h4><span id="risc-v规定">RISC-V规定</span></h4><ol>
 <li>x5 - x7 以及 x28 - x31 是 temp reg，如果需要的话 caller 保存；也就是说，不保证在经过过程调用之后这些寄存器的值不变。</li>
 <li>x8 - x9 和 x18 - x27 是 saved reg，callee 需要保证调用前后这些寄存器的值不变；也就是说，如果 callee 要用到这些寄存器，必须保存一份，返回前恢复。</li>
 <li>x10 - x17 是 8 个参数寄存器，函数调用的前 8 个参数会放在这些寄存器中；如果参数超过 8 个的话就需要放到栈上（放在 fp 上方， fp + 8 是第 9 个参数， fp + 16 的第 10 个，以此类推）。同时，过程的结果也会放到这些寄存器中（当然，对于 C 语言这种只能有一个返回值的语言，可能只会用到 x10 ）。</li>
 <li>x1 用来保存返回地址，所以也叫 ra 。因此，伪指令 ret 其实就是 jalr x0, 0(x1) 。</li>
-<li>栈指针是 x2 ，也叫 sp ；始终指向 栈顶元素。栈从高地址向低地址增长。</li>
-<li>addi sp, sp, -24 , sd x5, 16(sp) , sd x6, 8(sp) , sd x20, 0(sp) 可以实现将 x5, x6, x20 压栈。<br>一些 RISC-V 编译器保留寄存器 x3 用来指向静态变量区，称为 global pointer gp 。<br>一些 RISC-V 编译器使用 x8 指向 activation record 的第一个 dword，方便访问局部变量；因此 x8 也称为 frame pointer fp 。在进入函数时，用 sp 将 fp 初始化。<br>fp 的方便性在于在整个过程中对局部变量的所有引用相对于 fp 的偏移都是固定的，但是对 sp 不一定。当然，如果过程中没有什么栈的变化或者根本没有局部变量，那就没有必要用 fp 了。</li>
+<li>栈指针是 x2 ，也叫 sp ；始终指向 栈顶元素。栈从高地址向低地址增长。<br> addi sp, sp, -24 , sd x5, 16(sp) , sd x6, 8(sp) , sd x20, 0(sp) 可以实现将 x5, x6, x20 压栈。</li>
+<li>一些 RISC-V 编译器保留寄存器 x3 用来指向静态变量区，称为 global pointer gp 。</li>
+<li>一些 RISC-V 编译器使用 x8 指向 activation record 的第一个 dword，方便访问局部变量；因此 x8 也称为 frame pointer fp 。在进入函数时，用 sp 将 fp 初始化。<br>fp 的方便性在于在整个过程中对局部变量的所有引用相对于 fp 的偏移都是固定的，但是对 sp 不一定。当然，如果过程中没有什么栈的变化或者根本没有局部变量，那就没有必要用 fp 了。</li>
 </ol>
-<h2><span id="chapter3-arithmetic-for-computers">chapter3 arithmetic for computers</span></h2><h3><span id="31-introduction">3.1 introduction</span></h3><ul>
+<h4><span id="nested-procedures">Nested procedures</span></h4><blockquote>
+<p>ex</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">fact</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-keyword">if</span>(n&lt;<span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>  <span class="hljs-keyword">return</span> n*<span class="hljs-built_in">fact</span>(n<span class="hljs-number">-1</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>现在我们研究上述c语言的risc-v指令<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/digui.png" alt="digui" class="lazyload"></p>
+<p>解释：我们首先要建立这样一个大概，在没有进行到底部时a0（参数）与ra（函数调用地址）不断被压栈保存。当递归到底部时，我们开始jarl zero，0（ra）开始回到上一个函数调用，即开始进行L1的后半部分，不断更新a0（即结果），然后将栈pop得到上一个函数地址再进行jarl zero,0(ra)</p>
+<h4><span id="loacl-data-on-the-stack">loacl data on the stack</span></h4><ul>
+<li>fp与sp两个指针</li>
+<li>fp在一次函数调用的储存中固定，而sp随着压栈的元素不断移动.即fp只指向这个进程的起始位置</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/spfp.png" alt="spfp" class="lazyload"></p>
+<h3><span id="29-communicating-with-people">2.9 communicating with people</span></h3><h4><span id="string-copy">string copy</span></h4><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/stcp.png" alt="stcp" class="lazyload"><br><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizphoto/stcp1.png" alt="stcp1" class="lazyload"></p>
+<ul>
+<li>因为这个例子是一个leaf procedure所以有优化的点</li>
+<li>For a leaf procedure<br>The compiler exhausts all temporary registers<br>Then use the registers it must save</li>
+</ul>
+<h3><span id="210-对大立即数的risc-v的编址和寻址">2.10 对大立即数的RISC-V的编址和寻址</span></h3><h4><span id="32-bit-constants">32-bit constants</span></h4><ul>
+<li>当我们load时，要进行两次操作，先将前20位load进去，再加上后12位</li>
+<li>但是后12位需要扩展到32位，当后12位的符号位为1，则前面都需要扩展为1，那么我们第一次20位就需要做出一点变化。<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/32bit.png" alt="32bit" class="lazyload"></li>
+</ul>
+<h4><span id="branch-addressing">branch addressing</span></h4><ul>
+<li>PC-relative addressing<br>Target address &#x3D; PC + Branch offset<br>&#x3D; PC + immediate × 2 即通常存储的是相对位置，这也与下面的一个例子相互对应</li>
+</ul>
+<h4><span id="jump-addressing">jump addressing</span></h4><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/ex.png" alt="ex" class="lazyload"></p>
+<ul>
+<li>解释：All RISC-V instructions are 4 bytes long<br>PC-relative addressing refers to the number of halfwords<br>The address field at 80012 above should be 6 instead of 12</li>
+</ul>
+<h4><span id="指令类型对应寻址方式">指令类型对应寻址方式</span></h4><ul>
+<li>immediate addressing  addi x5,x6,4</li>
+<li>register addressing   add x5,x6,x7</li>
+<li>base addressing       ld x5,100(x6)</li>
+<li>PC-relative addressing  beq x5,x6,L1</li>
+</ul>
+<h3><span id="211-指令与并行性同步">2.11 指令与并行性：同步</span></h3><h4><span id="risc-v中的同步">risc-v中的同步</span></h4><ul>
+<li><p>Load reserved: lr.d rd,(rs1)<br> Load from address in rs1 to rd<br> Place reservation on memory address</p>
+</li>
+<li><p>Store conditional: sc.d rd,(rs1),rs2<br> Store from rs2 to address in rs1<br> Succeeds if location not changed since the lr.d Returns 0 in rd<br> Fails if location is changed Returns non-zero value in rd</p>
+</li>
+<li><p>上述两条指令的例子<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./jizuphoto/lock.png" alt="lock" class="lazyload"></p>
+</li>
+</ul>
+<h3><span id="212-translating-and-starting-a-programme">2.12 translating and starting a programme</span></h3><h2><span id="chapter3-arithmetic-for-computers">chapter3 arithmetic for computers</span></h2><h3><span id="31-introduction">3.1 introduction</span></h3><ul>
 <li>there are 32bit&#x2F;word(默认) or 64bit&#x2F;word in RISC-V</li>
 <li>数的表示二进制，有符号数与无符号数</li>
 </ul>
