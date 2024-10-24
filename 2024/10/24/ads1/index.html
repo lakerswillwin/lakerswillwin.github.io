@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> homework of cs61a -  Laneのhome</title>
+		<title> ads知识 -  Laneのhome</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -375,48 +375,125 @@
 		
 		<div class="kira-post-cover">
 			<img
-				data-src="https://s21.ax1x.com/2024/05/04/pkAJFu6.jpg"
+				data-src="https://s21.ax1x.com/2024/05/05/pkAwpd0.jpg"
 				data-sizes="auto"
-				alt="homework of cs61a"
+				alt="ads知识"
 				class="lazyload kira-post-cover-image disabled-kira-image"
 			/>
-			<h1>homework of cs61a</h1>
+			<h1>ads知识</h1>
 		</div>
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
-			<a><i class="kirafont icon-calendar-fill"></i>2024年05月03日</a>
-			<a><i class="kirafont icon-edit-fill"></i>419 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 2 分钟</a>
+			<a><i class="kirafont icon-calendar-fill"></i>2024年10月24日</a>
+			<a><i class="kirafont icon-edit-fill"></i>1.6k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 6 分钟</a>
 		</div>
-		<h1><span id="homework-of-cs61a">homework of cs61a</span></h1><h2><span id="lab2">lab2</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>b = <span class="hljs-keyword">lambda</span> x: <span class="hljs-keyword">lambda</span>: x  <span class="hljs-comment"># Lambdas can return other lambdas!</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>c = b(<span class="hljs-number">88</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>c<br><span class="hljs-meta">&gt;&gt;&gt; </span>c()<br></code></pre></td></tr></table></figure>
+		<h2><span id="hw1-avl树和红黑树">hw1 AVL树和红黑树</span></h2><h3><span id="选择与判断小题">选择与判断小题</span></h3><ul>
+<li><p>在AVL树中四种样例的划分是来自于 troublemaker retated child 与 troublefinder</p>
+</li>
+<li><p>在AVL中四种样例的具体调整方法还是不太清楚</p>
+</li>
+<li><p>AVL树的节点数量递推式<br>$n(h)&#x3D;n(h-1)+n(h-2)+1$</p>
+</li>
+</ul>
+<p>ex1:</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/hw11.png" alt="EX1" class="lazyload"></p>
+<p>解释：当对avl树进行删除操作后，则只能有一个点发生不平衡，现在对一这个点为根的子树进行分析。因为我们调整整颗avl树，则首先这颗树的高度会减少1。如果整棵树已经平衡，则停止操作。但是如果因为这颗子树的高度减一导致上方节点的左右子树的高度差大于等于2，则需要上移矛盾再进行操作，则这颗子树的高度可能最终保持不变。</p>
+<p>ex2:</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/hw12.png" alt="ex2" class="lazyload"></p>
+<p>解释：这道题需要结合红黑树的几个基本性质进行解决，u是红黑树的内部节点，其中u有两个孩子，其中一个孩子v是红黑树的内部节点，另一个孩子是nil节点。由红黑树的第五个定义，因为另外一个节点为内部节点则一定有两个nil，由第五个性质，则v一定为红色，再由第四个性质，u一定为黑色。</p>
+<h2><span id="hw2-摊还分析与splay树">hw2 摊还分析与splay树</span></h2><ul>
+<li><p>splay树的具体操作还得记一记喵</p>
+</li>
+<li><p>对摊还分析的思考(常用的是势能法)<br>接下来，我们需要设计一个势能函数<br>Φ(x)，并且根据我们提到过的势能分析法的特性，<br>Φ(x) 应该具有这么几个特征：<br>开销大的操作应当倾向让势能降，开销小的操作应当倾向让势能升；<br>势能高倾向于让某些操作开销大，势能低倾向于让某些操作开销小；<br>Φ(final)&gt;Φ(initial)；</p>
+</li>
+<li><p>ex1</p>
+</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/hw21.png" alt="ex1" class="lazyload"></p>
+<p>解释：这是splay树的一个特殊情况，也是最坏情况。当我们将一个递增的序列添加到一个空树中的时候，<br>每次都是最大值在根节点，所以添加的新的节点在它的右侧，旋转到根节点，均会退化为链表。</p>
+<ul>
+<li>ex2</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/hw22.png" alt="ex2" class="lazyload"></p>
+<p>解释：这道题感觉比较有迷惑性，因为如果这颗树要找某个键值的节点，最多就是O(h)的时间复杂度<br>而我们根据摊还分析可以证明高度为O(logn),而后每次寻找都在根节点即为O(1),所以综上，时间复杂度为O（m+logn）</p>
+<ul>
+<li>ex3</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/hw23.png" alt="ex3" class="lazyload"></p>
+<p>解释：这是一道均摊分析的题目，所谓摊还分析就是对于任何情况下的操作$cost&#x3D;actual cost+\Delta \phi&#x3D;O(target)$,因为题干要求amortized cost为O(1),不妨定义$\phi&#x3D;the opposite of the number of available cells in the array$,则当普通的添加操作一定符合O(1),研究扩展space时的操作$cost&#x3D;c+nc+-nc&#x3D;c$符合O(1),经验证其他选项都不满足条件。</p>
+<h2><span id="hw3-btree">hw3 b+tree</span></h2><h3><span id="hw3选择与判断小题">hw3选择与判断小题</span></h3><ul>
+<li><p>skewed heap和leftist heap</p>
+</li>
+<li><p>斜堆也需要满足大根堆（小根堆）的性质，而它的合并和左偏堆的合并也十分类似，只不过我们这次无条件的交换左右子树，换句话来说，不管左偏性质如何变化，我们都会选择交换参与合并的左右子树，这样我们就不需要在回溯的时候才进行左右子树的交换，于是就实现了完全的自上而下。</p>
+</li>
+<li><p>从二叉堆的结构说起，它是一棵二叉树，并且是完全二叉树，每个结点中存有一个元素（或者说，有个权值）。</p>
+</li>
+<li><p>零距离(英文名NPL，即Null Path Length)则是从一个节点到一个”最近的不满节点”的路径长度。不满节点是指该该节点的左右孩子至少有有一个为NULL。叶节点的NPL为0，NULL节点的NPL为-1</p>
+</li>
+<li><p>ex1<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/hw3ex1.png" alt="hw3ex1" class="lazyload"></p>
+</li>
+</ul>
+<p>解释：现在我们考虑b+树中的插入操作，因为题目的前提条件是leaf node没有发生分裂，则不需要更新internal node中的key。</p>
+<ul>
+<li>ex2<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/hw3ex2.png" alt="hw3ex2" class="lazyload"></li>
+</ul>
+<p>解释：（我觉得这个问题主要在于我的目光局限于2-3B+树）因为没有underflow操作。</p>
+<h2><span id="hw4-倒序查找与二向堆">hw4 倒序查找与二向堆</span></h2><ul>
+<li><p>倒排索引（inverted file index）是一种常见的文本检索技术，用于快速查找包含特定单词或短语的文档。它通过将单词或短语作为关键字，并将它们出现在文档中的位置记录在一个索引中，从而支持快速的文本检索</p>
+</li>
+<li><p>知识1<br>解释：主要是一些概念的明晰。 relevant  irrelevant<br>retrieved(检索)            RR        IR<br>not retrieved              RN        IN<br>precision&#x3D;RR&#x2F;（RR+IR）<br>recall&#x3D;RR&#x2F;（RR+RN）</p>
+</li>
+<li><p>知识2<br>注意document和query的评判标准<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/thre.png" alt="thre" class="lazyload"></p>
+</li>
+<li><p>知识3<br>distributed indexing中，each node contains index of a subset of collection</p>
+</li>
+<li><p>知识4<br>主要研究我们的评判标准，注意区分data和information<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/id.png" alt="id" class="lazyload"></p>
+</li>
+<li><p>知识5<br>对于单词的存储（采用哈希还是其他树）<br>哈希的速度更快，但是但是range searches are expensive</p>
+</li>
+</ul>
+<h2><span id="hw5-回溯">hw5 回溯</span></h2><h3><span id="选填小题">选填小题</span></h3><ul>
+<li>知识1 tic-tac-toe 题目</li>
+</ul>
+<p>解释：一般做这个题的时候就直接把所有空全部填满，然后分别查看人与电脑获胜的情况的数目</p>
+<ul>
+<li>知识2 阿尔法贝塔剪枝问题</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/apr.png" alt="apr" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/bpr.png" alt="bpr" class="lazyload"><br><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/hw5ex2.png" alt="hw5ex2" class="lazyload"><br>总结：当利用阿尔法贝塔剪枝时解题顺序：左子树–根–右子树（基于深度优先搜索）<br>解释：在这道题目中，因为剪枝的情况是不会选用它的父亲则它被剪枝，当我们遍历知道它的父亲不选择时，此时它父亲的左孩子已经完成遍历，则右孩子被剪枝。</p>
+<ul>
+<li>ex1 dfs与bfs加剪枝的速度<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/hw5ex1.png" alt="hw5ex1" class="lazyload"></li>
+</ul>
+<p>解释：其实这道题可以从老师的hint中看，假设一个例子左边的叶子的深度十分深而右侧的叶子深度较浅，则我们一定存在这样的例子，当使用bfs时并没有像dfs一样遍历完那么深的深度就已经提前进行剪枝操作，则我们的时间就比dfs要短。</p>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
 
-<details>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
 
-<summary>answer</summary>Function 88 </details>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>higher_order_lambda = <span class="hljs-keyword">lambda</span> f: <span class="hljs-keyword">lambda</span> x: f(x)<br><span class="hljs-meta">&gt;&gt;&gt; </span>g = <span class="hljs-keyword">lambda</span> x: x * x<br><span class="hljs-meta">&gt;&gt;&gt; </span>higer_order_lambda(<span class="hljs-number">2</span>)(g)<br><span class="hljs-meta">&gt;&gt;&gt; </span>higer_order_lambda(g)(<span class="hljs-number">2</span>)<br><br>In [<span class="hljs-number">10</span>]: p=<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;1&#x27;</span>)<br><span class="hljs-number">1</span><br><br>In [<span class="hljs-number">11</span>]: p<br></code></pre></td></tr></table></figure>
-
-<details>
-
-<summary>answer</summary>Error  'int' object is not callable
-; 4 ; Nothing
- </details>
-
-<h2><span id="project2-cats">project2-cats</span></h2><blockquote>
-<p>split and remove_punctuation(used in problem2)</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python">s_list=split(remove_punctuation(lower(s)))<br><br>(function) <span class="hljs-keyword">def</span> <span class="hljs-title function_">split</span>(<span class="hljs-params">s: <span class="hljs-type">Any</span></span>) -&gt; <span class="hljs-type">Any</span><br>Return a <span class="hljs-built_in">list</span> of words contained <span class="hljs-keyword">in</span> s, which are sequences of characters separated by whitespace (spaces, tabs, etc.).<br><br><span class="hljs-meta">&gt;&gt;&gt; </span>split(<span class="hljs-string">&quot;It&#x27;s a lovely day, don&#x27;t you think?&quot;</span>)<br>[<span class="hljs-string">&quot;It&#x27;s&quot;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;lovely&#x27;</span>, <span class="hljs-string">&#x27;day,&#x27;</span>, <span class="hljs-string">&quot;don&#x27;t&quot;</span>, <span class="hljs-string">&#x27;you&#x27;</span>, <span class="hljs-string">&#x27;think?&#x27;</span>]<br><br>(function) <span class="hljs-keyword">def</span> <span class="hljs-title function_">remove_punctuation</span>(<span class="hljs-params">s: <span class="hljs-type">Any</span></span>) -&gt; <span class="hljs-type">Any</span><br>Return a string <span class="hljs-keyword">with</span> the same contents <span class="hljs-keyword">as</span> s, but <span class="hljs-keyword">with</span> punctuation removed.<br><br><span class="hljs-meta">&gt;&gt;&gt; </span>remove_punctuation(<span class="hljs-string">&quot;It&#x27;s a lovely day, don&#x27;t you think?&quot;</span>)<br><span class="hljs-string">&#x27;Its a lovely day dont you think&#x27;</span><br>    &gt;&gt;&gt; remove_punctuation(<span class="hljs-string">&quot;Its a lovely day dont you think&quot;</span>)<br><span class="hljs-string">&#x27;Its a lovely day dont you think&#x27;</span><br></code></pre></td></tr></table></figure>
-
-<blockquote>
-<p>切片操作(used in problem6)</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">counts</span>(<span class="hljs-params">curr_start,curr_goal,cnt</span>):<br>        <span class="hljs-keyword">if</span> cnt &gt; limit:<br>            <span class="hljs-keyword">return</span> limit + <span class="hljs-number">1</span><br>        <br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> curr_start <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> curr_goal:<br>            <span class="hljs-keyword">return</span> cnt<br>        <span class="hljs-keyword">elif</span> <span class="hljs-keyword">not</span> curr_start <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> curr_goal:<br>            <span class="hljs-keyword">return</span> counts(curr_start[<span class="hljs-number">1</span>:], curr_goal[<span class="hljs-number">1</span>:], cnt + <span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">elif</span> curr_start[<span class="hljs-number">0</span>] == curr_goal[<span class="hljs-number">0</span>]:<br>            <span class="hljs-keyword">return</span> counts(curr_start[<span class="hljs-number">1</span>:], curr_goal[<span class="hljs-number">1</span>:], cnt)<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-keyword">return</span> counts(curr_start[<span class="hljs-number">1</span>:], curr_goal[<span class="hljs-number">1</span>:], cnt + <span class="hljs-number">1</span>)<br><br>    <span class="hljs-keyword">return</span> counts(typed,reference,<span class="hljs-number">0</span>)<br>    <span class="hljs-comment">#在Python中，curr[1:]这个表达式是在进行切片操作。这个表达式表示从curr这个序列（这个序列可能是列表、元组或字符串等）中，取出下标为1的元素到最后一个元素组成的子序列。Python的切片操作非常强大，基本形式是[start:end]，其中start是起始下标，end是结束下标，切片的结果包含start对应的元素，但不包含end对应的元素。</span><br></code></pre></td></tr></table></figure>
 	</article>
 
 	 
     <div class="kira-post-copyright">
         <strong>本文作者：</strong>Lane<br>
-        <strong>本文链接：</strong><a href="https://lakerswillwin.github.io/2024/05/03/homeworkofcs61a/" title="https:&#x2F;&#x2F;lakerswillwin.github.io&#x2F;2024&#x2F;05&#x2F;03&#x2F;homeworkofcs61a&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;lakerswillwin.github.io&#x2F;2024&#x2F;05&#x2F;03&#x2F;homeworkofcs61a&#x2F;</a><br>
+        <strong>本文链接：</strong><a href="https://lakerswillwin.github.io/2024/10/24/ads1/" title="https:&#x2F;&#x2F;lakerswillwin.github.io&#x2F;2024&#x2F;10&#x2F;24&#x2F;ads1&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;lakerswillwin.github.io&#x2F;2024&#x2F;10&#x2F;24&#x2F;ads1&#x2F;</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
         
@@ -425,32 +502,26 @@
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			      
+			  
 			<!-- 先找到与当前文字相同的目录 -->
-			      
+			                              
 			<!-- 在找到当前文章所在的 index -->
-			    
+			                                    
 			<!-- 上一篇文章 -->
 			<div class="old">
 				<span>上一章</span>
-				<a href="/2024/05/03/cs61a/"> cs61a</a>
+				<a href="/2024/09/25/jizu/"> 计算机组成</a>
 			</div>
-			       
-			<!-- 下一篇文章 -->
-			<div class="new">
-				<span>下一章</span>
-				<a href="/2024/05/03/mk/"> mkdocs 建站</a>
-			</div>
-			                                              
+			                      
 		</nav>
 	</div>
 	
 	<div class="kira-post-meta kira-rainbow">
 		
-			<a class="kirafont icon-container-fill -link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+			<a class="kirafont icon-container-fill -link" href="/categories/cs%E8%AF%BE%E7%A8%8B/">cs课程</a>
 		
 		
-			<a class="kirafont icon-tag-fill -none-link" href="/tags/python/" rel="tag">python</a>
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/C/" rel="tag">C</a>
 		
 	</div>
 	
