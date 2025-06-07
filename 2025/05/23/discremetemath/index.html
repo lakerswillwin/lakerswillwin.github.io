@@ -90,7 +90,7 @@
 		</a>
 	</div>
 	<div class="kira-count">
-		<div><span>文章</span>33</div>
+		<div><span>文章</span>34</div>
 		<div><span>标签</span>16</div>
 		<div><span>分类</span>7</div>
 	</div>
@@ -287,7 +287,7 @@
             <a class="category-list-link" href="/categories/科研训练/">
               科研训练
             </a>
-            <span class="category-list-count">2</span>
+            <span class="category-list-count">3</span>
           </li>
         
           <li class="category-list-item">
@@ -325,7 +325,7 @@
 			文章归档
 		</h3>
 		<div class="kira-widget">
-			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/">2025</a><span class="archive-list-count">33</span></li></ul>
+			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/">2025</a><span class="archive-list-count">34</span></li></ul>
 		</div>
 	</div>
 
@@ -422,8 +422,8 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2025年05月23日</a>
-			<a><i class="kirafont icon-edit-fill"></i>6.5k 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 31 分钟</a>
+			<a><i class="kirafont icon-edit-fill"></i>7.2k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 34 分钟</a>
 		</div>
 		<h2><span id="导航">导航</span></h2><ul>
 <li><a href="#%E5%AF%BC%E8%88%AA">导航</a></li>
@@ -463,6 +463,27 @@
 <li><a href="#23-cardinality-of-finite-and-infinite-sets">2.3 Cardinality of Finite and Infinite Sets</a><ul>
 <li><a href="#counting-finite-sets">Counting Finite sets</a></li>
 <li><a href="#cardinality-of-infinite-sets">Cardinality of infinite sets</a></li>
+</ul>
+</li>
+<li><a href="#24-functions">2.4 Functions</a><ul>
+<li><a href="#241-introduction">2.4.1 Introduction</a></li>
+<li><a href="#one-to-one-and-onto-functions">one-to-one and onto functions</a></li>
+<li><a href="#the-growth-of-functions">The growth of functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#chapter3-the-fundamentals-algorithms">chapter3-The Fundamentals: Algorithms</a><ul>
+<li><a href="#31-algorithms">3.1 Algorithms</a><ul>
+<li><a href="#311-introduction">3.1.1 Introduction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#chapter4-induction-and-recursion">chapter4-Induction and Recursion</a></li>
+<li><a href="#chapter5-counting">chapter5-Counting</a><ul>
+<li><a href="#51-the-basics-of-counting">5.1 The Basics of counting</a><ul>
+<li><a href="#basic-counting-principle">basic counting principle</a></li>
 </ul>
 </li>
 </ul>
@@ -702,13 +723,30 @@
 <li>Principle of inclusion-exclusion:<br> $$<br> | A \cup B | &#x3D; |A| + |B| - |A \cap B|<br> $$</li>
 </ul>
 <h4><span id="cardinality-of-infinite-sets">Cardinality of infinite sets</span></h4><ul>
-<li>对于无限集而言:Two sets have the <strong>same cardinality</strong> if and only if there is an <strong>one-to-one correspondence</strong> from A to B.<ul>
+<li><p>对于无限集而言:Two sets have the <strong>same cardinality</strong> if and only if there is an <strong>one-to-one correspondence</strong> from A to B.</p>
+<ul>
 <li>example:N1 &#x3D; {1,3,5…,},then |N1| &#x3D; |N| and where the one-to-one correspondence is $f(n) &#x3D; 2n - 1$</li>
 <li>如果两个集合满足以上关系那么它们是 equivalence relation. 并且one-to-one correspondence 不是唯一的。</li>
 </ul>
 </li>
-<li>可数（denumerable）的集合:对于无限的集合，如果和自然数集有相同的cardinality,也就是和自然数集建立一对一的映射那么这个无限集是可数的。有限集一定是可数的。</li>
-<li>可以试着通过希尔伯特酒店来理解可数无限集。<ul>
+<li><p>可数（denumerable）的集合:对于无限的集合，如果和自然数集有相同的cardinality,也就是和自然数集建立一对一的映射那么这个无限集是可数的。有限集一定是可数的。</p>
+<ul>
+<li>常见可数集<ul>
+<li><p>整数集</p>
+</li>
+<li><p>有理数集</p>
+<hr>
+<p>  通过对角线进行证明：<br>所有的有理数都可以用两个互质的数表示<br>$q &#x3D; \frac{p}{q}$,consider $|p| + q &#x3D;k$<br>并且我们按照如下计数规则依次计数:<br>1. 按照k从小到大的顺序<br>2. 在k相同时，按照p从小到大的顺序<br>并且在计数过程中，删除掉前面已经出现过的有理数，这样对于任何有理数我们都可以通过这样的方式得到它的$a_i$的表示，也就说明有理数与自然数集建立一一对应的映射</p>
+<hr>
+</li>
+<li><p>The set $N \times N$ is denumerable.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>可以试着通过希尔伯特酒店来理解可数无限集。</p>
+<ul>
 <li>希尔伯特酒店的设定，想象有一家酒店，它有：<br>无限多个房间，并且每个房间都有一个编号：1号房，2号房，3号房，… 以此类推，房间的数量是可数无限的。所有房间都已经住满了客人。</li>
 <li>希尔伯特酒店之所以被称为“悖论”，并不是因为它存在真正的逻辑矛盾，而是因为它与我们基于有限经验形成的直觉相悖。它深刻地揭示了无限集合的以下几个重要性质：<ul>
 <li>无限集可以与其真子集建立一一对应： 在有限世界里，一个集合的真子集（不等于原集合的子集）的元素数量总是少于原集合。但在希尔伯特酒店中，所有房间（无限）的集合与所有奇数房间（无限，是所有房间集合的真子集）的集合具有相同的基数（都是可数无限），它们之间可以建立一一对应。这在有限集合中是不可能的。</li>
@@ -717,12 +755,49 @@
 </li>
 </ul>
 </li>
-<li><code>Theorem 1</code>:The cardinality of the power set of an arbitrary set has a greater cardinality than the original arbitrary set.</li>
-<li><code>Theorem 2</code>:The set of real numbers is uncountable.(其实我们很多对于集合证明其不可数，最后都可以进行转换分析到实数集的不可数上)<ul>
+<li><p><code>Theorem 1</code>:The cardinality of the power set of an arbitrary set has a greater cardinality than the original arbitrary set.</p>
+</li>
+<li><p><code>Theorem 2</code>:The set of real numbers is uncountable.(其实我们很多对于集合证明其不可数，最后都可以进行转换分析到实数集的不可数上)</p>
+<ul>
 <li>比如(0,1),通过tan能够与实数集建立一对一的映射，这也说明其是不可数的。</li>
 <li>我们同样可以利用对角化严格证明(0,1)的不可数</li>
 </ul>
+<hr>
+<p>我们是用反证法进行证明<br>假设(0,1)是可数的，那么0到1所有的数都能被按照下面的方式列出来（与自然数构建一一映射）：<br>0 $0.a_{00} a_{01} a_{02} …$<br>1 $0.a_{10} a_{11} a_{12} …$<br>我们现在再构造一个$b &#x3D; 0.b_0b_1b_2…$（我们的想法是想要说明这个b并不存在于我们前面提及的数组成的集合中）其中如果$a_{ii}$不等于1，那么$b_i &#x3D; 1$,否则 $b_i &#x3D; 2$。我们很容易地看到这样构造的b一定不存在于前面的集合中，说明我们的假设是错误的，(0,1)不可数</p>
+<hr>
 </li>
+</ul>
+<h3><span id="24-functions">2.4 Functions</span></h3><h4><span id="241-introduction">2.4.1 Introduction</span></h4><ul>
+<li>定义:A与B均是集合，定义从A到B的函数如下:</li>
+</ul>
+<p>$$<br>f : A \rightarrow B \Leftrightarrow \forall a \in A \exists b \in B \text{ such that } f(a) &#x3D; b<br>$$</p>
+<ul>
+<li>A is the domain of the function,B is the codomain of the function.</li>
+</ul>
+<h4><span id="one-to-one-and-onto-functions">one-to-one and onto functions</span></h4><ul>
+<li>one-to-one function（单射）</li>
+</ul>
+<p>$$<br>\forall a,b \in A \land a \neq b \implies f(a) \neq f(b)<br>$$</p>
+<ul>
+<li>onto function（满射）</li>
+</ul>
+<p>$$<br>\forall b \in B \exists a \in A \text{ such that } f(a) &#x3D; b<br>$$</p>
+<ul>
+<li>bijection function（双射）:onto and one-to-one</li>
+</ul>
+<h4><span id="the-growth-of-functions">The growth of functions</span></h4><ul>
+<li>定义:Let f and g be functions from the set of integers or the set of real numbers.We say that $f(x)$ is $O(g(x))$ if there exist constants $c$ and $n$ such that $|f(x)| \leq c|g(x)|$ for all $x \geq n$.</li>
+<li><code>Theorem 3</code>:Let $f(x) &#x3D; a_nx^n + a_{n-1}x^{n-1} + … + a_1x + a_0$ be a polynomial of degree $n$ with real coefficients.Then $f(x) &#x3D; O(x^n)$</li>
+</ul>
+<hr>
+<p>证明的思路就是把它转化为定义的表达式：<br>第一步放缩利用绝对值不等式，再将我们需要的幂次项提出，进一步放缩，最终能得到我们想要的表达式</p>
+<hr>
+<h2><span id="chapter3-the-fundamentals-algorithms">chapter3-The Fundamentals: Algorithms</span></h2><h3><span id="31-algorithms">3.1 Algorithms</span></h3><h4><span id="311-introduction">3.1.1 Introduction</span></h4><ul>
+<li>Algorithm:A finite set of precise instructions for performing a computation or solving problem</li>
+</ul>
+<h2><span id="chapter4-induction-and-recursion">chapter4-Induction and Recursion</span></h2><h2><span id="chapter5-counting">chapter5-Counting</span></h2><h3><span id="51-the-basics-of-counting">5.1 The Basics of counting</span></h3><h4><span id="basic-counting-principle">basic counting principle</span></h4><ul>
+<li>加法原理</li>
+<li>乘法原理</li>
 </ul>
 <h2><span id="chapter6-高级计数技术">chapter6-高级计数技术</span></h2><h3><span id="递推关系的应用">递推关系的应用</span></h3><ul>
 <li>常见的递推关系<ul>
@@ -972,7 +1047,7 @@ MathJax = {
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			              
+			                  
 			<!-- 先找到与当前文字相同的目录 -->
 			   
 			<!-- 在找到当前文章所在的 index -->
@@ -982,7 +1057,7 @@ MathJax = {
 				<span>下一章</span>
 				<a href="/2025/05/23/linear/"> 线性代数二</a>
 			</div>
-			                                           
+			                                       
 		</nav>
 	</div>
 	
