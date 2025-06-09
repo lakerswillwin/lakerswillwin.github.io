@@ -422,8 +422,8 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2025年05月23日</a>
-			<a><i class="kirafont icon-edit-fill"></i>18.7k 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 89 分钟</a>
+			<a><i class="kirafont icon-edit-fill"></i>22.9k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 108 分钟</a>
 		</div>
 		<h2><span id="导航">导航</span></h2><ul>
 <li><a href="#%E5%AF%BC%E8%88%AA">导航</a></li>
@@ -586,19 +586,57 @@
 <li><a href="#norm-form">Norm form</a><ul>
 <li><a href="#boyce-codd-normal-form">Boyce-codd Normal Form</a><ul>
 <li><a href="#decomposing-a-schema-into-bcnf">decomposing a schema into BCNF</a></li>
+<li><a href="#bcnf-and-dependency-preservation">BCNF and Dependency Preservation</a></li>
+</ul>
+</li>
+<li><a href="#third-normal-formmotivation">Third Normal Form:Motivation</a><ul>
+<li><a href="#3nf-decomposition-algorithm">3NF decomposition algorithm</a></li>
+</ul>
+</li>
+<li><a href="#goals-of-normalization">goals of normalization</a></li>
+</ul>
+</li>
+<li><a href="#multivated-dependencies">Multivated dependencies</a><ul>
+<li><a href="#fourth-normal-form">Fourth Normal Form</a><ul>
+<li><a href="#4nf-decomposition-algorithm">4NF decomposition algorithm</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#e-r-modeling-and-normal-forms">E-R Modeling and Normal Forms</a></li>
+</ul>
+</li>
+<li><a href="#chpater12-physical-storage-systems">chpater12-Physical storage systems</a><ul>
+<li><a href="#classification-of-physical-storage-media">classification of physical storage media</a></li>
+<li><a href="#stroage-hierarchy">stroage hierarchy</a></li>
+<li><a href="#magnetic-disks">Magnetic Disks</a><ul>
+<li><a href="#performance-measures-of-disks">performance measures of disks</a></li>
+<li><a href="#optimization-of-disk-block-access">Optimization of Disk-Block Access</a></li>
+</ul>
+</li>
+<li><a href="#flash-storage">Flash Storage</a></li>
 </ul>
 </li>
 <li><a href="#chapter13-data-storage-structures">chapter13-Data storage structures</a><ul>
 <li><a href="#file-organization">File Organization</a><ul>
 <li><a href="#fixed-length-records">Fixed-length records</a></li>
 <li><a href="#variable-length-records">Variable-length records</a></li>
-<li><a href="#organization-of-records-in-files">Organization of records in files</a></li>
+<li><a href="#organization-of-records-in-files">Organization of records in files</a><ul>
+<li><a href="#heap-file-organization">heap file organization</a></li>
+<li><a href="#sequential-file-organization">Sequential File Organization</a></li>
+<li><a href="#multitable-clustering-file-organization">Multitable Clustering File Organization</a></li>
+<li><a href="#table-partitioning">Table Partitioning</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#data-dictionary-storage">Data Dictionary Storage</a></li>
+<li><a href="#storage-access">Storage Access</a><ul>
+<li><a href="#buffer-manager">Buffer Manager</a></li>
+<li><a href="#buffer-replacement-policies">Buffer-Replacement Policies</a></li>
+</ul>
+</li>
+<li><a href="#columnar-oriened-storage">columnar-oriened storage</a></li>
 </ul>
 </li>
 <li><a href="#chapter14-indexing">chapter14-Indexing</a><ul>
@@ -606,22 +644,30 @@
 <li><a href="#ordered-indices">Ordered Indices</a></li>
 <li><a href="#b-tree-index">B+-Tree Index</a><ul>
 <li><a href="#properties-of-b-tree">properties of B+-tree</a></li>
-<li><a href="#b-tree-node-structure">B+-Tree Node Structure</a></li>
+<li><a href="#b-tree-node-structure">B+-Tree Node Structure</a><ul>
+<li><a href="#leaf-nodes-in-b-trees">Leaf Nodes in B+-Trees</a></li>
+<li><a href="#non-leaf-nodes-in-b-trees">Non-leaf Nodes in B+-Trees</a></li>
+</ul>
+</li>
+<li><a href="#non-unique-search-keys">Non-Unique Search Keys</a></li>
 <li><a href="#b-treeheight-and-size-estimation">B+-tree:height and size estimation</a></li>
-<li><a href="#indexing-strings">Indexing strings</a></li>
-<li><a href="#non-unique-search-keys">Non-Unique Search keys</a></li>
 <li><a href="#b-file-organization">B+-File Organization</a></li>
+</ul>
+</li>
+<li><a href="#indexing-strings">Indexing strings</a></li>
+<li><a href="#multiple-keys-access">Multiple-keys access</a><ul>
 <li><a href="#indices-on-multiple-keys">Indices on Multiple Keys</a></li>
 </ul>
 </li>
 <li><a href="#bulk-loading-and-bottom-up-build">Bulk Loading and Bottom-Up Build</a></li>
 <li><a href="#indexing-in-main-memory">Indexing in Main Memory</a></li>
 <li><a href="#indexing-on-flash">Indexing on Flash</a></li>
-<li><a href="#write-optimized-indices--%E4%BC%98%E5%8C%96b%E6%A0%91">Write optimized indices–优化B+树</a><ul>
+<li><a href="#write-optimized-indices">Write optimized indices</a><ul>
 <li><a href="#log-structured-merge-tree">Log Structured Merge Tree</a></li>
 <li><a href="#buffer-tree">buffer tree</a></li>
 </ul>
 </li>
+<li><a href="#bitmap-indices">Bitmap indices</a></li>
 </ul>
 </li>
 <li><a href="#chapter15-query-processing">chapter15-Query Processing</a><ul>
@@ -1347,13 +1393,133 @@
 <h5><span id="decomposing-a-schema-into-bcnf">decomposing a schema into BCNF</span></h5><ul>
 <li>分解后子关系的函数依赖集包含所有属于原函数依赖的闭包，且完全由该子关系属性构成的函数<br>依赖，无论这些依赖在原始F中是显式声明还是隐式存在</li>
 <li>这个分解是lossless-join</li>
-<li>算法如下</li>
+<li>算法如下<ul>
+<li>每次都查看当前是否这个关系模式不满足BCNF范式<ul>
+<li>对于这个不满足BCNF范式的关系，找到不满足条件的函数依赖$\alpha \rightarrow \beta$</li>
+<li>$\text{result:&#x3D;(result - Ri)} \cup (Ri -  \beta) \cup (\alpha,\beta)$</li>
 </ul>
-<h2><span id="chapter13-data-storage-structures">chapter13-Data storage structures</span></h2><h3><span id="file-organization">File Organization</span></h3><h4><span id="fixed-length-records">Fixed-length records</span></h4><ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5><span id="bcnf-and-dependency-preservation">BCNF and Dependency Preservation</span></h5><ul>
+<li>（如果通过检验单一关系上的函数依赖，就能确保所有的函数依赖成立，那么这样的分解是依赖保持的）<br> （或者，原来关系R上的每一个函数依赖，都可以在分解后的单一关系上得到检验或者推导得到，并不局限于一个子关系，也就是子关系函数依赖的并集。）</li>
+<li>但是通常使用BCNF分解后很难同时满足函数依赖的保持，所以我们引入较弱的范式。</li>
+</ul>
+<h4><span id="third-normal-formmotivation">Third Normal Form:Motivation</span></h4><ul>
+<li>There is always a <strong>lossless-join</strong>, <strong>dependency-preserving</strong> decomposition into 3NF</li>
+<li>Third condition is a minimal relaxation of BCNF to ensure dependency<br>preservation</li>
+<li>定义：如果一个关系满足三范式，那么对于这个关系的所有函数依赖都需要满足三个条件之一（其中两个条件是BCNF的要求，另外还有一个条件，可见放宽了要求）<br>$$<br>\text{Each attribute A in }\beta - \alpha \text{ is contained in a candidate key for R}<br>$$</li>
+</ul>
+<h5><span id="3nf-decomposition-algorithm">3NF decomposition algorithm</span></h5><ul>
+<li>首先从F的正则覆盖出发，将里面的每一个函数依赖左右两侧的属性都放进单独一个关系中。</li>
+<li>经过以上操作后，如果没有任何一个子关系包含原来关系的候选键，那么新增一个子关系，这个子关系由R的任意一个候选键组成。</li>
+<li>可选操作：将冗余的子关系除去</li>
+</ul>
+<h4><span id="goals-of-normalization">goals of normalization</span></h4><ul>
+<li>如果关系模式R不符合“良好”形式，可以将其分解为一组关系模式{R1，R2，…，Rn }，确保每个关系模式都处于良好的形式（即BCNF或3NF），并且这种分解是无损连接的。理想情况下，这种分解还应保持依赖性。</li>
+</ul>
+<h3><span id="multivated-dependencies">Multivated dependencies</span></h3><ul>
+<li><strong>多值依赖</strong>描述的是一个表中，某个属性（或属性集）的值，独立地决定了另外两个或多个属性集的值，而这些被决定的属性集之间是相互独立的。</li>
+<li>本质上多值依赖就是函数依赖的推广</li>
+</ul>
+<hr>
+<p>更具体地说，对于一个关系 $R$ (表)，如果存在属性集 $A, B, C$，且 $B$ 和 $C$ 是 $R$ 的非空子集，并且 $B \cap C &#x3D; \emptyset$，那么我们称 $A$ <strong>多值决定</strong> $B$（表示为 $A \twoheadrightarrow B$），如果对于 $R$ 中的任何两个元组 $t_1$ 和 $t_2$，满足 $t_1[A] &#x3D; t_2[A]$，那么在 $R$ 中必然存在两个元组 $t_3$ 和 $t_4$，使得：</p>
+<ul>
+<li>$t_3[A] &#x3D; t_4[A] &#x3D; t_1[A]$</li>
+<li>$t_3[B] &#x3D; t_1[B]$ 且 $t_4[B] &#x3D; t_2[B]$</li>
+<li>$t_3[C] &#x3D; t_2[C]$ 且 $t_4[C] &#x3D; t_1[C]$</li>
+</ul>
+<p>简单来说，就是当 $A$ 确定时，$B$ 的所有可能值与 $C$ 的所有可能值之间是<strong>完全独立</strong>的。改变 $B$ 的值不会影响 $C$ 的值，反之亦然。</p>
+<h4><span id="fourth-normal-form">Fourth Normal Form</span></h4><ul>
+<li>A relation schema R is in 4NF with respect to a set D of functional and multivalued dependencies if for all multivalued dependencies in D+ of the form $\alpha$ →→ $\beta$, where $\alpha \subseteq$  R and $\beta \subseteq $ R, at least one of the following<br>hold:<br>◆ trivial (i.e., $\beta \subseteq \alpha $ or $\alpha \cup \beta$ &#x3D; R)<br>◆ $\alpha$ is a superkey for schema R</li>
+<li>由定义可以知道，在 4NF 中，除了由超键决定的多值依赖（即函数依赖），不应该存在其他多值依赖。它消除了在一个表中同时存在多个独立的多对多关系所导致的冗余。</li>
+<li>4NF 解决的问题：<br>4NF 解决了当一个实体同时拥有多个相互独立的多值属性时，数据冗余的问题。这些冗余无法通过函数依赖来消除。</li>
+</ul>
+<h5><span id="4nf-decomposition-algorithm">4NF decomposition algorithm</span></h5><ul>
+<li>分解步骤类似BCNF:查找违规:在Ri中找到一个非平凡的多值依赖 A↠B（其中 B 不在 A 中，且 A∪B!&#x3D;Ri），并且 A 不是 Ri的超键。<br>注意：如果找不到这样的多值依赖，但存在违反 BCNF 的函数依赖，则应先执行 BCNF 分解。理论上 4NF 的前提是 BCNF，所以实际操作中会先确保 BCNF。</li>
+</ul>
+<h3><span id="e-r-modeling-and-normal-forms">E-R Modeling and Normal Forms</span></h3><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database2.png" alt="database2" class="lazyload"></p>
+<p>解释：将E-R图转化为关系表示我感觉可能是一个考点。在上图中，{}代表的是多值属性，所以相对应的依赖关系是多值依赖。这是最主要的区别。相应的解答如下。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database3.png" alt="database3" class="lazyload"></p>
+<h2><span id="chpater12-physical-storage-systems">chpater12-Physical storage systems</span></h2><h3><span id="classification-of-physical-storage-media">classification of physical storage media</span></h3><ul>
+<li>volatile storage（易失存储）：loses contents when power is turned off</li>
+<li>non-volatile storage（非易失存储）：contents persist when power is turned off</li>
+<li>我们评估存储的性能:<ul>
+<li><strong>speed</strong> with which data can be accessed</li>
+<li><strong>cost</strong> per unit of data</li>
+<li><strong>reliability</strong></li>
+</ul>
+</li>
+</ul>
+<h3><span id="stroage-hierarchy">stroage hierarchy</span></h3><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database121.png" alt="database121" class="lazyload"></p>
+<ul>
+<li>主要存储：最快的介质，但易失性（缓存、主内存）。次级存储：层次结构的下一级，非易失性的，访问速度适中，也称为在线存储。例如闪存、磁盘。三级存储：层次结构的最底层，非易失性的，访问速度较慢，也称为离线存储。例如磁带、光存储。</li>
+</ul>
+<h3><span id="magnetic-disks">Magnetic Disks</span></h3><ul>
+<li>读写头位于盘片表面的非常近的位置（几乎接触盘片），以磁性方式读取或写入编码信息。</li>
+<li><strong>tracks</strong>:盘片表面被划分为圆形轨道</li>
+<li>Each track is divided into <strong>sectors</strong>(扇区)<ul>
+<li>扇区是最小的能够被读写的单元</li>
+<li>扇区大小为512字节</li>
+<li>通常每一个磁道有500-1000个扇区</li>
+</ul>
+</li>
+<li><strong>disk controller</strong>:计算机系统与磁盘驱动器硬件之间的接口。<ul>
+<li>接受高级命令来读取或写入扇区，启动诸如将磁盘臂移动到右侧轨道并实际读取或写入数据等操作。计算并为每个扇区附加校验和以验证数据是否被正确读回。通过在写入扇区后回读该扇区来确保成功写入。并执行坏扇区的重新映射</li>
+</ul>
+</li>
+</ul>
+<h4><span id="performance-measures-of-disks">performance measures of disks</span></h4><ul>
+<li><strong>access time</strong>:从发出读或写请求到开始数据传输所需的时间。<ul>
+<li><strong>seek time</strong>:重新定位机械臂到正确轨道所需的时间.通常的为4 to 10 milliseconds</li>
+<li><strong>rotational latency</strong>:time it takes for the sector to be accessed to appear under the head.4 to 11  milliseconds on typical disks</li>
+</ul>
+</li>
+<li><strong>Data-transfer rate</strong>:the rate at which data can be retrieved from or stored to the disk.</li>
+<li><strong>Disk block</strong> is a logical unit for storage allocation and retrieval.</li>
+<li>访问模式<ul>
+<li>顺序访问模式</li>
+<li>随机访问模式</li>
+</ul>
+</li>
+<li><strong>Mean time to failure</strong>:the average time the disk is expected to run continuously without any failure.</li>
+</ul>
+<h4><span id="optimization-of-disk-block-access">Optimization of Disk-Block Access</span></h4><ul>
+<li><strong>Buffering</strong>:内存缓冲区用于缓存磁盘块。</li>
+<li><strong>Read-ahead（预取）</strong>：提前从磁道读取额外的块，以预测它们将很快被请求。</li>
+<li><strong>磁盘臂调度</strong>算法会重新排序块请求，从而最小化磁盘臂的移动。</li>
+<li><strong>File organization</strong>:<ul>
+<li>以尽可能连续的方式分配文件块。以扩展（磁盘分区）为单位进行分配</li>
+</ul>
+</li>
+<li><strong>非易失性写缓存</strong>（Nonvolatile write Buffer）-通过立即将数据块写入非易失性RAM缓冲区来加快磁盘写入速度</li>
+<li><strong>日志磁盘</strong>的使用</li>
+</ul>
+<h3><span id="flash-storage">Flash Storage</span></h3><ul>
+<li>NAND闪存广泛用于存储，比NOR闪存更经济。<ul>
+<li>NAND闪存需要逐页读取（每页512字节至4 KB）。顺序读取与随机读取之间的差异不大。</li>
+<li>每个页面只能写入一次。必须先擦除才能重写</li>
+</ul>
+</li>
+<li>固态硬盘（SSD）使用标准的块状磁盘接口，但数据存储在多个内部闪存存储设备上。</li>
+</ul>
+<h2><span id="chapter13-data-storage-structures">chapter13-Data storage structures</span></h2><ul>
+<li>数据库的文件架构<ul>
+<li>The <strong>database</strong> is stored as a collection of <strong>files</strong>.</li>
+<li>Each file is a sequence of <strong>records</strong>.</li>
+<li>A record is a sequence of <strong>fields</strong>.</li>
+</ul>
+</li>
+</ul>
+<h3><span id="file-organization">File Organization</span></h3><h4><span id="fixed-length-records">Fixed-length records</span></h4><ul>
 <li>所有记录的长度都相等，当发生删除时：<ul>
+<li>其中一种做法：<ul>
 <li>move records i + 1, . . ., n to i, . . . , n – 1</li>
 <li>move record n to i</li>
-<li>do not move records, but link all free records on a free list</li>
+</ul>
+</li>
+<li>另一种做法：do not move records, but link all free records on a free list</li>
 </ul>
 </li>
 </ul>
@@ -1361,13 +1527,13 @@
 <li>Attributes are stored in order</li>
 <li>Variable length attributes represented by fixed size (offset, length), with actual data stored after all fixed length attributes</li>
 <li>Null values represented by null-value bitmap（空位图）<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database1.png" alt="database1" class="lazyload"><br>解释：这上面是一个例子，不定长的保存在后面，定长的与(offset,length)保存在前面。在这个例子中，null bitmap表示前面四个属性都是非空的。</li>
-<li>存储variable-length records采用slotted page structure，whose header contains:<ul>
+<li>存储variable-length records采用<strong>slotted page</strong> structure，whose header contains:<ul>
 <li>number of record entries</li>
 <li>end of free space in the block</li>
 <li>location and size of each record</li>
 </ul>
 </li>
-<li>需要注意的是：Records can be moved around within a page to keep them contiguous with no empty space between them; entry in the header must be updated.<br>Record pointers should not point directly to record — instead they should point to the entry for the record in header.</li>
+<li>需要注意的是：Records can be moved around within a page to keep them contiguous with no empty space between them; entry in the header must be updated.<br><strong>Record pointers</strong> should not point directly to record — instead they should point to the entry for the record in header.</li>
 </ul>
 <h4><span id="organization-of-records-in-files">Organization of records in files</span></h4><ul>
 <li>heap:有空余位置就插入<ul>
@@ -1382,11 +1548,118 @@
 <li>B+tree file organization</li>
 <li>Hashing</li>
 </ul>
-<h2><span id="chapter14-indexing">chapter14-Indexing</span></h2><h3><span id="basic-concepts">Basic Concepts</span></h3><h3><span id="ordered-indices">Ordered Indices</span></h3><ul>
-<li>Primary index:in a sequentially ordered file, the index whose search key specifies the sequential order of the file.</li>
-<li>Secondary index（辅助索引）: an index whose search key specifies an order different from the sequential order of the file. Also called non-clustering index.</li>
-<li>Dense index(稠密索引) — Index record appears for every search-key value in the file.</li>
-<li>Sparse Index（稀疏索引）: contains index records for only some search-key values.</li>
+<h5><span id="heap-file-organization">heap file organization</span></h5><ul>
+<li>记录可以放置在文件中任何有空闲空间的地方。分配后，记录通常不会移动。</li>
+<li>能够高效地在文件中查找空闲空间非常重要。所以引入了<strong>free-space map</strong><ul>
+<li>第一级 FSM（基础层）​​<br>​    ​数据结构​​：数组（每个块对应一个条目）。<br>​    ​条目大小​​：通常为 ​​1字节（8位）或更少<br>​​    编码规则​​：用数值表示块的​​空闲比例​​ （如3位可表示0–7，对应0&#x2F;8至7&#x2F;8的空闲比例）。<br>例如：011（二进制）&#x3D; 3 → 表示块有 3&#x2F;8 ≈ 37.5% 空闲空间。</li>
+<li>第二级 FSM（聚合层）​​<br>​​    目的​​：加速大范围空间搜索（避免逐块检查第一级FSM）。​数据结构​​：更高层数组，每个条目存储​​下层若干块的最大空闲值​​。</li>
+</ul>
+</li>
+</ul>
+<h5><span id="sequential-file-organization">Sequential File Organization</span></h5><ul>
+<li>Suitable for applications that require sequential processing of the entire file</li>
+<li>The records in the file are ordered by a <strong>search-key</strong></li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database144.png" alt="database144" class="lazyload"></p>
+<ul>
+<li>删除操作——使用指针链</li>
+<li>插入操作——如果存在空闲空间，则定位记录应插入的位置；若无空闲空间，则直接插入；若无空闲空间，则将记录插入溢出块。无论哪种情况，均需更新指针链。</li>
+</ul>
+<h5><span id="multitable-clustering-file-organization">Multitable Clustering File Organization</span></h5><ul>
+<li>核心思想是一个文件储存多个关系</li>
+<li>优势：适用于涉及<code>部门</code>、<code>教师</code>等多张表连接的查询，以及涉及单一部门及其教师的查询；</li>
+<li>劣势：但不适用于仅包含部门结果的查询</li>
+<li>可以通过添加指针链来链接特定关系的记录。能够加速单表查找。</li>
+</ul>
+<h5><span id="table-partitioning">Table Partitioning</span></h5><ul>
+<li>表分区：关系中的记录可以被分割成较小的关系，这些关系被单独存储</li>
+<li>写入事务的查询必须访问所有分区中的记录，除非查询具有选择，例如year&#x3D;2019，在这种情况下只需要一个分区</li>
+<li>优势：<ul>
+<li>Reduces costs of some operations such as free space management</li>
+<li>Allows different partitions to be stored on different storage devices</li>
+</ul>
+</li>
+</ul>
+<h3><span id="data-dictionary-storage">Data Dictionary Storage</span></h3><ul>
+<li>数据字典（也称为系统目录）存储元数据，即关于数据的信息，包括关系名称、每个关系的属性类型和长度、视图定义、完整性约束、用户和会计信息（包括密码）、统计和描述性数据（如每个关系中的元组数量）、物理文件组织方式（顺序&#x2F;哈希等）、关系的物理位置以及索引信息。</li>
+</ul>
+<h3><span id="storage-access">Storage Access</span></h3><ul>
+<li><strong>Blocks</strong> are units of both storage allocation and data transfer.<ul>
+<li>Database system seeks to minimize the number of block transfers between the disk and memory. We can reduce the number of disk accesses by keeping as many blocks as possible in main memory.</li>
+</ul>
+</li>
+<li><strong>Buffer</strong> – portion of main memory available to store copies of disk blocks.</li>
+<li><strong>Buffer manager</strong> – subsystem responsible for allocating buffer space in main memory</li>
+</ul>
+<h4><span id="buffer-manager">Buffer Manager</span></h4><ul>
+<li>这里的管理逻辑就和minisql实现的第一模块的buffer_manager相同，就不赘述了。</li>
+<li><strong>Pinned block</strong>:不允许写回磁盘的内存块,说明此时有进程正在使用这个内存块。<ul>
+<li>Pin done before operation on a block</li>
+<li>Unpin done after operation on a block</li>
+</ul>
+</li>
+<li>缓冲区的<strong>共享锁和独占锁</strong><ul>
+<li>用于防止并发操作在页面内容移动或重组时读取内容，并确保每次只进行一次移动或重组。</li>
+<li>读取者获得共享锁，而对块的更新则需要独占锁。</li>
+<li>锁定规则如下：同一时间只能有一个进程获得独占锁;共享锁不能与独占锁同时存在;多个进程可以同时获得共享锁（本质上就是相容矩阵的扩展，详细见第十八章锁的相关内容）</li>
+</ul>
+</li>
+</ul>
+<h4><span id="buffer-replacement-policies">Buffer-Replacement Policies</span></h4><ul>
+<li>LRU：最近最少使用算法，即最近没有被访问的块被淘汰。<ul>
+<li>但是LRU在某些情况下可能是很坏的策略，比如循环访问时</li>
+</ul>
+</li>
+<li>即时抛出策略——一旦该块的最后一个元组被处理完毕，立即释放该块所占用的空间</li>
+<li>最近使用（MRU）策略——系统必须固定当前正在处理的块。在该块的最后一个元组被处理后，该块将被解除固定，并成为最近使用的块。</li>
+</ul>
+<h3><span id="columnar-oriened-storage">columnar-oriened storage</span></h3><ul>
+<li>列式存储也称为列表示法，将关系的每个属性分别存储</li>
+<li>优势:<ul>
+<li>如果只访问某些属性，则IO会减少</li>
+<li>CPU缓存性能得到改善</li>
+<li>压缩得到改善</li>
+</ul>
+</li>
+<li>劣势：<ul>
+<li>Cost of tuple reconstruction from columnar representation</li>
+<li>Cost of tuple deletion and update</li>
+<li>Cost of decompression</li>
+</ul>
+</li>
+<li>现代CPU架构上的向量处理本质上就是利用率列式存储的优势</li>
+<li>列式存储与行式存储<ul>
+<li>Columnar representation found to be more efficient for <strong>decision support</strong> than row-oriented representation</li>
+<li>Traditional row-oriented representation preferable for <strong>transaction processing</strong></li>
+</ul>
+</li>
+</ul>
+<h2><span id="chapter14-indexing">chapter14-Indexing</span></h2><h3><span id="basic-concepts">Basic Concepts</span></h3><ul>
+<li>索引机制就是为了加速查找设置的</li>
+<li>一些概念:<ul>
+<li><strong>search key</strong>:用于在文件中查找记录的属性集的属性</li>
+<li>索引文件中存储的records的形式：由<code>search key</code>和<code>pointer</code>组成</li>
+<li>两种索引方式：<ul>
+<li>有序索引：搜索键按排序顺序存储</li>
+<li>哈希索引：使用“哈希函数”将搜索键均匀地分布在“桶”中。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><span id="ordered-indices">Ordered Indices</span></h3><ul>
+<li><strong>Primary index</strong>:in a sequentially ordered file, the index whose search key specifies the sequential order of the file.<ul>
+<li>它也被叫做<strong>clustering index</strong><br><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database145.png" alt="database145" class="lazyload"></li>
+</ul>
+</li>
+<li><strong>Secondary index（辅助索引）</strong>: an index whose search key specifies an order different from the sequential order of the file. Also called non-clustering index.(索引键指定的顺序与文件顺序不同)<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database146.png" alt="database146" class="lazyload"></li>
+<li><strong>Dense index(稠密索引)</strong> — Index record appears for every search-key value in the file.</li>
+<li><strong>Sparse Index（稀疏索引）</strong>: contains index records for only some search-key values.<ul>
+<li>与密集索引相比：占用空间更少，插入和删除操作的维护开销更低。通常在查找记录时比密集索引慢。</li>
+<li>一个良好的折中：稀疏索引为文件中的每个块（每个块存放多条记录）都设置了一个索引条目，对应于该块中最小的搜索键值</li>
+</ul>
+</li>
+<li><strong>multilevel index（多级索引）</strong>：如果主索引无法完全加载到内存中，访问成本将显著增加。解决方法是：将存储在磁盘上的主索引视为一个顺序文件，并在其上构建一个稀疏索引。外索引即主索引的稀疏索引，内索引则是主索引文件。</li>
 </ul>
 <h3><span id="b-tree-index">B+-Tree Index</span></h3><h4><span id="properties-of-b-tree">properties of B+-tree</span></h4><ul>
 <li>All paths from root to leaf are of the same length</li>
@@ -1399,17 +1672,40 @@
 </li>
 </ul>
 <h4><span id="b-tree-node-structure">B+-Tree Node Structure</span></h4><p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database141.png" alt="database141" class="lazyload"></p>
+<h5><span id="leaf-nodes-in-b-trees">Leaf Nodes in B+-Trees</span></h5><ul>
+<li>对于i &#x3D; 1到2，…，n-1时，指针<strong>Pi</strong>指向具有搜索键值<strong>Ki</strong>的文件记录。</li>
+<li>若Li和Lj为叶节点且i小于j，则Li的搜索键值不大于Lj的搜索键值。</li>
+<li>指针Pn则指向按搜索键顺序排列的下一个叶节点。<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database147.png" alt="database147" class="lazyload"></li>
+</ul>
+<h5><span id="non-leaf-nodes-in-b-trees">Non-leaf Nodes in B+-Trees</span></h5><ul>
+<li>非叶节点在叶节点上形成一个多级稀疏索引。</li>
+<li>For a non-leaf node with m pointers:<ul>
+<li>P1: all the search-keys in the subtree to which P1 points are less than K1</li>
+<li>Pi(2 $\le$ i $\le$ n – 1): all the search-keys in the subtree to which Pi<br>points have values greater than or equal to Ki–1 and less than Ki</li>
+<li>Pn: All the search-keys in the subtree to which Pn points have values greater than or equal to Kn–1</li>
+</ul>
+</li>
+</ul>
+<h4><span id="non-unique-search-keys">Non-Unique Search Keys</span></h4><ul>
+<li>如果搜索键ai不是唯一的，那么请创建一个复合键（ai，Ap）的索引，该索引是唯一的<ul>
+<li>在这种情况下，如果想要利用这个符合键去检索ai的值的时候，其实就是另外一个属性的范围不加任何限制。</li>
+</ul>
+</li>
+<li>影响<ul>
+<li>键的额外存储开销</li>
+<li>更简单的插入&#x2F;删除代码</li>
+<li>需要更多的I&#x2F;O操作来获取实际记录</li>
+</ul>
+</li>
+</ul>
 <h4><span id="b-treeheight-and-size-estimation">B+-tree:height and size estimation</span></h4><ul>
-<li>最关键的是找到fan-out,因为按照我们上面提到的B+Tree Node structure，每一个fan都是由serch key和指针决定。我们的fan_out就是由search key和指针的大小以及block size决定。</li>
+<li>最关键的是找到fan-out,因为按照我们上面提到的B+Tree Node structure，每一个fan都是由serch key和指针决定。我们的fan_out就是由<code>search key</code>和<code>指针的大小</code>以及<code>block size</code>决定。</li>
+<li>注意扇出计算的时候，因为n个指针分割n-1个（search key），所以扇出的数量最后要加1.</li>
 </ul>
 <p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database142.png" alt="database142" class="lazyload"></p>
-<h4><span id="indexing-strings">Indexing strings</span></h4><ul>
-<li>如果索引值为variable length strings，按照前面的思路我们可能得到不同的fanout。</li>
-<li>解决：采用前缀压缩解决</li>
-</ul>
-<h4><span id="non-unique-search-keys">Non-Unique Search keys</span></h4><h4><span id="b-file-organization">B+-File Organization</span></h4><ul>
+<h4><span id="b-file-organization">B+-File Organization</span></h4><ul>
 <li>B+-Tree File Organization:<ul>
-<li>Leaf nodes in a B+-tree file organization store records, instead of pointers</li>
+<li><strong>Leaf nodes</strong> in a B+-tree file organization store records, instead of <strong>pointers</strong></li>
 <li>Helps keep data records clustered even when there are insertions&#x2F;deletions&#x2F;updates</li>
 </ul>
 </li>
@@ -1419,44 +1715,71 @@
 </li>
 <li>Insertion and deletion are handled in the same way as insertion and deletion of entries in a B+-tree index.</li>
 </ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database148.png" alt="database148" class="lazyload"></p>
+<ul>
+<li>由于记录占用的空间比指针多，因此良好的空间利用率非常重要。为了提高空间利用率，在拆分和合并期间将更多兄弟节点纳入重新分配<ul>
+<li>通过让两个兄弟节点参与数据重分配（尽可能避免分裂或合并），每个节点至少能拥有[2n&#x2F;3]个条目。</li>
+</ul>
+</li>
+</ul>
+<h3><span id="indexing-strings">Indexing strings</span></h3><ul>
+<li>如果索引值为variable length strings，按照前面的思路我们可能得到不同的fanout。</li>
+<li>解决：采用前缀压缩解决</li>
+</ul>
+<h3><span id="multiple-keys-access">Multiple-keys access</span></h3><ul>
+<li>在B+树中，一个索引值可以包含多个属性。<ul>
+<li>对于解决一些特定的查询时速度很快<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database1410.png" alt="database1410" class="lazyload"></li>
+</ul>
+</li>
+</ul>
 <h4><span id="indices-on-multiple-keys">Indices on Multiple Keys</span></h4><ul>
 <li>Composite search keys are search keys containing more than one attribute。</li>
 <li>大小的比较就根据属性的次序依次比较即可</li>
 </ul>
 <h3><span id="bulk-loading-and-bottom-up-build">Bulk Loading and Bottom-Up Build</span></h3><ul>
-<li>将条目逐个插入B+树中，假设叶级无法装入内存，则每次需要1 IO，对于一次加载大量条目（批量加载）来说，这可能非常低效</li>
-<li>选择1：insert in sorted order</li>
+<li>将条目一次性插入B+树中，假设叶级无法装入内存，则每次需要大于1次IO开销，对于一次加载大量条目（批量加载）来说，这可能非常低效</li>
+<li>以下两种选择的本质都是使用预计算，减少由于不确定性随机分裂导致的开销（最终写入磁盘的块数过多）</li>
+<li>选择1：insert in sorted order<ul>
+<li>首先使用外部排序</li>
+<li>再将索引顺序插入到B+树中</li>
+</ul>
+</li>
 <li>选择2：Bottom-up build<ul>
 <li>首先把所有索引排序</li>
 <li>从叶子节点开始向上构造每一层</li>
-<li>The built B+-tree is written to disk using sequential I&#x2F;O operations</li>
+<li>The built B+-tree is written to disk using sequential I&#x2F;O operations<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database149.png" alt="database149" class="lazyload"><br>解释开销：我们提前进行了排序，所以只进行一次seek，每将一个块写进磁盘进行一次transfer。</li>
 </ul>
 </li>
 <li>如果要批量插入较大规模的数据，我们可以直接合并为大的b+tree，然后使用bottom-up build方法构建。(其中原来的b+tree在磁盘中是连续存放的，所以我们归并时只要seek1次，然后连续读入block进行归并。最后构建好b+tree后再seek1次，并且通过block transfers写入磁盘)</li>
 </ul>
 <h3><span id="indexing-in-main-memory">Indexing in Main Memory</span></h3><ul>
 <li>Random access in memory<ul>
-<li>Much cheaper than on disk&#x2F;flash, but still expensive compared to cache read</li>
+<li>Much <strong>cheaper</strong> than on disk&#x2F;flash, but still expensive compared to cache read</li>
 <li>Binary search for a key value within a large B+-tree node results in many cache misses</li>
 <li>Data structures that make best use of cache preferable – cache conscious</li>
 </ul>
 </li>
-<li>小节点的b+树适合缓存行的树比减少缓存缺失更可取</li>
-<li>总结：优化磁盘访问采用大节点；优化缓存采用小节点的树，减小cache miss.</li>
+<li>B+ -小节点的树更适合缓存行，以减少缓存未命中</li>
+<li>总结：优化磁盘访问采用大节点,减少I&#x2F;O开销；优化缓存采用小节点的树，减小cache miss.</li>
 </ul>
 <h3><span id="indexing-on-flash">Indexing on Flash</span></h3><ul>
 <li>Random I&#x2F;O cost much lower on flash</li>
 <li>Write-optimized tree structures (i.e., LSM-tree) have been adapted to minimize page writes for flash-optimized search trees</li>
 </ul>
-<h3><span id="write-optimized-indices优化b树">Write optimized indices–优化B+树</span></h3><h4><span id="log-structured-merge-tree">Log Structured Merge Tree</span></h4><ul>
+<h3><span id="write-optimized-indices">Write optimized indices</span></h3><ul>
+<li>B+树在处理<strong>写入密集型工作</strong>负载时性能可能较差。</li>
+<li>减少写入成本的两种方法：日志结构化合并树（LSM树）和缓冲树。</li>
+</ul>
+<h4><span id="log-structured-merge-tree">Log Structured Merge Tree</span></h4><ul>
 <li>结构<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database143.png" alt="database143" class="lazyload"><ul>
 <li>records inserted first into in-memory tree(L0 tree)</li>
-<li>内存里的B+tree满了的话，就写入磁盘中。此时b+tree的构建如果使用L0和L1就可以采用自下而上的构建方式。</li>
+<li>内存里的B+tree满了的话，就写入磁盘中。此时b+tree通过L0和L1采用<strong>自下而上</strong>的构建方式进行merge得到新的L1。</li>
 <li>当L1超过某个阈值以后merge into L2,并且新树的阈值是原来树的阈值的倍数。</li>
 </ul>
 </li>
 <li>benefits<ul>
 <li>减少IO次数，减少磁盘碎片化。</li>
+<li>树始终是满的，提高空间利用率</li>
 <li>始终顺序I&#x2F;O操作。因为当使用LSM Tree的时候，数据先写到内存，满了再到磁盘，磁盘分级向下，始终是一个顺序的操作。</li>
 </ul>
 </li>
@@ -1465,7 +1788,7 @@
 <li>内容都要复制多次（因为merge的缘故）</li>
 </ul>
 </li>
-<li>stepped merge index<ul>
+<li>stepped merge index<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/database1411.png" alt="database1411" class="lazyload"><ul>
 <li>是传统的LSM tree的变体，每一个level在磁盘上都有k棵树。当k个索引处于同一层时，合并得到一颗层数加一的树。</li>
 <li>所以我们通过延迟merge，使得写入更便宜，但是查询变得更贵了。</li>
 <li>优化查询的一个方法是使用Bloom filter<ul>
@@ -1478,6 +1801,11 @@
 <h4><span id="buffer-tree">buffer tree</span></h4><ul>
 <li>主要思想：B+树的每个内部节点都有一个缓冲区来存储插入</li>
 <li>当缓冲区满时，插入操作将移动到较低级别。使用大缓冲区时，每次都会将许多记录移动到较低级别。每条记录的I&#x2F;O会相应地减少</li>
+<li>优点：查询开销更少，可与任何树索引结构一起使用，用于PostgreSQL广义搜索树（GiST）索引。</li>
+<li>缺点：比LSM树更多的随机I&#x2F;O</li>
+</ul>
+<h3><span id="bitmap-indices">Bitmap indices</span></h3><ul>
+<li>在最简单的形式中，属性的位图索引包含每个属性值的位图。位图的位数与记录数量相同。对于值v的位图，如果记录具有该属性的值v，则该记录对应的位为1，否则为0</li>
 </ul>
 <h2><span id="chapter15-query-processing">chapter15-Query Processing</span></h2><h3><span id="basic-steps-in-query-processing">Basic steps in query processing</span></h3><ul>
 <li>by parser and translator to relational algebra expression</li>
@@ -2201,7 +2529,7 @@ MathJax = {
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			  
+			      
 			<!-- 先找到与当前文字相同的目录 -->
 			                     
 			<!-- 在找到当前文章所在的 index -->
@@ -2217,7 +2545,7 @@ MathJax = {
 				<span>下一章</span>
 				<a href="/2025/05/23/fds/"> 数据结构与算法基础</a>
 			</div>
-			                                                                            
+			                                                                        
 		</nav>
 	</div>
 	
