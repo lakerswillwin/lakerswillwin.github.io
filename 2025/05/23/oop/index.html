@@ -422,8 +422,8 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2025年05月23日</a>
-			<a><i class="kirafont icon-edit-fill"></i>16.5k 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 80 分钟</a>
+			<a><i class="kirafont icon-edit-fill"></i>18k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 86 分钟</a>
 		</div>
 		<h2><span id="引言">引言</span></h2><p>本笔记基于cx老师的上课记录与<a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/cpp_restart/3_oop/#%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB">xuan的笔记</a> 感谢老师与前辈！</p>
 <h2><span id="导航">导航</span></h2><ul>
@@ -492,7 +492,11 @@
 <li><a href="#52-objects">5.2 objects</a><ul>
 <li><a href="#521-%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E7%9A%84%E7%B1%BB%E5%9E%8B">5.2.1 成员变量的类型</a></li>
 <li><a href="#522-object-vs-class">5.2.2 object vs class</a></li>
-<li><a href="#523-%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F">5.2.3 静态变量</a></li>
+<li><a href="#523-%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F">5.2.3 静态变量</a><ul>
+<li><a href="#%E5%B1%80%E9%83%A8%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F">局部静态变量</a></li>
+<li><a href="#%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E4%B8%8E%E6%99%AE%E9%80%9A%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F">静态变量与普通成员变量</a></li>
+</ul>
+</li>
 <li><a href="#524-const%E6%88%90%E5%91%98">5.2.4 const成员</a></li>
 </ul>
 </li>
@@ -523,6 +527,8 @@
 <li><a href="#%E8%99%9A%E5%87%BD%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89">虚函数的意义</a></li>
 <li><a href="#override">override</a></li>
 <li><a href="#final">final</a></li>
+<li><a href="#%E5%8D%8F%E5%8F%98%E8%BF%94%E5%9B%9E">协变返回</a></li>
+<li><a href="#%E8%99%9A%E5%87%BD%E6%95%B0%E7%9A%84%E9%99%90%E5%88%B6">虚函数的限制</a></li>
 </ul>
 </li>
 <li><a href="#%E8%99%9A%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0">虚析构函数</a></li>
@@ -559,13 +565,18 @@
 <li><a href="#week10--template">week10–template</a><ul>
 <li><a href="#function-templates">function templates</a><ul>
 <li><a href="#template-instantiation">template instantiation</a></li>
-<li><a href="#%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0%E6%8E%A8%E5%AF%BC">函数模板参数推导</a></li>
 <li><a href="#%E9%BB%98%E8%AE%A4%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0">默认模板参数</a></li>
 </ul>
 </li>
 <li><a href="#class-templates">class templates</a><ul>
+<li><a href="#%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E6%8E%A8%E5%AF%BC">模板参数类型推导</a></li>
 <li><a href="#%E6%A8%A1%E6%9D%BF%E7%9B%B8%E5%85%B3%E7%9A%84%E7%BB%A7%E6%89%BF">模板相关的继承</a></li>
 <li><a href="#expression-parameter">expression parameter</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A8%A1%E6%9D%BF%E9%87%8D%E8%BD%BD%E7%89%B9%E5%8C%96%E9%9D%9E%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0%E5%8F%8A%E8%B0%83%E7%94%A8%E6%AC%A1%E5%BA%8F">模板重载、特化、非模板函数及调用次序</a><ul>
+<li><a href="#%E6%A8%A1%E6%9D%BF%E7%89%B9%E5%8C%96">模板特化</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E5%8C%B9%E9%85%8D%E4%B8%8E%E8%B0%83%E7%94%A8%E6%AC%A1%E5%BA%8F">函数参数匹配与调用次序</a></li>
 </ul>
 </li>
 </ul>
@@ -839,7 +850,7 @@
 
 <h4><span id="rules-of-references">Rules of references</span></h4><ul>
 <li>引用变量创造时必须初始化</li>
-<li>初始化建立了binding，并且不能再重新和另一个变量绑定</li>
+<li>初始化建立了binding，<strong>并且不能再重新和另一个变量绑定</strong></li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">f</span> <span class="hljs-params">(<span class="hljs-type">int</span>&amp; x)</span></span>;<br><span class="hljs-built_in">f</span>(y);<span class="hljs-comment">//在函数被调用时初始化</span><br></code></pre></td></tr></table></figure>
 
@@ -1011,7 +1022,11 @@
 <li><p>static 成员函数：我们可以使用 User::getTot() 来调用这个函数，当然也允许通过一个具体的对象调用这个函数；但是调用时不会有 this 指针。这个性质也说明static 成员函数<strong>只能访问静态成员变量</strong>。</p>
 </li>
 </ul>
-<p>静态变量与普通成员变量的区别<br>特性     静态变量 (static)    普通成员变量<br>生命周期  整个程序运行期间     实例的生命周期<br>存储位置  全局数据区           实例的内存空间<br>共享性    所有实例共享         每个实例独立<br>访问方式  类名或实例访问        只能通过实例访问<br>初始化    必须在类外初始化      可以在构造函数中初始化</p>
+<h5><span id="局部静态变量">局部静态变量</span></h5><ul>
+<li>初始化仅发生一次​​：无论函数被调用多少次，初始化（如 count &#x3D; 0）仅在第一次执行时进行。</li>
+<li>只能在定义它的函数内访问，但生命周期持续到程序结束。​无法通过外部访问​</li>
+</ul>
+<h5><span id="静态变量与普通成员变量">静态变量与普通成员变量</span></h5><p>静态变量与普通成员变量的区别<br>特性     静态变量 (static)    普通成员变量<br>生命周期  整个程序运行期间     实例的生命周期<br>存储位置  全局数据区           实例的内存空间<br>共享性    所有实例共享         每个实例独立<br>访问方式  类名或实例访问        只能通过实例访问<br>初始化    必须在类外初始化      可以在构造函数中初始化</p>
 <h4><span id="524-const成员">5.2.4 const成员</span></h4><ul>
 <li>声明为 const 的成员函数称为 const 成员函数，它**保证不会修改 *this 的值**；即调用这个成员函数的对象不会被更改。</li>
 <li>在 const 成员函数中，试图调用其他非 const 成员函数，或者更改成员变量都是不合法的（但是const成员函数允许修改被<code>mutable</code>修饰的成员变量）</li>
@@ -1028,6 +1043,7 @@
 <h3><span id="55-inline函数">5.5 inline函数</span></h3><ul>
 <li>inline函数就是将函数的实现直接嵌入到调用它的地方，从而达到减少函数调用开销的目的。</li>
 <li>而在class中，如果函数主体放置在class中，那么这个函数就是inline函数。而inline函数如果放置在一个.h头文件中，并不会引起重定义的问题。</li>
+<li>适用场景​​<br>​​短小函数​​（如简单的 getter&#x2F;setter）。<br>​​高频调用函数​​（如循环内的操作）。<br>​​替代宏​​（类型安全，避免宏的副作用）</li>
 </ul>
 <h2><span id="week6composition-and-inheritance">week6–composition and inheritance</span></h2><h3><span id="composition">composition</span></h3><h4><span id="组合的概念">组合的概念</span></h4><ul>
 <li><p>它通过将一个类的对象作为另一个类的成员变量来实现。相比于继承，组合强调“拥有关系”而非“是一种”。</p>
@@ -1091,10 +1107,10 @@
 <li>​存在的问题​​：通过这些赋值方式，只能访问派生类对象从基类继承的成员，无法访问派生类自己定义的成员。（向上转型）</li>
 </ul>
 <h4><span id="虚函数的特性">虚函数的特性</span></h4><ul>
-<li>一旦将某个成员函数声明为虚函数后，它在继承体系中就永远为虚函数了</li>
+<li>一旦将某个成员函数声明为虚函数后，它在继承体系中就<strong>永远为虚函数</strong>了</li>
 <li>如果基类定义了虚函数，当通过基类指针或引用调用派生类对象时，将访问到它们实际所指对象中的虚函数版本。</li>
 <li>派生类通过<strong>从基类继承的成员函数</strong>调用虚函数时，将访问到派生类中的版本。</li>
-<li>、只有类的非静态成员函数才能被定义为虚函数，类的构造函数和静态成员函数以及内联函数不能定义为虚函数</li>
+<li>只有类的<strong>非静态成员函数</strong>才能被定义为虚函数，类的构造函数和静态成员函数以及内联函数不能定义为虚函数</li>
 </ul>
 <h4><span id="虚函数的意义">虚函数的意义</span></h4><ul>
 <li>虚函数：它允许通过基类指针或引用调用派生类重写的成员函数​​。也就是说，当派生类重写了基类的虚函数时：如果通过基类指针或引用调用该函数，实际执行的是派生类中的版本（而不是基类中的版本）</li>
@@ -1110,6 +1126,16 @@
 <h4><span id="final">final</span></h4><ul>
 <li>可以作用于类，当类被声明为final时，该类不能被继承。</li>
 <li>final 用于限定只想让派生类继承，而不允许被覆盖的虚成员<br>函数。final 只能限定虚函数，被限定为final 的成员函数，则任何派生类对该函数的覆盖定义都是错误的。</li>
+</ul>
+<h4><span id="协变返回">协变返回</span></h4><ul>
+<li>C++ 的虚函数重写规则​​<br>函数签名必须严格匹配​​（除了协变返回类型）。<br>​​协变返回类型仅适用于指针&#x2F;引用​​：<br>Expr* → BinaryExpr* ✅<br>Expr&amp; → BinaryExpr&amp; ✅<br>Expr → BinaryExpr ❌（值类型不协变）</li>
+</ul>
+<h4><span id="虚函数的限制">虚函数的限制</span></h4><ul>
+<li>普通函数（非成员函数）​​<br>​​原因​​：虚函数必须是类的成员函数，普通函数（全局函数或命名空间内的函数）没有 this 指针，无法通过虚函数表（vtable）动态调用。</li>
+<li>静态函数​​</li>
+<li>构造函数​​：构造函数用于初始化对象，此时对象尚未完全创建，虚函数表（vtable）可能未初始化。</li>
+<li>友元函数不属于类的成员函数，即使声明在类内，也无法成为虚函数。</li>
+<li>模板函数需要在编译时实例化，而虚函数表需要在运行时动态绑定，两者机制冲突</li>
 </ul>
 <h3><span id="虚析构函数">虚析构函数</span></h3><ul>
 <li>假定使用delete来销毁一个指向派生类的基类指针，如果<br>基类析构函数不是虚函数，就如一个普通成员函数那样，delete函<br>数调用的就是基类析构函数，而不会调用派生类的析构函数。这样，在通过基类对象的引用或指针调用派生类对象时，将致使对<br>象析构不彻底。</li>
@@ -1271,11 +1297,11 @@
 
 <ul>
 <li>这里swap会调用函数模板,随后生成float swap，编译器会插入函数并调用。并且C++编译后的重载函数的名字会与原来有所不同，会把函数的参数类型编入函数的名字。</li>
-<li>模板函数不能同时实例化多个类型.<code>swap(int,double) //error</code></li>
+<li>模板函数不能同时实例化多个类型.<code>swap(int,double) //error</code>，也就是说在实例化过程中不会进行参数类型转换</li>
 <li>并且普通函数的优先级高于模板函数，编译器首先寻找普通函数，如果普通函数存在，则调用普通函数，否则调用模板函数。</li>
 <li>需要注意的是，在构造指向某个类型的指针时<code>Container&lt;char&gt;* p</code>，隐式实例化并不会发生，因为不需要这个类型的完整信息。</li>
 </ul>
-<h4><span id="函数模板参数推导">函数模板参数推导</span></h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; </span><br><span class="hljs-function">T <span class="hljs-title">greater</span><span class="hljs-params">(<span class="hljs-type">const</span> T&amp; lhs, <span class="hljs-type">const</span> T&amp; rhs)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> rhs &gt; lhs ? rhs : lhs;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">foo</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">double</span> b)</span> </span>&#123;<br>    <span class="hljs-comment">// double x = greater(a, b); // error</span><br>    <span class="hljs-type">double</span> x = <span class="hljs-built_in">greater</span>&lt;<span class="hljs-type">double</span>&gt;(a, b); <span class="hljs-comment">// OK</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; </span><br><span class="hljs-function">T <span class="hljs-title">greater</span><span class="hljs-params">(<span class="hljs-type">const</span> T&amp; lhs, <span class="hljs-type">const</span> T&amp; rhs)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> rhs &gt; lhs ? rhs : lhs;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">foo</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">double</span> b)</span> </span>&#123;<br>    <span class="hljs-comment">// double x = greater(a, b); // error</span><br>    <span class="hljs-type">double</span> x = <span class="hljs-built_in">greater</span>&lt;<span class="hljs-type">double</span>&gt;(a, b); <span class="hljs-comment">// OK</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>上述的第一个调用函数错误的原因主要在于模板参数推导发生在重载解析与隐式转化之前，编译器尝试推导 T 时发现 a 和 b 类型不一致，无法确定 T 应该是 int 还是 double，因此报错。</li>
@@ -1287,6 +1313,7 @@
 <h3><span id="class-templates">class templates</span></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span>&gt; <br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Vector</span> &#123; <br><span class="hljs-keyword">public</span>: <br> <span class="hljs-built_in">Vector</span>(<span class="hljs-type">int</span>); <br> ~<span class="hljs-built_in">Vector</span>(); <br> <span class="hljs-built_in">Vector</span>(<span class="hljs-type">const</span> Vector&amp;); <br> Vector&amp; <span class="hljs-keyword">operator</span>=(<span class="hljs-type">const</span> Vector&amp;); <br> T&amp; <span class="hljs-keyword">operator</span>[](<span class="hljs-type">int</span>); <br><span class="hljs-keyword">private</span>: <br> T* m_elements; <br> <span class="hljs-type">int</span> m_size; <br>&#125;;<br></code></pre></td></tr></table></figure>
 
 <ul>
+<li>模板类中可以有多个模板参数，包括类型参数和非类型参数（ 通常可以是整型、枚举型、对象或函数的引用，以及对象、函数或类成员的指针– 但不允许用浮点型（或双精度型）、类对象或void作为非类型参数。）</li>
 <li>类模板里的函数都是函数模板</li>
 <li>成员函数的定义需要模板(注意，类模板的函数是声明不是定义)，就如同下面的例子，一定要加上<code>vector&lt;T&gt;::</code></li>
 </ul>
@@ -1299,6 +1326,21 @@
 
 <ul>
 <li>template嵌套:<code>vector&lt;vector&lt;double *&gt;&gt;</code></li>
+</ul>
+<h4><span id="模板参数类型推导">模板参数类型推导</span></h4><ul>
+<li>传值模板参数<ul>
+<li>编译器在推导模板参数param类型的过程中，会去除所有加在实参上的类型限定符（包括const 、&amp;和&amp;&amp;）以体现函数的值形参语义。因为这样才能够保证模板函数值形参可复制的语义（函数调用时将实参的值复制到值形参变量中）</li>
+</ul>
+</li>
+<li>左值引用模板参数<ul>
+<li>当类型参数Param为可变引用（左值引用）时，可以向它传递能够推断出地址的实参，如果是const类型的实参，将保留它的const限定。但是，不能够接受字面常量和临时变量，这是因为引用参数是可以修改实参值的，但将常量和临时变量传给引用参数，就与该语义相违背了。</li>
+<li>当类型参数为左值引用时，无论实参是左值还是右值，推断出的模板参数都是左值。</li>
+</ul>
+</li>
+<li>右值引用模板参数<ul>
+<li>形如T&amp;&amp;这样的右值引用参数，既可以接受左值引用实参，也可以接受右值引用实参，通常被称为转发引用。</li>
+</ul>
+</li>
 </ul>
 <h4><span id="模板相关的继承">模板相关的继承</span></h4><ul>
 <li><p>模板类可以继承非模板类，也可以继承模板类(需要实例化)</p>
@@ -1319,6 +1361,17 @@
 </ul>
 <h4><span id="expression-parameter">expression parameter</span></h4><ul>
 <li>模板中可以声明一些常数，这些常数在模板中声明，在模板函数中可以访问。</li>
+</ul>
+<h3><span id="模板重载-特化-非模板函数及调用次序">模板重载、特化、非模板函数及调用次序</span></h3><h4><span id="模板特化">模板特化</span></h4><ul>
+<li>模板特化的原因</li>
+<li>模板虽然能够实例化出实用于各种数据类型的可用函数或类，但要让一个模板实现对全部数据类型的正确处理，却不一定做得到。比如，在例7-9中，max模板就不能够正确计算字符串的最大<br>值。因为，char*类型的字符串需要用strcmp函数而不是“&lt;”运算符比较其大小。</li>
+<li>为了解决这一问题，C++允许为模板定义针对某种数据类型的替代版本，称为模板的特化。</li>
+<li>模板特化的语法形式<br>template &lt;&gt;<br>用具体类型替换模板参数的函数模板或类模板<br>&lt;&gt;中不需要任何内容，表示模板特化。</li>
+</ul>
+<h4><span id="函数参数匹配与调用次序">函数参数匹配与调用次序</span></h4><ul>
+<li>优先调用普通函数</li>
+<li>如果没有普通函数，优先调用模板特化函数；</li>
+<li>当没有普通函数和特化模板函数时才调用模板函数。如果有多个重载模板函数都符合要求，就选择精确匹配的模板函数；</li>
 </ul>
 <h2><span id="week11iterators-and-ix2fo-stream">week11–iterators and I&#x2F;O stream</span></h2><h3><span id="链式输入和输出">链式输入和输出</span></h3><ul>
 <li><p>cin和cout是<code>&lt;iostream&gt;</code>提供的两个全局对象，它们所处在命名空间std中。</p>
@@ -1370,11 +1423,13 @@
 <h3><span id="exception-handlers">exception handlers</span></h3><ul>
 <li>select exception by type</li>
 <li>can re-raise</li>
+<li>用noexcept修饰某个函数，则这个函数不会抛出异常</li>
 <li>two forms<ul>
 <li><code>catch (SomeType v)&#123;//handler code&#125;</code></li>
 <li><code>catch (...)&#123;//handler code&#125;</code></li>
 </ul>
 </li>
+<li>注意在catch块捕获时不会进行数据类型的默认转换，强调精准匹配。如果异常不能被任何catch块捕获，它将被传递给系统的异常处理模块，程序将被系统异常处理模块终止。</li>
 </ul>
 <h4><span id="exception-inheritance">exception inheritance</span></h4><ul>
 <li>我们的错误类型也可以采用继承一个父亲类型</li>
@@ -1404,22 +1459,31 @@
 </ul>
 <h2><span id="week-13smart-pointer">week 13–smart pointer</span></h2><h2><span id="week-14miscellaneous-topics">week 14–miscellaneous topics</span></h2><h3><span id="named-casts">named casts</span></h3><ul>
 <li>想要类型转化,use a named cast:<ul>
-<li>static_cast,不容易犯错</li>
-<li>dynamic_cast</li>
-<li>reinterpret_cast</li>
-<li>const_cast</li>
+<li><p>static_cast,不容易犯错,在编译时期完成，可以进行数值类型转换，类层次转换，但<strong>不允许无关类型的指针转换</strong>，<strong>也不允许移除const</strong>。</p>
+</li>
+<li><p>dynamic_cast: 是一个强制类型转换操作符，主要用于多态基类的指针或引用与派生类指针或引用之间的转换，它是在程序运行时刻执行的。</p>
+<ul>
+<li>向上转换：在类的继承层次结构中，从派生类向基类方向<br>的转换，即把派生类对象的指针或引用转换成基类对象的指<br>针或引用，这种转换常用C++的默认方式完成。</li>
+<li>向下转换：当<strong>基类指针或引用实际派生类对象上</strong>时，向下强制转换能够成功。如果失败抛出null指针。如果是引用的转换失败则抛出异常</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp">D d,*pd<br>B *pb=&amp;d, &amp;rb=d; <span class="hljs-comment">// 向上转换</span><br>pd=<span class="hljs-built_in">dynamic_cast</span>&lt;D*&gt;(pb);<span class="hljs-comment">// 向下转换</span><br>D &amp;rd=<span class="hljs-keyword">dynamic_cast</span>&lt;D&amp;&gt; rb;<span class="hljs-comment">// 向下转换</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>reinterpret_cast，在编译时期完成，不需要做任何类型检查</p>
+</li>
+<li><p>const_cast，在编译时期完成，<strong>唯一能安全移除const</strong>的C++转换操作符。</p>
+</li>
 </ul>
 </li>
 </ul>
 <blockquote>
 <p>example</p>
 </blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">double</span> d = <span class="hljs-number">7.1</span>;<br><span class="hljs-type">int</span> a;<br>a = d;<br>a = (<span class="hljs-type">int</span>)d;<br>a = <span class="hljs-built_in">static_cast</span>&lt;<span class="hljs-type">int</span>&gt;(d);<br><span class="hljs-comment">//但是涉及指针的时候要用reinterpret_cast</span><br><span class="hljs-type">int</span> a = <span class="hljs-number">7</span>;<br><span class="hljs-type">double</span> *p;<br>p = <span class="hljs-built_in">reinterpret_cast</span>&lt;<span class="hljs-type">double</span>*&gt;(&amp;a);<br>p = <span class="hljs-built_in">static_cast</span>&lt;<span class="hljs-type">double</span>*&gt;(&amp;a);<span class="hljs-comment">//error!</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">double</span> d = <span class="hljs-number">7.1</span>;<br><span class="hljs-type">int</span> a;<br>a = d;<br>a = (<span class="hljs-type">int</span>)d;<br>a = <span class="hljs-built_in">static_cast</span>&lt;<span class="hljs-type">int</span>&gt;(d);<br><span class="hljs-comment">//但是涉及不同类型指针的时候要用reinterpret_cast</span><br><span class="hljs-type">int</span> a = <span class="hljs-number">7</span>;<br><span class="hljs-type">double</span> *p;<br>p = <span class="hljs-built_in">reinterpret_cast</span>&lt;<span class="hljs-type">double</span>*&gt;(&amp;a);<br>p = <span class="hljs-built_in">static_cast</span>&lt;<span class="hljs-type">double</span>*&gt;(&amp;a);<span class="hljs-comment">//error!</span><br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>涉及继承</p>
 </blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">A</span>&#123;<br>  <span class="hljs-function">Virtual <span class="hljs-type">void</span> <span class="hljs-title">f</span><span class="hljs-params">()</span></span>&#123;&#125;<br>&#125;<br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">B</span>:A&#123;&#125;;<br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">C</span>:A&#123;&#125;;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>  A *pa = <span class="hljs-keyword">new</span> B;<br>  C *pc = <span class="hljs-built_in">static_cast</span>&lt;C*&gt;(pa); <span class="hljs-comment">//ok,但是pa指向B.有继承关系即可,否则只能使用reinterpret_cast</span><br>  C *pc = <span class="hljs-built_in">dynamic_cast</span>&lt;C*&gt;(pa);<span class="hljs-comment">//因为dynamic_cast会检查是否是同一个类型的转化，所以返回nullptr;但是如果体系不是多态的，没有虚函数，那么就不能使用dynamic_cast</span><br><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">A</span>&#123;<br>  <span class="hljs-function">Virtual <span class="hljs-type">void</span> <span class="hljs-title">f</span><span class="hljs-params">()</span></span>&#123;&#125;<br>&#125;<br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">B</span>:A&#123;&#125;;<br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">C</span>:A&#123;&#125;;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>  A *pa = <span class="hljs-keyword">new</span> B;<br>  C *pc = <span class="hljs-built_in">static_cast</span>&lt;C*&gt;(pa); <span class="hljs-comment">//ok,但是pa指向B.有继承关系即可,否则只能使用reinterpret_cast</span><br>  C *pc = <span class="hljs-built_in">dynamic_cast</span>&lt;C*&gt;(pa);<span class="hljs-comment">//因为dynamic_cast会检查是否是同一个类型的转化，所以返回nullptr;但是如果体系不是多态的，没有虚函数，那么就不能使用dynamic_cast</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h3><span id="multiple-inheritance">multiple inheritance</span></h3><blockquote>
 <p>example of ml</p>
@@ -1487,7 +1551,7 @@
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			      
+			  
 			<!-- 先找到与当前文字相同的目录 -->
 			                                       
 			<!-- 在找到当前文章所在的 index -->
@@ -1503,7 +1567,7 @@
 				<span>下一章</span>
 				<a href="/2025/05/23/secret/"> secret知识点</a>
 			</div>
-			                              
+			                                  
 		</nav>
 	</div>
 	
