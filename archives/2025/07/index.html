@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> cs50 -  Laneのhome</title>
+		<title> 文章归档：2025/7 -  Laneのhome</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -354,156 +354,45 @@
 			<div class="kira-content">
 				<div id="kira-top-header"></div>
 				<div class="kira-main-content">
-					
-<link rel="stylesheet" href="/css/kira-image.css">
-
-
-<script src="/js/kira-image.js"></script>
-
-<div class="kira-image">
-    <div class="kira-image-modal">
-        <div class="kira-image-header">
-            <div class="kira-image-counter"></div>
-            <div class="kira-image-title"></div>
-            <div class="kira-image-operation">
-                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
-                    <i class="kirafont icon-zoom-in"></i>
+					<div class="kira-posts">
+    
+        <div class="kira-post">
+            <a href="/2025/07/01/pytorch/">
+                
+                <div
+                    class="kira-post-cover mdui-ripple"
+                    style="padding-bottom: '56.25%'"
+                >
+                    <img
+                        data-src="https://s21.ax1x.com/2025/07/01/pVuej7F.png"
+                        data-sizes="auto"
+                        alt="pytorch教程"
+                        class="lazyload kira-post-cover-image"
+                    />
+                    <h1>pytorch教程</h1>
                 </div>
-                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
-                    <i class="kirafont icon-close"></i>
-                </div>
+                
+            </a>
+
+            <div class="kira-post-meta kira-rainbow">
+                <a>
+                    <i class="kirafont icon-calendar-fill"></i>
+                    2025年07月01日
+                </a>
+                <a>
+                    <i class="kirafont icon-edit-fill"></i>
+                    2.8k 字
+                </a>
+                <a>
+                    <i class="kirafont icon-time-circle-fill"></i>大概
+                    13 分钟
+                </a>
             </div>
+    
+            
         </div>
-        <div class="kira-image-container">
-            <div class="kira-image-prev-button-panel">
-                <div class="kira-image-exchange-button">
-                    <i class="kirafont icon-left"></i>
-                </div>
-            </div>
-            <div class="kira-image-list">
-                <div class="kira-image-prev">
-                    <img />
-                </div>
-                <div class="kira-image-now">
-                    <img />
-                </div>
-                <div class="kira-image-next">
-                    <img />
-                </div>
-            </div>
-            <div class="kira-image-next-button-panel">
-                <div class="kira-image-exchange-button">
-                    <i class="kirafont icon-right"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-	
-<link rel="stylesheet" href="/css/kira-code-copy.css">
-
-	
-<script src="/js/kira-code-copy.js"></script>
-
-
-<div class="kira-post">
-	<article>
-		
-		<div class="kira-post-cover">
-			<img
-				data-src="https://s21.ax1x.com/2024/05/04/pkAJAHO.jpg"
-				data-sizes="auto"
-				alt="cs50"
-				class="lazyload kira-post-cover-image disabled-kira-image"
-			/>
-			<h1>cs50</h1>
-		</div>
-		
-		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
-			<a><i class="kirafont icon-calendar-fill"></i>2025年05月23日</a>
-			<a><i class="kirafont icon-edit-fill"></i>516 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 2 分钟</a>
-		</div>
-		<h2><span id="week1-search">week1-search</span></h2><h3><span id="search">search</span></h3><h4><span id="goal-test">goal test</span></h4><p>ai中的一个重要概念，确定一个state是否是最终的目标。</p>
-<h4><span id="path-cost">path cost</span></h4><p>numercial cost与路径紧密相关</p>
-<h3><span id="soving-search-problem">soving search problem</span></h3><h4><span id="node">node</span></h4><p>node是ai中的一个重要概念，它表示一个状态，它有父节点(node that generated this node)，an action(action applied to this state)，一个path cost。</p>
-<h4><span id="appraoch-of-ai">appraoch of ai</span></h4><ul>
-<li>start with a frotier that contains that initial node</li>
-<li>repeat:<ol>
-<li>if the frontier is empty, then fail</li>
-<li>remove a node from the frontier</li>
-<li>if the node contains a goal state, then succeed</li>
-<li>expand node,add resulting nodes to the frontier</li>
-</ol>
-</li>
-<li>但是这个general appraoch可能出现错误，如果图中节点的连接方式存在双指针，则有可能陷入循环。</li>
-</ul>
-<h4><span id="revised-approach">revised approach</span></h4><ul>
-<li>start with a frontier that contains the initial node</li>
-<li>start with an empty explored set</li>
-<li>repeat:<ol>
-<li>if the frontier is empty, then fail</li>
-<li>remove a node from the frontier</li>
-<li>if the node contains a goal state, then succeed</li>
-<li>add node to the explored set</li>
-<li>expand node,add resulting nodes to the frontier,but only if not in the frontier or the explored set</li>
-</ol>
-</li>
-</ul>
-<h4><span id="栈与depth-first-search">栈与depth-first search</span></h4><ul>
-<li>在具体的算法实现中，我们可以利用栈这个数据结构来实现frontier的作用。</li>
-<li>这样我们的搜索方式便是深度优先搜索（找到一个路径直到尽头）。</li>
-</ul>
-<h4><span id="队列与breadth-first-search">队列与breadth-first search</span></h4><ul>
-<li>在具体的算法实现中，若利用队列这个数据结构来实现frontier的作用，则我们的搜索方式便是广度优先搜索（多个路径共同进行）。</li>
-</ul>
-<h4><span id="greedy-best-first-search">greedy best-first search</span></h4><p>与传统的dfs和bfs不同，expands the node that is closest to the goal state.通过启发式算法实现</p>
-<h3><span id="project0-degrees">project0-degrees</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">shortest_path</span>(<span class="hljs-params">source, target</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    Returns the shortest list of (movie_id, person_id) pairs</span><br><span class="hljs-string">    that connect the source to the target.</span><br><span class="hljs-string">    If no possible path, returns None.</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br>      <br>    <span class="hljs-comment"># TODO</span><br>    <span class="hljs-comment"># 注意我们此时为bfs则采取队列数据结构</span><br>    frontier = QueueFrontier()<br>    explored = <span class="hljs-built_in">set</span>()<br>    frontier.add(source,<span class="hljs-literal">None</span>,<span class="hljs-literal">None</span>)<br>    <span class="hljs-keyword">while</span> <span class="hljs-keyword">not</span> frontier.empty():<br>        node = frontier.remove()<br>        explored.add(node.state)<br>        neighbors = neighbors_for_person(node.state)<br>        <span class="hljs-keyword">for</span> neighbor <span class="hljs-keyword">in</span> neighbors:<br>            _, person_id =neighbor<br>            <span class="hljs-keyword">if</span> person_id == target:<br>                path=[neighbor]<br>                <span class="hljs-keyword">while</span> node.parent <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:<br>                    path.append(node.action)<br>                    node = node.parent<br>                <span class="hljs-comment"># 注意此时需要翻转</span><br>                path.reverse()<br>                <span class="hljs-keyword">return</span> path<br>                <span class="hljs-comment"># 如果此时的节点没有被探索过，且不在frontier中，则加入frontier</span><br>            <span class="hljs-keyword">if</span> person_id <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> explored <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> frontier.contains_state(person_id):<br>                frontier.add(person_id,node,neighbor)<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span><br></code></pre></td></tr></table></figure>
-
-	</article>
-
-	 
-    <div class="kira-post-copyright">
-        <strong>本文作者：</strong>Lane<br>
-        <strong>本文链接：</strong><a href="https://lakerswillwin.github.io/2025/05/23/cs50/" title="https:&#x2F;&#x2F;lakerswillwin.github.io&#x2F;2025&#x2F;05&#x2F;23&#x2F;cs50&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;lakerswillwin.github.io&#x2F;2025&#x2F;05&#x2F;23&#x2F;cs50&#x2F;</a><br>
-        
-            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
-        
-    </div>
-
-  
-	<div class="kira-post-nav">
-		<nav class="post-nav">
-			          
-			<!-- 先找到与当前文字相同的目录 -->
-			   
-			<!-- 在找到当前文章所在的 index -->
-			       
-			<!-- 下一篇文章 -->
-			<div class="new">
-				<span>下一章</span>
-				<a href="/2025/05/23/cs61a/"> cs61a</a>
-			</div>
-			                                                                    
-		</nav>
-	</div>
-	
-	<div class="kira-post-meta kira-rainbow">
-		
-			<a class="kirafont icon-container-fill -link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-		
-		
-			<a class="kirafont icon-tag-fill -none-link" href="/tags/python/" rel="tag">python</a>
-		
-	</div>
-	
-	<div class="kira-post-footer">
-		
-
-		
-	</div>
-	
+        <div class="kira-hr"></div>
+    
 </div>
 
 				</div>
