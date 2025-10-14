@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html 
+	lang="CH-zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 计算机网络 -  Laneのhome</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="https://kira.host/assets/Pictures/Others/116359b4ccf19917.jpg"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 6.3.0"></head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('https://s21.ax1x.com/2024/08/08/pkzljdH.jpg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="Laneのhome">
+        <img
+			src="https://s21.ax1x.com/2024/08/08/pkzljdH.jpg"
+			alt="Lane"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a target="_blank" rel="noopener" href="https://s21.ax1x.com/2024/08/08/pkzljdH.jpg" title="Lane">
+			<img
+				src="https://s21.ax1x.com/2024/08/08/pkzljdH.jpg"
+				alt="Lane"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>38</div>
+		<div><span>标签</span>16</div>
+		<div><span>分类</span>7</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/index/index.html"
+			title="指路楼"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				指路楼
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about/about.html"
+			title="本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/friends.html"
+			title="友链"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				友链
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/todolist/index.html"
+			title="todolist"
+		>
+			<i
+				class="kirafont
+					
+						icon-unordered-list
+					"
+			></i>
+			<div class="kira-list-item-content">
+				todolist
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="https://wx.mail.qq.com/home/index?sid=zRxMToxhT2suJFZaALhEUwAA#/list/1/1"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/3537107830179843?spm_id_from=333.1007.0.0"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/lakerswillwin/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="/null"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+  <div class="kira-widget-wrap">
+    <h3 class="kira-widget-title">分类</h3>
+    <div class="kira-widget">
+      <ul class="category-list">
+        
+        
+
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/cs课程/">
+              cs课程
+            </a>
+            <span class="category-list-count">17</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/思政课/">
+              思政课
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/技术/">
+              技术
+            </a>
+            <span class="category-list-count">8</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数理课程/">
+              数理课程
+            </a>
+            <span class="category-list-count">5</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/科研训练/">
+              科研训练
+            </a>
+            <span class="category-list-count">4</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/课程经验/">
+              课程经验
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/随笔/">
+              随笔
+            </a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/C/" style="font-size: 18px;">C</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/ai/" style="font-size: 10px;">ai</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/math/" style="font-size: 16px;">math</a> <a href="/tags/nihao/" style="font-size: 10px;">nihao</a> <a href="/tags/physics/" style="font-size: 10px;">physics</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 10px;">建站</a> <a href="/tags/%E6%80%9D%E6%94%BF/" style="font-size: 10px;">思政</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 14px;">硬件</a> <a href="/tags/%E7%A7%91%E7%A0%94/" style="font-size: 12px;">科研</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">经验</a>
+		</div>
+		
+	</div>
+
+
+		
+			
+	<div class="kira-widget-wrap">
+		<h3 class="kira-widget-title">
+			文章归档
+		</h3>
+		<div class="kira-widget">
+			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/">2025</a><span class="archive-list-count">38</span></li></ul>
+		</div>
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2025
+		<a href="/">Lane</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<center> 浏览量：<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>| 访客数：<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> </center>
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="https://s21.ax1x.com/2025/09/15/pVfee1A.jpg"
+				data-sizes="auto"
+				alt="计算机网络"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>计算机网络</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2025年09月24日</a>
+			<a><i class="kirafont icon-edit-fill"></i>4k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 16 分钟</a>
+		</div>
+		<ul>
+<li>本课程笔记的图片与内容绝大多数来自于徐海涛老师的ppt，在此致谢！！</li>
+</ul>
+<h2><span id="导航">导航</span></h2><ul>
+<li><a href="#%E5%AF%BC%E8%88%AA">导航</a></li>
+<li><a href="#chapter1-%E6%A6%82%E8%BF%B0">Chapter1-概述</a><ul>
+<li><a href="#14-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%86%E7%B1%BB">1.4 计算机网络的定义和分类</a><ul>
+<li><a href="#%E5%AE%9A%E4%B9%89">定义</a></li>
+<li><a href="#%E5%88%86%E7%B1%BB">分类</a></li>
+</ul>
+</li>
+<li><a href="#15-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87">1.5 计算机网络的性能指标</a><ul>
+<li><a href="#%E9%80%9F%E7%8E%87">速率</a></li>
+<li><a href="#%E5%B8%A6%E5%AE%BD">带宽</a></li>
+<li><a href="#%E5%90%9E%E5%90%90%E9%87%8F">吞吐量</a></li>
+<li><a href="#%E6%97%B6%E5%BB%B6">时延</a></li>
+<li><a href="#%E6%97%B6%E5%BB%B6%E5%B8%A6%E5%AE%BD%E7%A7%AF">时延带宽积</a></li>
+<li><a href="#%E5%BE%80%E8%BF%94%E6%97%B6%E9%97%B4">往返时间</a></li>
+<li><a href="#%E5%88%A9%E7%94%A8%E7%8E%87">利用率</a></li>
+<li><a href="#%E4%B8%A2%E5%8C%85%E7%8E%87">丢包率</a></li>
+</ul>
+</li>
+<li><a href="#16-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84">1.6 计算机网络体系结构</a><ul>
+<li><a href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%89%E7%A7%8D%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84">常见的三种计算机网络体系结构</a></li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%88%86%E5%B1%82%E7%9A%84%E5%BF%85%E8%A6%81%E6%80%A7">计算机网络体系结构分层的必要性</a></li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%AD%E7%9A%84%E4%B8%93%E7%94%A8%E6%9C%AF%E8%AF%AD">计算机网络体系结构中的专用术语</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#chapter2-%E7%89%A9%E7%90%86%E5%B1%82">chapter2 物理层</a><ul>
+<li><a href="#21-%E7%89%A9%E7%90%86%E5%B1%82%E6%A6%82%E8%BF%B0">2.1 物理层概述</a><ul>
+<li><a href="#%E7%89%A9%E7%90%86%E5%B1%82%E8%A6%81%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8A%9F%E8%83%BD">物理层要实现的功能</a></li>
+<li><a href="#%E7%89%A9%E7%90%86%E5%B1%82%E6%8E%A5%E5%8F%A3%E7%89%B9%E6%80%A7">物理层接口特性</a></li>
+</ul>
+</li>
+<li><a href="#22-%E7%89%A9%E7%90%86%E5%B1%82%E4%B8%8B%E9%9D%A2%E7%9A%84%E4%BC%A0%E8%BE%93%E5%AA%92%E4%BD%93">2.2 物理层下面的传输媒体</a><ul>
+<li><a href="#%E4%BC%A0%E8%BE%93%E5%AA%92%E4%BD%93%E7%9A%84%E5%88%86%E7%B1%BB">传输媒体的分类</a></li>
+<li><a href="#%E5%AF%BC%E5%90%91%E5%9E%8B%E4%BC%A0%E8%BE%93%E5%AA%92%E4%BD%93">导向型传输媒体</a></li>
+<li><a href="#%E9%9D%9E%E5%AF%BC%E5%90%91%E5%9E%8B%E4%BC%A0%E8%BE%93%E5%AA%92%E4%BD%93">非导向型传输媒体</a></li>
+</ul>
+</li>
+<li><a href="#23-%E4%BC%A0%E8%BE%93%E6%96%B9%E5%BC%8F">2.3 传输方式</a><ul>
+<li><a href="#%E4%B8%B2%E8%A1%8C%E4%BC%A0%E8%BE%93%E5%92%8C%E5%B9%B6%E8%A1%8C%E4%BC%A0%E8%BE%93">串行传输和并行传输</a></li>
+<li><a href="#%E5%90%8C%E6%AD%A5%E4%BC%A0%E8%BE%93%E5%92%8C%E5%BC%82%E6%AD%A5%E4%BC%A0%E8%BE%93">同步传输和异步传输</a></li>
+<li><a href="#%E5%8D%95%E5%90%91%E9%80%9A%E4%BF%A1%E5%8F%8C%E5%90%91%E4%BA%A4%E6%9B%BF%E9%80%9A%E4%BF%A1%E5%92%8C%E5%8F%8C%E5%90%91%E5%90%8C%E6%97%B6%E9%80%9A%E4%BF%A1">单向通信、双向交替通信和双向同时通信</a></li>
+</ul>
+</li>
+<li><a href="#24-%E7%BC%96%E7%A0%81%E4%B8%8E%E8%B0%83%E5%88%B6">2.4 编码与调制</a><ul>
+<li><a href="#%E7%BC%96%E7%A0%81%E4%B8%8E%E8%B0%83%E5%88%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">编码与调制的基本概念</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F">常用编码方式</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%B8%A6%E9%80%9A%E8%B0%83%E5%88%B6%E6%96%B9%E6%B3%95%E5%92%8C%E6%B7%B7%E5%90%88%E8%B0%83%E5%88%B6%E6%96%B9%E6%B3%95">基本的带通调制方法和混合调制方法</a></li>
+</ul>
+</li>
+<li><a href="#25-%E4%BF%A1%E9%81%93%E7%9A%84%E6%9E%81%E9%99%90%E5%AE%B9%E9%87%8F">2.5 信道的极限容量</a><ul>
+<li><a href="#%E9%80%A0%E6%88%90%E4%BF%A1%E5%8F%B7%E5%A4%B1%E7%9C%9F%E7%9A%84%E4%B8%BB%E8%A6%81%E5%9B%A0%E7%B4%A0">造成信号失真的主要因素</a></li>
+<li><a href="#%E5%A5%88%E6%B0%8F%E5%87%86%E5%88%99">奈氏准则</a></li>
+<li><a href="#%E9%A6%99%E5%86%9C%E5%85%AC%E5%BC%8F">香农公式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2><span id="chapter1-概述">Chapter1-概述</span></h2><h3><span id="14-计算机网络的定义和分类">1.4 计算机网络的定义和分类</span></h3><h4><span id="定义">定义</span></h4><ul>
+<li>三个关键字：互连，自治和计算机集合</li>
+<li>计算机网络主要是由一些通用的、可编程的硬件（包含有中央处理单元的硬件）互连而成的，而这些硬件并非专门用来实现某一特定目的（例如，传送数据或视频信号）。这些可编程的硬件能够用来传送多种不同类型的数据，并能支持广泛的和日益增长的应用。</li>
+</ul>
+<h4><span id="分类">分类</span></h4><ul>
+<li>交换方式<ul>
+<li>电路交换</li>
+<li>报文交换</li>
+<li>分组交换</li>
+</ul>
+</li>
+<li>使用者<ul>
+<li>公用网</li>
+<li>专用网</li>
+</ul>
+</li>
+<li>传输介质</li>
+<li>覆盖范围</li>
+<li>拓扑结构</li>
+</ul>
+<h3><span id="15-计算机网络的性能指标">1.5 计算机网络的性能指标</span></h3><h4><span id="速率">速率</span></h4><ul>
+<li>补充知识–计算机中数据量的单位<ul>
+<li>比特为基本单位</li>
+<li>数据量的常用单位有字节，千字节，兆字节，吉字节，太字节</li>
+</ul>
+</li>
+<li>速率：数据的传输速率（每秒传送的比特数量）<ul>
+<li>速率的基本单位为比特&#x2F;秒，还有千比特&#x2F;秒(但是需要注意的是速率的换算关系与数据量的换算关系存在差异，这里是10的幂次的换算关系)</li>
+</ul>
+</li>
+</ul>
+<h4><span id="带宽">带宽</span></h4><ul>
+<li>用来表示网络的通信线路所能传送数据的能力，即在单位时间内从网络中的某一点到另一点所能通过的最高数据率。</li>
+<li>数据传送速率 &#x3D; min[主机接口速率，线路带宽，交换机或路由器的接口速率]</li>
+</ul>
+<h4><span id="吞吐量">吞吐量</span></h4><ul>
+<li>吞吐量是指在单位时间内通过某个网络或接口的实际数据量。吞吐量常被用于对实际网络的测量，以便获知到底有多少数据量通过了网络。</li>
+</ul>
+<h4><span id="时延">时延</span></h4><ul>
+<li>时延是指数据从网络的一端传送到另一端所耗费的时间，也称为延迟或迟延。 数据可由一个或多个分组、甚至是一个比特构成。</li>
+<li>发送时延 &#x3D; $\frac{分组长度(b)}{发送速率(b&#x2F;s)}$</li>
+<li>传播时延 &#x3D; $\frac{信道长度(m)}{信号传播速率(m&#x2F;s)}$</li>
+<li>example</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/net1.png" alt="net1" class="lazyload"></p>
+<p>解答:对于上述题目，发送时延就是平行四边形的一条边的长度，当这个分组成功发送后经过传播时延到达路由器1，全部到达路由器后再进行发送和传播于是就形成了上述的图像。可以看到发送时延分组的数量为构成发送文件的分组数量与转发次数即路由器数量之和。</p>
+<ul>
+<li>一般排队时延和处理时延都是直接忽略的，那么发送时延和传播时延谁是主导？<ul>
+<li>发送时延一般是主导，因为信号传播速率一般很快。但是如果数据块较小，那么传播时延就是主导。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="时延带宽积">时延带宽积</span></h4><ul>
+<li>时延带宽积是传播时延和带宽的乘积。</li>
+</ul>
+<h4><span id="往返时间">往返时间</span></h4><ul>
+<li>往返时间（Round-Trip Time，RTT）是指从发送端发送数据分组开始，到发送端收到接收端发来的相应确认分组为止，总共耗费的时间。</li>
+</ul>
+<h4><span id="利用率">利用率</span></h4><ul>
+<li>链路利用率：链路利用率是指某条链路有百分之几的时间是被利用的（即有数据通过）。完全空闲的链路的利用率为零。</li>
+<li>网络利用率：网络利用率是指网络中所有链路的链路利用率的加权平均。</li>
+<li>令D0表示网络空闲时的时延，D表示网络当前的时延，那么在理想的假定条件下，可用下式来表示D、D0和网络利用率U之间的关系。$D &#x3D; \frac{D_0}{1-U}$</li>
+</ul>
+<h4><span id="丢包率">丢包率</span></h4><ul>
+<li>丢包率是指在一定的时间范围内，传输过程中丢失的分组数量与总分组数量的比率。</li>
+</ul>
+<h3><span id="16-计算机网络体系结构">1.6 计算机网络体系结构</span></h3><h4><span id="常见的三种计算机网络体系结构">常见的三种计算机网络体系结构</span></h4><ul>
+<li>OSI参考模型（应用层，表示层，会话层，传输层，网络层，数据链路层和物理层）</li>
+<li>TCP&#x2F;IP参考模型（应用层，运输层，网际层和网络接口层）</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/./adsphoto/net2.png" alt="net2" class="lazyload"></p>
+<ul>
+<li>原理参考模型：在TCP&#x2F;IP的基础上将网络接口层划分为数据链路层和物理层</li>
+<li>各个功能<ul>
+<li>应用层:解决通过应用进程的交互来实现特定网络应用的问题</li>
+<li>运输层：解决进程之间基于网络的通信问题</li>
+<li>网络层：解决数据包在多个网络之间传输和路由的问题</li>
+<li>数据链路层：解决数据包在一个网络或一段链路上传输的问题</li>
+<li>物理层：解决使用何种信号来表示比特0和1的问题</li>
+</ul>
+</li>
+</ul>
+<h4><span id="计算机网络体系结构分层的必要性">计算机网络体系结构分层的必要性</span></h4><ul>
+<li>“分层”可将庞大复杂的问题转化为若干较小的局部问题</li>
+</ul>
+<h4><span id="计算机网络体系结构中的专用术语">计算机网络体系结构中的专用术语</span></h4><ul>
+<li>实体：实体是指任何可发送或接收信息的硬件或软件进程。</li>
+<li>对等实体：对等实体是指通信双方相同层次中的实体。</li>
+<li>协议是控制两个对等实体在“水平方向” 进行“逻辑通信”的规则的集合。<ul>
+<li>协议的三要素：语法（定义所交换信息的格式），语义（定义通信双方所要完成的操作），同步（定义通信双方的时序关系）</li>
+</ul>
+</li>
+</ul>
+<h2><span id="chapter2-物理层">chapter2 物理层</span></h2><h3><span id="21-物理层概述">2.1 物理层概述</span></h3><h4><span id="物理层要实现的功能">物理层要实现的功能</span></h4><ul>
+<li>各种传输媒体</li>
+<li>“透明”传输比特流，向数据链路层提供统一的接口</li>
+</ul>
+<h4><span id="物理层接口特性">物理层接口特性</span></h4><ul>
+<li>机械特性（形状和尺寸，引脚数目和排列，固定和锁定装置）</li>
+<li>电气特性（信号电压的范围，阻抗匹配的情况，传输速率，距离限制）</li>
+<li>功能特性（规定接口电缆的各条信号线的作用）</li>
+<li>过程特性（规定在信号线上传输比特流的一组操作过程，包括各信号间的时序关系）</li>
+</ul>
+<h3><span id="22-物理层下面的传输媒体">2.2 物理层下面的传输媒体</span></h3><h4><span id="传输媒体的分类">传输媒体的分类</span></h4><ul>
+<li>传输媒体是计算机网络设备之间的物理通路，也称为传输介质或传输媒介。</li>
+<li>传输媒体并不包含在计算机网络体系结构中。</li>
+</ul>
+<h4><span id="导向型传输媒体">导向型传输媒体</span></h4><ul>
+<li>同轴电缆<ul>
+<li>同轴电缆价格较贵且布线不够灵活和方便。随着技术的发展和集线器的出现，在局域网领域基本上都采用双绞线作为传输媒体。</li>
+</ul>
+</li>
+<li>双绞线<ul>
+<li>绞合的作用：减少相邻导线的电磁干扰；抵御部分来自外界的电磁干扰。</li>
+</ul>
+</li>
+<li>光纤<ul>
+<li>光纤通信利用光脉冲在光纤中的传递来进行通信。由于可见光的频率非常高（约为108MHz量级），因此一个光纤通信系统的传输带宽远大于目前其他各种传输媒体的带宽。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="非导向型传输媒体">非导向型传输媒体</span></h4><ul>
+<li>无线电波<ul>
+<li>LF和MF波段(低频和中频)通过地面波传输，HF和VHF波段(高频)通过地球上方100-500km的高空处带电离子层传输。</li>
+</ul>
+</li>
+<li>微波<ul>
+<li>通过信号塔地面微波接力通信；通过同步地球卫星传输</li>
+</ul>
+</li>
+<li>红外线<ul>
+<li>点对点无线传输;直线传输，中间不能有障碍物，传输距离短</li>
+</ul>
+</li>
+<li>激光</li>
+<li>可见光</li>
+</ul>
+<h3><span id="23-传输方式">2.3 传输方式</span></h3><h4><span id="串行传输和并行传输">串行传输和并行传输</span></h4><ul>
+<li>在计算机内CPU和存储器通过并行传输到网卡，网卡再通过局域网串行传输给接收端。</li>
+</ul>
+<h4><span id="同步传输和异步传输">同步传输和异步传输</span></h4><ul>
+<li>同步传输:<ul>
+<li>同步传输以数据块（帧或分组）为单位进行传输。其最显著的特点是发送方和接收方共享一个严格同步的时钟信号，以确保双方在同一时刻对数据进行采样和解析。高效但严格</li>
+<li>接收方在比特信号的中间时刻进行采样</li>
+<li>收发双方时钟同步的方法:外同步，内同步</li>
+</ul>
+</li>
+<li>异步传输<ul>
+<li>字节之间异步，即字节之间的时间间隔不固定。</li>
+<li>字节中的每个比特仍然要同步，即各比特的持续时间是相同的。</li>
+<li>其核心特点是发送方和接收方之间没有统一的时钟信号。为了让接收方能够准确地识别每个字符的开始和结束，异步传输在每个字符或字节的数据前后都添加了额外的控制位：一个起始位 (Start Bit) 和一个或多个停止位 (Stop Bit)。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="单向通信-双向交替通信和双向同时通信">单向通信、双向交替通信和双向同时通信</span></h4><ul>
+<li>单向通信：数据发送方和接收方之间没有时钟信号，数据发送方只能向接收方发送数据，不能接收数据。</li>
+<li>双向交替通信：数据发送方和接收方之间有时钟信号，数据发送方和接收方交替向对方发送数据。但是不能同时发送数据</li>
+<li>双向同时通信：数据发送方和接收方之间有时钟信号，数据发送方和接收方同时向对方发送数据。</li>
+</ul>
+<h3><span id="24-编码与调制">2.4 编码与调制</span></h3><h4><span id="编码与调制的基本概念">编码与调制的基本概念</span></h4><ul>
+<li>编码(基带调制):编码是将数据从一种形式转换为另一种形式的过程，以便于传输、存储或处理。在数字通信中，编码特指将数字数据（逻辑上的0和1）转换为特定电压或电流波形的数字信号的过程。</li>
+<li>调制:调制是将低频的基带信号 (Baseband Signal)（也就是编码后产生的数字信号或原始的模拟信号）加载（或称“搭载”）到高频的载波 (Carrier Wave) 上的过程。这个过程是信息从本地走向远方的关键一步。</li>
+<li>码元:在使用时间域的波形表示信号时，代表不同离散数值的基本波形称为码元。</li>
+</ul>
+<h4><span id="常用编码方式">常用编码方式</span></h4><ul>
+<li>双极性不归零编码<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./networkphoto/net1.png" alt="net1" class="lazyload"><ul>
+<li>也就是只有两个极性，只是负电平不归零。</li>
+<li>但是这就会出现一个问题，接收方不能确定码元的数量。</li>
+<li>需要给收发双方再添加一条时钟信号线。发送方通过数据信号线给接收方发送数据的同时，还通过时钟信号线给接收方发送时钟信号。接收方按照接收到的时钟信号的节拍，对数据信号线上的信号进行采样。</li>
+</ul>
+</li>
+<li>双极性归零编码<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./networkphoto/net2.png" alt="net2" class="lazyload"><ul>
+<li>在每个码元的中间时刻信号都会回归到零电平。接收方只要在信号归零后采样即可。</li>
+</ul>
+</li>
+<li>曼彻斯特编码<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./networkphoto/net3.png" alt="net3" class="lazyload"><ul>
+<li>注意:使用曼彻斯特编码的主要是早期的、速率为10 Mbps的以太网标准</li>
+</ul>
+</li>
+<li>差分曼彻斯特编码<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./networkphoto/net4.png" alt="net4" class="lazyload"><ul>
+<li>在传输大量连续1或连续0的情况下，差分曼彻斯特编码信号比曼彻斯特编码信号的变化少。在噪声干扰环境下，检测有无跳变比检测跳变方向更不容易出错，因此差分曼彻斯特编码信号比曼彻斯特编码信号更易于检测。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="基本的带通调制方法和混合调制方法">基本的带通调制方法和混合调制方法</span></h4><ul>
+<li>基本的带通调制方法:<br><img data-fancybox="gallery" data-sizes="auto" data-src="/./networkphoto/net5.png" alt="net5" class="lazyload"></li>
+<li>混合调制方法:<ul>
+<li>因为载波的频率和相位是相关的，即频率是相位随时间的变化率，所以载波的频率和相位不能进行混合调制。</li>
+<li>通常情况下，载波的相位和振幅可以结合起来一起调制，例如正交振幅调制QAM。</li>
+<li>正交振幅调制QAM-16<ul>
+<li>12种相位</li>
+<li>每种相位有1或2种振幅可选</li>
+<li>可以调制出16种码元（波形），每种码元可以对应表示4个比特（log216&#x3D;4）</li>
+<li>每个码元与4个比特的对应关系采用格雷码，即任意两个相邻码元只有1个比特不同。否则因为在传播过程中很容易导致失真，如果不小心解调到另一个码元就会导致出现较大的错误。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><span id="25-信道的极限容量">2.5 信道的极限容量</span></h3><h4><span id="造成信号失真的主要因素">造成信号失真的主要因素</span></h4><ul>
+<li>码元的传输速率:传输速率越高，信号经过传输后的失真就越严重。如果信道的频带越宽，则能够通过的信号的高频分量就越多，那么码元的传输速率就可以更高，而不会导致码间串扰。</li>
+<li>信号的传输距离:传输距离越远，信号经过传输后的失真就越严重。</li>
+<li>噪声干扰:噪声干扰越大，信号经过传输后的失真就越严重。</li>
+<li>传输媒体的质量:传输媒体质量越差，信号经过传输后的失真就越严重。</li>
+</ul>
+<h4><span id="奈氏准则">奈氏准则</span></h4><ul>
+<li>理想低通信道的最高码元传输速率 &#x3D; 2W Baud &#x3D; 2W 码元&#x2F;秒<ul>
+<li>W:信道的频率带宽</li>
+<li>Baud:波特，即码元&#x2F;秒</li>
+</ul>
+</li>
+<li>使用奈氏准则给出的公式，就可以根据信道的频率带宽，计算出信道的最高码元传输速率。</li>
+<li>只要码元传输速率不超过根据奈氏准则计算出的上限，就可以避免码间串扰。</li>
+<li>码元传输速率又称为波特率、调制速率、波形速率或符号速率。当1个码元只携带1比特的信息量时，波特率（码元&#x2F;秒）与比特率（比特&#x2F;秒）在数值上是相等的。</li>
+<li>虽然奈氏准则规定了最高码元传输速率，但是并不是让码元携带越多的比特信息就越好，因为在实际的信道中会有噪声，噪声是随机产生的，其瞬时值有时会很大，这会影响接收端对码元的识别，并且噪声功率相对于信号功率越大，影响就越大。</li>
+</ul>
+<h4><span id="香农公式">香农公式</span></h4><ul>
+<li>带宽受限且有高斯白噪声干扰的信道的极限信息传输速率:<ul>
+<li>$C &#x3D; W log_2(1+ \frac{S}{N})$</li>
+<li>C：信道的极限信息传输速率（单位为b&#x2F;s）</li>
+<li>W：信道的频率带宽</li>
+<li>S：信道中的信号平均功率</li>
+<li>N: 信道中的高斯噪声平均功率</li>
+<li>S&#x2F;N: 信道中的噪声比，使用分贝为度量单位。信噪比(db)&#x3D; $10log_{10}(\frac{S}{N})$</li>
+</ul>
+</li>
+</ul>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>Lane<br>
+        <strong>本文链接：</strong><a href="https://lakerswillwin.github.io/2025/09/24/network/" title="https:&#x2F;&#x2F;lakerswillwin.github.io&#x2F;2025&#x2F;09&#x2F;24&#x2F;network&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;lakerswillwin.github.io&#x2F;2025&#x2F;09&#x2F;24&#x2F;network&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			  
+			<!-- 先找到与当前文字相同的目录 -->
+			                                                   
+			<!-- 在找到当前文章所在的 index -->
+			                                                                
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2025/09/18/os/"> operating system</a>
+			</div>
+			                                  
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/cs%E8%AF%BE%E7%A8%8B/">cs课程</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/C/" rel="tag">C++</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>
