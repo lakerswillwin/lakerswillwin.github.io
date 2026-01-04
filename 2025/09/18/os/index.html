@@ -333,7 +333,7 @@
 		
 	</aside>
 	<div class="kira-copyright">
-		&copy; 2025
+		&copy; 2026
 		<a href="/">Lane</a>
 		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
 		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
@@ -422,8 +422,8 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2025年09月18日</a>
-			<a><i class="kirafont icon-edit-fill"></i>1.1k 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 4 分钟</a>
+			<a><i class="kirafont icon-edit-fill"></i>19.2k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 85 分钟</a>
 		</div>
 		<h2><span id="导航">导航</span></h2><ul>
 <li><a href="#%E5%AF%BC%E8%88%AA">导航</a></li>
@@ -451,6 +451,251 @@
 <li><a href="#%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%9D%97">进程控制块</a></li>
 </ul>
 </li>
+<li><a href="#32-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6">3.2 进程调度</a><ul>
+<li><a href="#321-scheduling-queues">3.2.1 Scheduling Queues</a></li>
+<li><a href="#322-schedulers">3.2.2 Schedulers</a></li>
+<li><a href="#323-context-switch">3.2.3 Context Switch</a></li>
+</ul>
+</li>
+<li><a href="#33-operations-on-processes">3.3 Operations on Processes</a><ul>
+<li><a href="#331-process-creation">3.3.1 Process Creation</a></li>
+<li><a href="#332-process-termination">3.3.2 Process Termination</a></li>
+</ul>
+</li>
+<li><a href="#34-interprocess-communication">3.4 Interprocess Communication</a></li>
+<li><a href="#35-ipc-in-shared-memory-systems">3.5 IPC in Shared-Memory Systems</a></li>
+<li><a href="#36-ipc-in-message-passing-systems">3.6 IPC in Message-Passing Systems</a><ul>
+<li><a href="#direct-communication">Direct Communication</a></li>
+<li><a href="#indirect-communication">Indirect Communication</a></li>
+<li><a href="#%E5%90%8C%E6%AD%A5">同步</a></li>
+<li><a href="#buffering">Buffering</a></li>
+</ul>
+</li>
+<li><a href="#chapter3-%E7%BB%83%E4%B9%A0%E9%A2%98%E7%BA%A0%E9%94%99">chapter3-练习题纠错</a></li>
+</ul>
+</li>
+<li><a href="#chapter4-threads-and-concurrency">Chapter4 Threads and Concurrency</a><ul>
+<li><a href="#41-overview">4.1 Overview</a></li>
+<li><a href="#42-multicore-programming">4.2 Multicore Programming</a></li>
+<li><a href="#43-multithreading-models">4.3 Multithreading Models</a><ul>
+<li><a href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6">线程的实现机制</a></li>
+<li><a href="#many-to-one">Many-to-one</a></li>
+<li><a href="#one-to-one">One-to-one</a></li>
+<li><a href="#many-to-many-model">Many-to-Many Model</a></li>
+<li><a href="#%E7%BA%BF%E7%A8%8B%E4%BC%98%E7%BC%BA%E7%82%B9">线程优缺点</a></li>
+</ul>
+</li>
+<li><a href="#44-thread-libraries">4.4 Thread Libraries</a></li>
+<li><a href="#45-implicit-threading">4.5 Implicit Threading</a></li>
+</ul>
+</li>
+<li><a href="#chapter-5cpu-scheduling">Chapter 5:CPU Scheduling</a><ul>
+<li><a href="#51-basic-concepts">5.1 Basic Concepts</a><ul>
+<li><a href="#cpu-scheduler">CPU Scheduler</a></li>
+</ul>
+</li>
+<li><a href="#53-scheduling-algorithms">5.3 Scheduling Algorithms</a><ul>
+<li><a href="#531-fcfs">5.3.1 FCFS</a></li>
+<li><a href="#532-sjf-scheduling">5.3.2 SJF Scheduling</a></li>
+<li><a href="#533-priority-scheduling">5.3.3 Priority Scheduling</a></li>
+<li><a href="#534-round-robin-scheduling">5.3.4 Round-Robin Scheduling</a></li>
+<li><a href="#535-%E5%A4%9A%E7%BA%A7%E9%98%9F%E5%88%97%E8%B0%83%E5%BA%A6">5.3.5 多级队列调度</a></li>
+<li><a href="#536-%E5%A4%9A%E7%BA%A7%E5%8F%8D%E9%A6%88%E9%98%9F%E5%88%97%E7%AE%97%E6%B3%95">5.3.6 多级反馈队列算法</a></li>
+</ul>
+</li>
+<li><a href="#chapter5-%E4%B9%A0%E9%A2%98%E7%BA%A0%E9%94%99">chapter5-习题纠错</a></li>
+</ul>
+</li>
+<li><a href="#chapter-6process-synchronization">Chapter 6:Process Synchronization</a><ul>
+<li><a href="#61-background">6.1 Background</a><ul>
+<li><a href="#bounded-buffer">bounded buffer</a></li>
+<li><a href="#%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E7%9A%84%E6%A6%82%E5%BF%B5">进程同步的概念</a></li>
+</ul>
+</li>
+<li><a href="#62-the-critical-section-problem">6.2 The Critical-Section Problem</a><ul>
+<li><a href="#%E8%A7%A3%E5%86%B3%E4%B8%B4%E7%95%8C%E5%8C%BA%E9%97%AE%E9%A2%98%E5%BF%85%E9%A1%BB%E5%AE%9E%E7%8E%B0%E7%9A%84%E4%BA%8B">解决临界区问题必须实现的事</a></li>
+</ul>
+</li>
+<li><a href="#63-petersons-solution">6.3 Peterson’s Solution</a><ul>
+<li><a href="#%E5%8D%95%E6%A0%87%E5%BF%97%E6%B3%95">单标志法</a></li>
+<li><a href="#%E5%8F%8C%E6%A0%87%E5%BF%97%E5%85%88%E6%A3%80%E6%9F%A5">双标志先检查</a></li>
+<li><a href="#%E5%8F%8C%E6%A0%87%E5%BF%97%E5%90%8E%E6%A3%80%E6%9F%A5">双标志后检查</a></li>
+<li><a href="#peterson">Peterson</a></li>
+</ul>
+</li>
+<li><a href="#64-synchronization-hardware">6.4 Synchronization Hardware</a><ul>
+<li><a href="#mutual-exclusion-with-test-and-set">Mutual Exclusion with Test-and-Set</a></li>
+<li><a href="#mutual-exclusion-with-swap">Mutual exclusion with swap</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+<li><a href="#bounded-waiting-mutual-exclusion-with-testandset">Bounded-waiting mutual exclusion with TestAndSet</a></li>
+</ul>
+</li>
+<li><a href="#65-semaphores">6.5 semaphores</a><ul>
+<li><a href="#%E4%BF%A1%E5%8F%B7%E9%87%8F%E7%9A%84%E7%B1%BB%E5%9E%8B">信号量的类型</a></li>
+<li><a href="#%E4%BF%A1%E5%8F%B7%E9%87%8F%E7%9A%84%E5%BA%94%E7%94%A8">信号量的应用</a></li>
+</ul>
+</li>
+<li><a href="#66-%E7%BB%8F%E5%85%B8%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98">6.6 经典进程同步问题</a><ul>
+<li><a href="#661-bounded-buffer-problem">6.6.1 Bounded-Buffer problem</a></li>
+<li><a href="#662-readers-writers-problem">6.6.2 Readers-Writers Problem</a></li>
+<li><a href="#663-dining-philosophers-problem">6.6.3 Dining Philosophers Problem</a></li>
+</ul>
+</li>
+<li><a href="#67-monitors">6.7 Monitors</a></li>
+<li><a href="#68-os-synchronization">6.8 OS Synchronization</a></li>
+<li><a href="#chapter-6-review-questions">Chapter 6-review questions</a></li>
+</ul>
+</li>
+<li><a href="#chapter-7deadlocks">Chapter 7:Deadlocks</a><ul>
+<li><a href="#71-system-model">7.1 System Model</a><ul>
+<li><a href="#the-deadlock-problem">The Deadlock Problem</a></li>
+</ul>
+</li>
+<li><a href="#72-deadlock-characterization">7.2 Deadlock Characterization</a><ul>
+<li><a href="#resource-allocation-graph">Resource-Allocation Graph</a></li>
+</ul>
+</li>
+<li><a href="#73-methods-for-handling-deadlocks">7.3 Methods for Handling Deadlocks</a></li>
+<li><a href="#74-deadlock-prevention">7.4 Deadlock Prevention</a></li>
+<li><a href="#75-deadlock-avoidance">7.5 Deadlock Avoidance</a><ul>
+<li><a href="#751-safe-state">7.5.1 Safe state</a></li>
+<li><a href="#752-resource-allocation-graph-algorithm">7.5.2 Resource-Allocation Graph Algorithm</a></li>
+<li><a href="#753-bankers-algorithm">7.5.3 Banker’s Algorithm</a></li>
+</ul>
+</li>
+<li><a href="#76-deadlock-detection">7.6 Deadlock Detection</a><ul>
+<li><a href="#761-single-instance-of-each-resource-type">7.6.1 Single Instance of Each Resource Type</a></li>
+<li><a href="#762-several-instances-of-a-resource-type">7.6.2 Several Instances of a Resource Type</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#chapter-8-main-memory">Chapter 8: Main Memory</a><ul>
+<li><a href="#81-background">8.1 Background</a><ul>
+<li><a href="#%E5%9C%B0%E5%9D%80%E7%BB%91%E5%AE%9A%E4%B8%8E%E9%87%8D%E5%AE%9A%E4%BD%8D-address-binding">地址绑定与重定位 (Address Binding)</a></li>
+<li><a href="#%E7%94%A8%E6%88%B7%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B">用户程序的处理流程</a></li>
+<li><a href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E5%8D%95%E5%85%83">内存管理单元</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E5%92%8C%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5">动态加载和动态链接</a></li>
+</ul>
+</li>
+<li><a href="#82-swapping">8.2 Swapping</a></li>
+<li><a href="#83-contiguous-allocation">8.3 Contiguous Allocation</a><ul>
+<li><a href="#831-%E5%8D%95%E4%B8%80%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D">8.3.1 单一连续分配</a></li>
+<li><a href="#832-multiple-parttion-allocation">8.3.2 Multiple-parttion Allocation</a><ul>
+<li><a href="#%E5%9B%BA%E5%AE%9A%E5%88%86%E5%8C%BA">固定分区</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E5%88%86%E5%8C%BA">动态分区</a></li>
+</ul>
+</li>
+<li><a href="#833-%E5%8A%A8%E6%80%81%E5%88%86%E5%8C%BA%E7%AE%97%E6%B3%95">8.3.3 动态分区算法</a></li>
+<li><a href="#834-%E7%A2%8E%E7%89%87">8.3.4 碎片</a></li>
+</ul>
+</li>
+<li><a href="#84-paging">8.4 Paging</a><ul>
+<li><a href="#implementation-of-page-table">Implementation of Page Table</a><ul>
+<li><a href="#effective-access-time-eat">Effective Access Time (EAT)</a></li>
+</ul>
+</li>
+<li><a href="#structure-of-the-page-table">Structure of the Page Table</a><ul>
+<li><a href="#hierarchical-page-table">Hierarchical Page Table</a></li>
+<li><a href="#hashed-page-table">Hashed Page Table</a></li>
+<li><a href="#inverted-page-table">Inverted Page Table</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#85-segmentation">8.5 Segmentation</a></li>
+</ul>
+</li>
+<li><a href="#chapter-9-virtual-memory">Chapter 9: Virtual Memory</a><ul>
+<li><a href="#91-background">9.1 Background</a></li>
+<li><a href="#92-demand-paging">9.2 Demand Paging</a><ul>
+<li><a href="#page-fault">Page Fault</a></li>
+</ul>
+</li>
+<li><a href="#93-process-creation">9.3 Process Creation</a><ul>
+<li><a href="#copy-on-write">Copy-on-Write</a></li>
+</ul>
+</li>
+<li><a href="#94-page-replacement">9.4 Page Replacement</a><ul>
+<li><a href="#1-%E6%A6%82%E5%BF%B5%E4%B8%8E%E9%9C%80%E6%B1%82">1. 概念与需求</a></li>
+<li><a href="#2-basic-page-replacement-%E5%9F%BA%E6%9C%AC%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E8%BF%87%E7%A8%8B">2. Basic Page Replacement (基本页面置换过程)</a></li>
+<li><a href="#3-%E4%BC%98%E5%8C%96%E4%B8%8E%E8%AF%84%E4%BC%B0">3. 优化与评估</a></li>
+<li><a href="#4%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95">4.页面置换算法</a><ul>
+<li><a href="#1-fifo-page-replacement-%E5%85%88%E8%BF%9B%E5%85%88%E5%87%BA">1. FIFO Page Replacement (先进先出)</a></li>
+<li><a href="#2-optimal-page-replacement-%E6%9C%80%E4%BC%98%E7%BD%AE%E6%8D%A2">2. Optimal Page Replacement (最优置换)</a></li>
+<li><a href="#3-lru-page-replacement-%E6%9C%80%E8%BF%91%E6%9C%80%E5%B0%91%E4%BD%BF%E7%94%A8">3. LRU Page Replacement (最近最少使用)</a></li>
+<li><a href="#4-clock-page-replacement-%E6%97%B6%E9%92%9F%E7%AE%97%E6%B3%95">4. Clock Page Replacement (时钟算法)</a></li>
+<li><a href="#%E7%AE%97%E6%B3%95%E6%AF%94%E8%BE%83">算法比较</a></li>
+<li><a href="#5-%E9%99%84%E5%8A%A0%E5%BC%95%E7%94%A8%E7%AE%97%E6%B3%95-additional-reference-bits-algorithm">5. 附加引用算法 (Additional Reference Bits Algorithm)</a></li>
+<li><a href="#6-%E4%BA%8C%E6%AC%A1%E6%9C%BA%E4%BC%9A%E7%AE%97%E6%B3%95-second-chance-algorithm">6. 二次机会算法 (Second Chance Algorithm)</a></li>
+<li><a href="#7-%E8%AE%A1%E6%95%B0%E7%AE%97%E6%B3%95-counting-based-algorithms">7. 计数算法 (Counting-Based Algorithms)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#95-allocation-of-frames">9.5 Allocation of frames</a><ul>
+<li><a href="#1-%E5%9B%BA%E5%AE%9A%E5%88%86%E9%85%8D-vs-%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D">1. 固定分配 vs. 动态分配</a></li>
+<li><a href="#2-%E5%B1%80%E9%83%A8%E7%BD%AE%E6%8D%A2-vs-%E5%85%A8%E5%B1%80%E7%BD%AE%E6%8D%A2">2. 局部置换 vs. 全局置换</a></li>
+<li><a href="#3-%E5%88%86%E9%85%8D%E7%AE%97%E6%B3%95">3. 分配算法</a></li>
+<li><a href="#4-%E5%B7%A5%E4%BD%9C%E9%9B%86%E6%A8%A1%E5%9E%8B-working-set-model">4. 工作集模型 (Working Set Model)</a></li>
+<li><a href="#5-%E7%BC%BA%E9%A1%B5%E9%A2%91%E7%8E%87-page-fault-frequency">5. 缺页频率 (Page-Fault Frequency)</a></li>
+</ul>
+</li>
+<li><a href="#96-thrashing">9.6 Thrashing</a></li>
+</ul>
+</li>
+<li><a href="#chapter-10-file-system-interface">Chapter 10: File-System Interface</a><ul>
+<li><a href="#101-file-concept">10.1 File Concept</a><ul>
+<li><a href="#file-attributes">File Attributes</a></li>
+<li><a href="#file-operations">File Operations</a></li>
+<li><a href="#file-types">File Types</a></li>
+<li><a href="#file-structure">File Structure</a></li>
+</ul>
+</li>
+<li><a href="#102-access-methods">10.2 Access Methods</a></li>
+<li><a href="#103-directory-structure">10.3 Directory Structure</a><ul>
+<li><a href="#%E7%9B%AE%E5%BD%95%E7%9A%84%E6%A6%82%E5%BF%B5">目录的概念</a></li>
+<li><a href="#%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84">磁盘结构</a></li>
+<li><a href="#%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C">目录操作</a></li>
+<li><a href="#%E7%9B%AE%E5%BD%95%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F">目录组织方式</a><ul>
+<li><a href="#%E5%8D%95%E7%BA%A7%E7%9B%AE%E5%BD%95-single-level-directory">单级目录 (Single-Level Directory)</a></li>
+<li><a href="#%E4%BA%8C%E7%BA%A7%E7%9B%AE%E5%BD%95-two-level-directory">二级目录 (Two-Level Directory)</a></li>
+<li><a href="#%E6%A0%91%E5%9E%8B%E7%9B%AE%E5%BD%95-tree-structured-directories">树型目录 (Tree-Structured Directories)</a></li>
+<li><a href="#%E6%97%A0%E7%8E%AF%E5%9B%BE%E7%9B%AE%E5%BD%95-acyclic-graph-directories">无环图目录 (Acyclic-Graph Directories)</a></li>
+<li><a href="#%E6%99%AE%E9%80%9A%E5%9B%BE%E7%9B%AE%E5%BD%95-general-graph-directory">普通图目录 (General Graph Directory)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#104-file-system-mounting">10.4 File System Mounting</a><ul>
+<li><a href="#%E6%8C%82%E8%BD%BD%E7%9A%84%E6%A6%82%E5%BF%B5">挂载的概念</a></li>
+<li><a href="#%E6%8C%82%E8%BD%BD%E7%9A%84%E7%9B%AE%E7%9A%84">挂载的目的</a></li>
+<li><a href="#%E7%A4%BA%E4%BE%8B">示例</a></li>
+</ul>
+</li>
+<li><a href="#105-file-sharing">10.5 File Sharing</a></li>
+<li><a href="#106-protection">10.6 Protection</a></li>
+</ul>
+</li>
+<li><a href="#chapter-11-file-system-implementation">Chapter 11: File System Implementation</a><ul>
+<li><a href="#111-file-system-structure">11.1 File-System Structure</a><ul>
+<li><a href="#file-system-types">File System Types</a></li>
+<li><a href="#in-memory-file-system-structures">In-Memory File System Structures</a></li>
+</ul>
+</li>
+<li><a href="#113-directory-implementation">11.3 Directory Implementation</a></li>
+<li><a href="#114-allocation-methods">11.4 Allocation Methods</a><ul>
+<li><a href="#contiguous-allocation">Contiguous Allocation</a></li>
+<li><a href="#linked-allocation">Linked Allocation</a><ul>
+<li><a href="#fat-file-allocation-table">FAT (File Allocation Table)</a></li>
+<li><a href="#fat32-%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84">FAT32 磁盘结构</a></li>
+<li><a href="#fat32-%E7%9B%AE%E5%BD%95%E9%A1%B9%E7%BB%93%E6%9E%84">FAT32 目录项结构</a></li>
+</ul>
+</li>
+<li><a href="#indexed-allocation">Indexed Allocation</a></li>
+</ul>
+</li>
+<li><a href="#115-free-space-management">11.5 Free-Space Management</a></li>
 </ul>
 </li>
 </ul>
@@ -522,12 +767,12 @@
 <ul>
 <li>New（新）: The process is being created.</li>
 <li>Running（运行、执行）: Instructions are being executed.需要注意的是一次只有一个进程可以在处理器上运行</li>
-<li>Ready（就绪）: The process is waiting to be assigned to a processor (CPU).当进程处于就绪状态时，说明此时处理器不是空闲的，一定有进程在处理器上运行。</li>
-<li>Waiting（等待、blocked阻塞）: The process is waiting for some event to occur.所有的进程都可能处于等待状态。</li>
+<li>Ready（就绪）: The process is waiting to be assigned to a processor (CPU).当进程处于就绪状态时，说明此时处理器不是空闲的，一定有进程在处理器上运行。一般按照一定的算法排成一个队列。</li>
+<li>Waiting（等待、blocked阻塞）: The process is waiting for some event to occur.所有的进程都可能处于等待状态。处于等待事件的进程排在等待队列中，由于等待事件原因不同，等待队列可以按照事件分成几个队列。</li>
 <li>Terminated（终止）: The process has finished execution.</li>
 </ul>
 <h4><span id="进程控制块">进程控制块</span></h4><ul>
-<li>每个进程在操作系统内用进程控制块来表示，它包含与特定进程相关的许多信息：<ul>
+<li>每个进程在操作系统内用进程控制块（通过链表组织）来表示，它包含与特定进程相关的许多信息：<ul>
 <li>Process state</li>
 <li>Program counter</li>
 <li>CPU registers</li>
@@ -539,6 +784,1174 @@
 </ul>
 </li>
 </ul>
+<h3><span id="32-进程调度">3.2 进程调度</span></h3><h4><span id="321-scheduling-queues">3.2.1 Scheduling Queues</span></h4><ul>
+<li>Job queue（外存） –set of all processes in the system.尚未被操作系统加载到内存。</li>
+<li>Ready queue（内存） –set of all processes residing in main memory, ready and waiting to execute.</li>
+<li>Device queues –set of processes waiting for an I&#x2F;O device.</li>
+<li>Process migration between the various queues.</li>
+</ul>
+<h4><span id="322-schedulers">3.2.2 Schedulers</span></h4><ul>
+<li>Long-term scheduler(or job scheduler)长程调度（或作业调度）<ul>
+<li>selects which processes should be brought into the ready queue.</li>
+<li>invoked very infrequently (seconds, minutes)-》(may be slow)</li>
+<li>controls the degree of multiprogramming多道程序的“道”</li>
+<li>Most modern operating systems have nolong-term scheduler(e.g. Windows, UNIX,Linux)</li>
+</ul>
+</li>
+<li>Short-term scheduler(or CPU scheduler)短程调度（或CPU调度）<ul>
+<li>selects which process should be executed next and allocates CPU.</li>
+<li>invoked very frequently (milliseconds) (must be fast).</li>
+</ul>
+</li>
+<li>Medium-Term Scheduler 中程调度<ul>
+<li>当检测到内存压力过大时，或者某个进程长期处于阻塞状态，它会做出一个决定：暂时将这个进程“挂起 (Suspend)”。被换出的进程状态就从“就绪”或“阻塞”变成了“挂起”。当系统资源变得充裕（例如，其他进程执行完毕释放了内存），或者那个被换出的进程所等待的事件已经发生时，中程调度器可以决定将这个进程重新“激活”。激活的操作就是将该进程之前存放在磁盘交换区的数据重新加载回内存。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="323-context-switch">3.2.3 Context Switch</span></h4><ul>
+<li>When CPU switches to another process, the system must save the state of the old process and load the saved state for the new process via a context switch</li>
+<li>Context of a process represented in the PCB</li>
+<li>Context-switch time is overhead; the system does no useful work while switching</li>
+<li>Time dependent on hardware support</li>
+</ul>
+<h3><span id="33-operations-on-processes">3.3 Operations on Processes</span></h3><h4><span id="331-process-creation">3.3.1 Process Creation</span></h4><ul>
+<li>创建时间:作业调度程序调度到某个job时将它装进内存并分配资源以创建进程。父进程创建子进程:一个正在运行的进程（称为父进程）可以执行系统调用来创建一个新的进程（称为子进程）。</li>
+<li>Parent process create children processes, which, in turn create other processes, forming a tree of processes.</li>
+<li>Generally, process identified and managed via a process identifier (pid)</li>
+<li>Resource sharing：<ul>
+<li>Parent and children share all resources.</li>
+<li>Children share subset of parent’s resources.</li>
+<li>Parent and child share no resources.</li>
+</ul>
+</li>
+<li>Unix examples:<ul>
+<li>fork() creates a new process: 从系统调用fork 中返回时，两个进程除了返回值pid不同外，具有完全一样的用户级上下文。在子进程中，pid的值为0;父进程中，pid的值为子进程的进程号。</li>
+<li>fork()调用一次，返回两次，一次在父进程中，一次在子进程中。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="332-process-termination">3.3.2 Process Termination</span></h4><ul>
+<li>引起进程终止的事件<ul>
+<li>正常结束</li>
+<li>异常结束</li>
+<li>外界干预</li>
+</ul>
+</li>
+<li>Process executes last statement and asks the operating system to decide it (exit).<ul>
+<li>Output data from child to parent (via wait).</li>
+<li>Process’ resources are deallocatedby operating system.</li>
+</ul>
+</li>
+<li>The parent process may wait for termination of a child process by using the wait()system call. The call returns status information and the pid of the terminated process。<code>pid= wait(&amp;status)</code>; </li>
+<li>If no parent waiting (did not invoke wait()) process is a zombie（僵尸进程：子进程运行终止，父进程尚未调用wait()）</li>
+<li>If parent terminated without invokingwait, process is an orphan（孤立进程:父进程没有调用wait()就终止了）</li>
+</ul>
+<h3><span id="34-interprocess-communication">3.4 Interprocess Communication</span></h3><ul>
+<li>IPC provides a Mechanism for processes to communicate and to synchronize their actions without sharing the same address space.</li>
+<li>Two models of IPC<ul>
+<li>共享内存：操作系统在物理内存中开辟一块特殊的内存区域，然后通过内存映射技术，将这同一块物理内存分别映射到多个进程各自的虚拟地址空间中。这样，这些进程就可以像访问自己的私有内存一样，直接读写这块共享区域，而无需内核的干预。</li>
+<li>消息传递：进程之间交换数据必须通过内核，在内核中开辟缓冲区，进程1把数据从用户空间拷贝到缓冲区，进程2再把这个数据读走，这就是IPC。</li>
+</ul>
+</li>
+</ul>
+<h3><span id="35-ipc-in-shared-memory-systems">3.5 IPC in Shared-Memory Systems</span></h3><ul>
+<li>这块“公共白板”就是由操作系统在物理内存 (RAM) 中划出的一块特殊区域。操作系统会对需要通信的进程说：“好了，这块内存你们都可以访问、读取和写入。” 于是，这些进程就都能像访问自己的内存一样，直接访问这块公共区域了。</li>
+<li>有限缓冲区(Bounded Buffer):<ul>
+<li>生产者 (Producer)：是后台的面包师，他不停地烤制新面包。</li>
+<li>消费者 (Consumer)：是前台的售货员，他不停地把面包卖给顾客。</li>
+<li>有限缓冲区 (Bounded-Buffer)：是柜台上的面包陈列架，它的空间是固定的，比如只能放 10 个面包。</li>
+<li>核心同步问题：<ul>
+<li>缓冲区的状态问题：使用计数信号量来记录缓冲区的状态</li>
+<li>互斥访问问题：必须保证在任何时刻，只有一个人（一个进程）能够操作陈列架（缓冲区）。当一个人在操作时，另一个人必须等待。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><span id="36-ipc-in-message-passing-systems">3.6 IPC in Message-Passing Systems</span></h3><h4><span id="direct-communication">Direct Communication</span></h4><ul>
+<li>Processes must name each other explicitly:<ul>
+<li>send(P, message)- send a message to process P</li>
+<li>receive(Q, message)- receive a message from process Q</li>
+</ul>
+</li>
+<li>Properties of communication link<ul>
+<li>Links are established automatically</li>
+<li>A link is associated with exactly one pair of communicating processes</li>
+<li>Between each pair there exists exactly one link</li>
+<li>The link may be unidirectional, but is usually bi-directional</li>
+</ul>
+</li>
+</ul>
+<h4><span id="indirect-communication">Indirect Communication</span></h4><ul>
+<li>Messages are directed and received from mailboxes (also referred to as ports)<ul>
+<li>Each mailbox has a unique id</li>
+<li>Processes can communicate only if they share a mailbox</li>
+</ul>
+</li>
+<li>Properties of communication link<ul>
+<li>Link established only if processes share a common mailbox</li>
+<li>A link may be associated with many processes,因为中间存在邮箱，所以可能有多个进程。</li>
+<li>Each pair of processes may share several communication links，每个链路对应一个邮箱。</li>
+<li>Link may be unidirectional or bi-directional</li>
+</ul>
+</li>
+<li>一个问题:<ul>
+<li>P1, P2,andP3 share mailbox A.P1, sends;P2 and P3 receive.Who gets the message?</li>
+<li>解决:Allow a link to be associated with at most two processes.Allow only one process at a time to execute a receive operation.Allow the system to select arbitrarily the receiver.Sender is notified who the receiver was.</li>
+</ul>
+</li>
+</ul>
+<h4><span id="同步">同步</span></h4><h4><span id="buffering">Buffering</span></h4><ul>
+<li>Queue of messages attached to the link.Implemented in one of three ways<br>1.Zero capacity –no messages are queued on a link.Sender must wait for receiver (rendezvous)<br>2.Bounded capacity –finite length of nmessagesSender must wait if link full<br>3.Unbounded capacity –infinite length Sender never waits</li>
+</ul>
+<h3><span id="chapter3-练习题纠错">chapter3-练习题纠错</span></h3><ul>
+<li>解析： 调用子程序（subroutine call）是进程内部的正常执行流程，在用户态完成，不会引起操作系统内核的介入，因此不会触发进程调度。A（中断）、B（等待子进程）和 D（I&#x2F;O请求）都会导致进程从用户态切换到内核态，并将CPU控制权交给操作系统，此时操作系统可以决定是否切换到另一个进程。</li>
+<li>系统调用必然会导致模式切换（Mode Switch，从用户态到内核态）。但它不一定会导致上下文切换（Context Switch，从进程A切换到进程B）。如果系统调用很快完成（例如，获取当前时间），内核会执行该调用然后立即返回到同一个进程的用户态，这期间没有切换到其他进程。</li>
+<li>“唤醒”（waken up）一个进程意味着它所等待的事件已经发生（例如，I&#x2F;O操作已完成）。因此，它的状态从等待态（Waiting） 变为就绪态（Ready），表示它现在可以运行了，正在等待CPU。</li>
+<li>需要注意的是使用fork()，子进程会创建一个父进程的副本，但是子进程对字段的影响并不会波及父进程。</li>
+</ul>
+<h2><span id="chapter4-threads-and-concurrency">Chapter4 Threads and Concurrency</span></h2><h3><span id="41-overview">4.1 Overview</span></h3><ul>
+<li>资源拥有单元称为进程(资源调度的基本单位)（或任务），cpu调度的基本单位称为线程、又称轻型进程（light weight process）。线程只拥有一点在运行中必不可省的资源（程序计数器、一组寄存器和堆栈），但它可与同属一个进程的其它线程共享进程拥有的全部资源。</li>
+<li>线程定义为进程内一个执行单元或一个可调度实体。也就是说每一个线程都有一个对应的进程。</li>
+<li>线程的内容<ul>
+<li>有执行状态（状态转换）</li>
+<li>不运行时保存上下文</li>
+<li>有一个执行栈</li>
+<li>有一些局部变量的静态存储</li>
+<li>可存取所在进程的内存和其他资源</li>
+</ul>
+</li>
+<li>A thread shares withthreads belonging to the same process its:code section,data section,operating-system resources.但是寄存器需要自己拥有，用于保存上下文。</li>
+</ul>
+<h3><span id="42-multicore-programming">4.2 Multicore Programming</span></h3><h3><span id="43-multithreading-models">4.3 Multithreading Models</span></h3><h4><span id="线程的实现机制">线程的实现机制</span></h4><ul>
+<li>用户级线程:不依赖于OS内核（内核不了解用户线程的存在），应用进程利用线程库提供创建、同步、调度和管理线程的函数来控制用户线程。调度由应用软件内部进行，通常采用非抢先式和更简单的规则，也无需用户态&#x2F;核心态切换，所以速度特别快。一个线程发起系统调用而阻塞，则整个进程在等待</li>
+<li>内核级线程:依赖于OS核心，由内核的内部需求进行创建和撤销，用来执行一个指定的函数。一个线程发起系统调用而阻塞，不会影响其他线程。时间片分配给线程，所以多线程的进程获得更多CPU时间。</li>
+</ul>
+<h4><span id="many-to-one">Many-to-one</span></h4><ul>
+<li>Many user-level threads mapped to single kernel thread</li>
+<li>Implemented by user-level runtime libraries<ul>
+<li>Create, schedule, synchronize threads at user-level</li>
+</ul>
+</li>
+<li>OS is not aware of user-level threads<ul>
+<li>OS thinks each process contains only a single thread of control</li>
+</ul>
+</li>
+<li>在这个模型中，一个线程发起系统调用而阻塞，则整个进程在等待</li>
+<li>Advantages<ul>
+<li>Does not require OS support</li>
+<li>Can tune scheduling policy to meet application (user level) demands</li>
+<li>Lower overhead thread operations since no system calls</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Cannot leverage multiprocessors (no true parallelism),本质上还是操作系统只操控一个内核线程。</li>
+<li>Entire process blocks when one thread blocks，当一个用户级线程（比如线程 A）需要读取一个文件时，它会触发一个系统调用。这个系统调用最终是由它所映射的那个唯一的内核级线程来执行的。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="one-to-one">One-to-one</span></h4><ul>
+<li>Each user-level thread maps to kernel thread</li>
+<li>OS provides each user-level thread with a kernel thread</li>
+<li>Each kernel thread scheduled independently</li>
+<li>Thread operations (creation, scheduling, synchronization) performed by OS</li>
+<li>Advantages<ul>
+<li>Each kernel-level thread can run in parallel on amultiprocessor</li>
+<li>When one thread blocks, other threads from process canbe scheduled</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Higher overheadfor thread operations</li>
+<li>OS must scale well with increasing number of threads</li>
+</ul>
+</li>
+</ul>
+<h4><span id="many-to-many-model">Many-to-Many Model</span></h4><h4><span id="线程优缺点">线程优缺点</span></h4><ol>
+<li>线程的优点： 一个进程中可以同时存在多个线程;各个线程之间可以并发的执行；各个线程之间可以共享地址空间和文件等资源，多个线程之间的通信是方便的。</li>
+<li>线程的缺点：当进程中的一个线程崩溃时，会导致该进程内的所有其它线程都崩溃；我们说进程内的资源是线程共享的，那么多个线程来同时访问一块数据的时候该给哪个线程呢？所以线程存在着资源竞争；</li>
+</ol>
+<h3><span id="44-thread-libraries">4.4 Thread Libraries</span></h3><h3><span id="45-implicit-threading">4.5 Implicit Threading</span></h3><h2><span id="chapter-5cpu-scheduling">Chapter 5:CPU Scheduling</span></h2><h3><span id="51-basic-concepts">5.1 Basic Concepts</span></h3><ul>
+<li>CPU调度&#x3D;&#x3D;处理机调度&#x3D;&#x3D;进程调度</li>
+</ul>
+<h4><span id="cpu-scheduler">CPU Scheduler</span></h4><ul>
+<li>调度方式<ul>
+<li>非抢占式:调度程序一旦把处理机分配给某进程后便让它一直运行下去，直到进程完成或发生某事件而阻塞时，才把处理机分配给另一个进程.</li>
+<li>抢占式:当一个进程正在运行时，系统可以基于某种原则，剥夺已分配给它的处理机，将之分配给其它进程。被抢占的进程回到就绪队列的队首。</li>
+</ul>
+</li>
+</ul>
+<h3><span id="53-scheduling-algorithms">5.3 Scheduling Algorithms</span></h3><h4><span id="531-fcfs">5.3.1 FCFS</span></h4><ul>
+<li>FCFS算法<ul>
+<li>按照进程或作业提交顺序形成就绪状态的先后次序，分派CPU</li>
+<li>当前进程或作业占用CPU，直到执行完或阻塞，才出让CPU（非抢占方式）在进程或作业唤醒后（如I&#x2F;O完成），并不立即恢复执行，通常等到当前作业或进程出让CPU</li>
+<li>最简单的算法</li>
+</ul>
+</li>
+<li>FCFS的特点<ul>
+<li>比较有利于长进程，而不利于短进程。</li>
+<li>有利于CPU Bound的进程，而不利于I&#x2F;O Bound的进程。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="532-sjf-scheduling">5.3.2 SJF Scheduling</span></h4><ul>
+<li>又称为“短进程优先”SPF(Shortest Process First)；这是对FCFS算法的改进，其目标是减少平均周转时间。</li>
+<li>SJF算法:对预计执行时间短的作业（进程）优先分派处理机。</li>
+<li>Two schemes: <ul>
+<li>nonpreemptive – once CPU given to the process it cannot be preempted until completes its CPU burst</li>
+<li>preemptive – if a new process arrives with CPU burst length less than remaining time of current executing process, preempt. This scheme is know as the Shortest-Remaining-Time-First (SRTF)</li>
+</ul>
+</li>
+<li>最优的算法，能够实现最短的平均等待时间。</li>
+</ul>
+<h4><span id="533-priority-scheduling">5.3.3 Priority Scheduling</span></h4><ul>
+<li>Associate a priority number with each process</li>
+<li>该算法总是把处理机分配给就绪队列中具有最高优先权的进程。常用以下两种方法来确定进程的优先权：<ul>
+<li>静态优先权: 静态优先权是在创建进程时确定的，在整个运行期间不再改变。依据有：进程类型、进程对资源的要求、用户要求的优先权。</li>
+<li>动态优先权: 动态优先权是基于某种原则，使进程的优先权随时间改变而改变。假定：最小的整数 &#x3D; 最高的优先级.</li>
+</ul>
+</li>
+<li>同样具有非抢占式模式和抢占式优先级调度算法。</li>
+</ul>
+<h4><span id="534-round-robin-scheduling">5.3.4 Round-Robin Scheduling</span></h4><ul>
+<li>基本思路：通过时间片轮转，提高进程并发性和响应时间特性，从而提高资源利用率。</li>
+<li>RR算法：<ul>
+<li>将系统中所有的就绪进程按照FCFS原则，排成一个队列。</li>
+<li>每次调度时将CPU分派给队首进程，让其执行一个时间片 (time slice) 。时间片的长度从几个ms到几百ms。</li>
+<li>在一个时间片结束时，暂停当前进程的执行，将其送到就绪队列的末尾，并通过上下文切换执行就绪队列的队首进程。</li>
+<li>进程可以未使用完一个时间片，就出让CPU（如阻塞）。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="535-多级队列调度">5.3.5 多级队列调度</span></h4><ul>
+<li>根据进程的性质或类型的不同，将就绪队列再分为若干个子队列。</li>
+<li>每个进程固定归入一个队列。</li>
+<li>各队列的不同处理：不同队列可有不同的优先级、时间片长度、调度策略等。如：系统进程、用户交互进程、批处理进程等。</li>
+<li>通常前台的交互式就绪队列采用时间片轮转；后台的批处理就绪队列采用FCFS.</li>
+<li>多级队列算法调度须在队列间进行<ul>
+<li>固定优先级调度，即前台运行完后再运行后台。有可能产生饥饿</li>
+<li>给定时间片调度，即每个队列得到一定的CPU时间，进程在给定时间内执行；如，80%的时间执行前台的RR调度，20%的时间执行后台的FCFS调度。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="536-多级反馈队列算法">5.3.6 多级反馈队列算法</span></h4><ul>
+<li>也是多个就绪队列并赋予不同的优先级，规定优先级越低时间片越长。</li>
+<li>每次新的进程会被放入到第一级队列（优先级最高）的末尾，按先来先服务的原则排队等待被调度，如果某个进程在第一级队列设置的时间片内没运行完，则将其转入到第二级队列的末尾，以此类推，直至完成；</li>
+<li>当较高优先级的队列为空，才调度较低优先级的队列中的进程运行。如果进程运行时，有新进程进入较高优先级的队列（如就绪队列3），则停止当前运行的进程（如就绪队列5）并将其移入到原队列末尾，接着让较高优先级的进程运行；</li>
+</ul>
+<h3><span id="chapter5-习题纠错">chapter5-习题纠错</span></h3><h2><span id="chapter-6process-synchronization">Chapter 6:Process Synchronization</span></h2><h3><span id="61-background">6.1 Background</span></h3><ul>
+<li>并发:在微观上进程并不是同时运行，而是交替进行。</li>
+<li>并行：在微观上进程同时进行。</li>
+</ul>
+<h4><span id="bounded-buffer">bounded buffer</span></h4><ul>
+<li>原来的设计思路：一个大小为 N 的环形缓冲区 (Circular Buffer)：buffer[N]。一个“写入”指针 in：指向下一个空闲的、可以生产物品的位置。一个“读出”指针 out：指向下一个有物品的、可以消费物品的位置。我们牺牲一个存储单元。我们规定，缓冲区中最多只能存放 N-1 个物品。</li>
+<li>改进方案:保留 N 个槽位的缓冲区 buffer[N]。保留 in 和 out 指针。引入一个新变量：counter，初始化为 0。生产者逻辑： 每当它在 buffer[in] 放入一个物品，它就执行 counter++。消费者逻辑： 每当它从 buffer[out] 取出一个物品，它就执行 counter–。</li>
+<li>但是需要注意的是上述改进方案会引入一个新问题。很多题目也需要这样考虑，一行简单的高级语言代码:<code>counter++</code>,涉及三个步骤：读取，修改，写回。counter 是一个被多个线程（生产者和消费者）同时读写的共享变量会导致竞态。</li>
+</ul>
+<h4><span id="进程同步的概念">进程同步的概念</span></h4><ul>
+<li>进程之间竞争资源面临三个控制问题：<ul>
+<li>互斥（mutual exclusion）指多个进程不能同时使用同一个资源。</li>
+<li>死锁（deadlock）指多个进程互不相让，都得不到足够的资源。永远得不到资源。</li>
+<li>饥饿（starvation）指一个进程长时间得不到资源（其它进程可能轮流占用资源）。资源分配不公平</li>
+</ul>
+</li>
+<li>进程并发执行如果是竞争资源则称为互斥；如果是合作关系则称为同步。</li>
+</ul>
+<h3><span id="62-the-critical-section-problem">6.2 The Critical-Section Problem</span></h3><ul>
+<li>临界区就是每个进程的那段“访问共享数据的代码段”。</li>
+<li>必须确保当一个进程在临界区执行时，没有其他进程被允许在它们的临界区执行。</li>
+<li>临界资源:一次只允许一个进程使用(访问)的资源。</li>
+</ul>
+<h4><span id="解决临界区问题必须实现的事">解决临界区问题必须实现的事</span></h4><ul>
+<li>Mutual Exclusion(互斥):  If process Pi is executing in its critical section, then no other processes can be executing in their critical sections.</li>
+<li>Progress（空闲让进）：If no process is executing in its critical section and there exist some processes that wish to enter their critical section, then the selection of the processes that will enter the critical section next cannot be postponed indefinitely</li>
+<li>Bounded Waiting（有限等待）:A bound must exist on the number of times that other processes are allowed to enter their critical sections after a process has made a request to enter its critical section and before that request is granted</li>
+</ul>
+<h3><span id="63-petersons-solution">6.3 Peterson’s Solution</span></h3><h4><span id="单标志法">单标志法</span></h4><ul>
+<li>Only 2 processes, P0and P1</li>
+<li>Shared variables:<ul>
+<li>int turn;initially turn &#x3D; 0</li>
+<li>turn &#x3D; i：Pi can enter its critical section, i&#x3D;0,1</li>
+</ul>
+</li>
+<li>在每个进程的退出区将turn设置为另一个进程的编号</li>
+<li>缺点：强制轮流进入临界区，没有考虑进程的实际需要。容易造成资源利用不充分：在Pi出让临界区之后，Pj使用临界区之前，Pi不可能再次使用临界区</li>
+</ul>
+<h4><span id="双标志先检查">双标志先检查</span></h4><ul>
+<li>Shared variables：<ul>
+<li>boolean flag[2];initially flag [0] &#x3D; flag [1] &#x3D; false.</li>
+<li>flag [i] &#x3D; true：Pi enter its critical section</li>
+</ul>
+</li>
+<li>先检查再上锁。</li>
+<li>P0和P1可能同时进入临界区。当flag [0] &#x3D; flag [1] &#x3D; false时，P0执行了while (flag[1])后，P1执行while (flag[0]) ，这样两个进程同时进入了临界区。</li>
+</ul>
+<h4><span id="双标志后检查">双标志后检查</span></h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp">P0:<br>flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>;<br><span class="hljs-keyword">while</span>(flag[<span class="hljs-number">1</span>]);<br>critical section;<br>flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">false</span>;<br>remainder section;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>P0和P1可能都进入不了临界区。当P0执行了flag[0] :&#x3D; true后，然后P1执行了flag[1] :&#x3D; true，这样两个进程都无法进入临界区。</li>
+</ul>
+<h4><span id="peterson">Peterson</span></h4><ul>
+<li>Combined shared variables of algorithms 1 and 2.</li>
+<li>The two processes share two variables:<ul>
+<li>int turn;</li>
+<li>boolean flag[2]</li>
+</ul>
+</li>
+<li>The variable turn indicates whose turn it is to enter the critical section.谁应该进入。</li>
+<li>The flag array is used to indicate if a process is ready to enter the critical section. flag[i] &#x3D; true implies that process Pi is ready!谁准备好进入没有。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp">P0:<br>flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>;<br>turn = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">while</span>(turn == <span class="hljs-number">1</span> &amp;&amp; flag[<span class="hljs-number">1</span>]);<br>critical section;<br>flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">false</span>;<br>remainder section;<br></code></pre></td></tr></table></figure>
+
+<h3><span id="64-synchronization-hardware">6.4 Synchronization Hardware</span></h3><h4><span id="mutual-exclusion-with-test-and-set">Mutual Exclusion with Test-and-Set</span></h4><ul>
+<li>Test-and-Set 是一种硬件指令，而不是一个普通的软件函数。这一点至关重要。它的关键特性是原子性 (Atomicity)。原子性意味着该指令的整个执行过程是不可分割的。当 CPU 执行这条指令时，它会“锁住”总线，防止任何其他 CPU 或进程在它完成之前访问同一个内存地址。</li>
+<li>如何使用Test-and-set实现互斥:</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp">boolean lock = <span class="hljs-literal">false</span>; <span class="hljs-comment">// 一开始，锁是打开的</span><br><span class="hljs-keyword">while</span> (<span class="hljs-built_in">TestAndSet</span>(&amp;lock) == <span class="hljs-literal">true</span>) &#123;<br>    <span class="hljs-comment">// do nothing; </span><br>    <span class="hljs-comment">// 只是不断地循环，直到锁被释放</span><br>&#125;<br>临界区<br>lock = <span class="hljs-literal">false</span>;<br></code></pre></td></tr></table></figure>
+
+<h4><span id="mutual-exclusion-with-swap">Mutual exclusion with swap</span></h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>) &#123;<br>key = TRUE;<br><span class="hljs-keyword">while</span> (key == TRUE) <span class="hljs-built_in">Swap</span>(&amp;lock , &amp;key);<br>critical section<br>lock = <span class="hljs-literal">false</span>;<br>remainder section<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4><span id="总结">总结</span></h4><ul>
+<li>硬件方法的优点<ul>
+<li>适用于任意数目的进程，在单处理器或多处理器上</li>
+<li>简单，容易验证其正确性</li>
+<li>可以支持进程内存在多个临界区，只需为每个临界区设立一个布尔变量</li>
+</ul>
+</li>
+<li>硬件方法的缺点<ul>
+<li>等待要耗费CPU时间，不能实现”让权等待”</li>
+<li>可能“饥饿”：从等待进程中随机选择一个进入临界区，有的进程可能一直选不上</li>
+<li>可能死锁：单CPU情况下,P1执行特殊指令(swap)进入临界区，这时拥有更高优先级P2执行并中断P1,如果P2又要使用P1占用的资源，按照资源分配规则拒绝P2对资源的要求，陷入忙等循环。然后P1也得不到CPU，因为P1比P2优先级低。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="bounded-waiting-mutual-exclusion-with-testandset">Bounded-waiting mutual exclusion with TestAndSet</span></h4><ul>
+<li>lock (布尔变量)：这是一个全局的“主锁”。它由 TestAndSet 原子地操作。lock &#x3D; true 表示“有人在临界区或正准备进入”。</li>
+<li>waiting[n] (布尔数组)：这是一个“排队”数组。waiting[i] &#x3D; true 表示“进程 P_i 正在排队等待进入临界区”。</li>
+<li>key (局部变量)：这是每个进程自己的一个局部布尔变量，用于控制自己的自旋。</li>
+<li>该算法可以成功满足临界区产生的三个问题</li>
+<li>进入区<ul>
+<li>这里打破自旋等待就有两种可能，一种可能是锁没有被占用，成功被这个进程抢占；另一种可能是另外一个进程将资源的控制权交接到这个进程中。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp">waiting[i] = <span class="hljs-literal">true</span>;  <span class="hljs-comment">// 1. 我(P_i)开始排队</span><br>key = <span class="hljs-literal">true</span>;         <span class="hljs-comment">// 2. 准备开始自旋</span><br><br><span class="hljs-comment">// 3. 开始自旋等待</span><br><span class="hljs-keyword">while</span> (waiting[i] &amp;&amp; key) &#123;<br>    key = <span class="hljs-built_in">TestAndSet</span>(lock);<br>&#125;<br><br>waiting[i] = <span class="hljs-literal">false</span>; <span class="hljs-comment">// 4. 我不再“等待”了（因为我马上要进入临界区了）</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>退出区</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 1. 寻找下一个要进入的进程</span><br>j = (i + <span class="hljs-number">1</span>) % n; <span class="hljs-comment">// 从我的下一个进程开始</span><br><span class="hljs-keyword">while</span> ((j != i) &amp;&amp; !waiting[j]) &#123;<br>    j = (j + <span class="hljs-number">1</span>) % n; <span class="hljs-comment">// 跳过所有不在排队的进程</span><br>&#125;<br><br><span class="hljs-comment">// 2. 决定如何“交接”</span><br><span class="hljs-keyword">if</span> (j == i) &#123;<br>    <span class="hljs-comment">// 情况 X: 绕了一圈回到自己，说明没有其他进程在排队</span><br>    lock = <span class="hljs-literal">false</span>; <span class="hljs-comment">// 释放“主锁”</span><br>&#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-comment">// 情况 Y: 找到了一个正在排队的进程 P_j</span><br>    waiting[j] = <span class="hljs-literal">false</span>; <span class="hljs-comment">// “交棒”：通过将其 waiting 设为 false 来“唤醒” P_j</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3><span id="65-semaphores">6.5 semaphores</span></h3><ul>
+<li>将信号量想象成一个<strong>“受保护的计数器”</strong>，它控制着对一组共享资源的访问。</li>
+<li>这个“受保护的计数器”由两部分组成：<ul>
+<li>一个整数 (Integer)： 这个数值表示“可用资源的数量”。</li>
+<li>两个原子操作 (Atomic Operations)： P 和 V。P(S) 等同于 wait(S)：尝试申请&#x2F;消耗一个资源。V(S) 等同于 signal(S)：释放&#x2F;归还一个资源。</li>
+<li>“原子”意味着这些操作一旦开始，就必须完整执行到底，中途绝不会被中断。</li>
+</ul>
+</li>
+<li>wait的实现</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">wait</span>(S) &#123;<br>    <span class="hljs-comment">// 1. 检查资源是否可用</span><br>    <span class="hljs-keyword">if</span> (S.value &gt; <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-comment">// 资源可用</span><br>        S.value--; <span class="hljs-comment">// 消耗一个资源</span><br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-comment">// 资源不可用 (S.value == 0)</span><br>        <span class="hljs-comment">// 1. 将当前进程/线程放入 S 的“等待队列”</span><br>        <span class="hljs-comment">// 2. 阻塞 (Block) 该进程，使其进入“睡眠”状态 (不消耗CPU)</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>signal的实现</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">signal</span>(S) &#123;<br>    <span class="hljs-comment">// 1. 检查是否“有进程在等待”这个资源</span><br>    <span class="hljs-keyword">if</span> (S 的等待队列中有进程) &#123;<br>        <span class="hljs-comment">// 有进程在等待</span><br>        <span class="hljs-comment">// 1. 从等待队列中唤醒 (Wake up) 一个进程</span><br>        <span class="hljs-comment">// 2. (被唤醒的进程将完成它的 wait 操作，并进入临界区)</span><br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-comment">// 没有进程在等待</span><br>        S.value++; <span class="hljs-comment">// 归还一个资源</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4><span id="信号量的类型">信号量的类型</span></h4><ul>
+<li>计数信号量 (Counting Semaphore)<ul>
+<li>S.value 可以是任意非负整数（0, 1, 2, 3…）。</li>
+<li>用途： 用于管理多个相同的资源。</li>
+<li>例子： 一个系统有 5 台打印机。我们可以设置一个 S_printers 信号量，初始值为 5。每当一个进程想用打印机，它就执行 wait(S_printers)（计数器减 1）。当 S_printers 减到 0 时，第 6 个想用打印机的进程就会被阻塞，直到有人释放（signal）打印机。</li>
+</ul>
+</li>
+<li>二元信号量 (Binary Semaphore)<ul>
+<li>S.value 只能是 0 或 1。</li>
+<li>用途： 用于实现互斥 (Mutual Exclusion)，即“锁”。</li>
+<li>说明： 它的功能与互斥锁 (Mutex) 几乎完全相同。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="信号量的应用">信号量的应用</span></h4><ul>
+<li>实现互斥<ul>
+<li>P1 调用 wait(mutex)，mutex.value 变为 0，P1 进入临界区。此时 P2 尝试调用 wait(mutex)。此时value为-1，说明等待队列中的进程数为1，P2进入阻塞状态。P1 完成临界区，调用 signal(mutex)。signal 发现 P2 在等待队列中，于是唤醒 P2。</li>
+</ul>
+</li>
+<li>实现同步<ul>
+<li>假设我们有两个进程，P1 和 P2。我们必须保证 P1 的 语句 A 执行完之后，P2 的 语句 B 才能开始执行。</li>
+<li>解决方案： 使用一个信号量 sync，初始值设为 0。初始值： sync &#x3D; 0 (表示“P1 尚未完成”)。进程1运行完以后调用 signal(sync);进程2在运行代码前调用 wait(sync)。</li>
+</ul>
+</li>
+</ul>
+<h3><span id="66-经典进程同步问题">6.6 经典进程同步问题</span></h3><h4><span id="661-bounded-buffer-problem">6.6.1 Bounded-Buffer problem</span></h4><ul>
+<li>我们使用一个大小为 n 的缓冲区，并定义三个信号量：<ul>
+<li>mutex (互斥信号量):用途：确保同一时间只有一个进程（生产者或消费者）可以访问缓冲区。类型： 二进制信号量（Binary Semaphore），也常称为锁。初始值： 1 （表示缓冲区当前可访问）。</li>
+<li>empty (空槽位计数):用途：记录缓冲区中空闲槽位的数量。类型：计数信号量（Counting Semaphore）。初始值： n （缓冲区大小，表示初始时所有槽位都是空的）。</li>
+<li>full (满槽位计数):用途：记录缓冲区中已占用槽位的数量（即有多少个数据项）。类型：计数信号量。初始值： 0 （表示初始时缓冲区是空的）。</li>
+</ul>
+</li>
+<li>生产者进程</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">do</span> &#123;<br>    <span class="hljs-comment">// ... 生产一个数据项 (item) ...</span><br><br>    <span class="hljs-comment">// 1. 等待空槽位</span><br>    <span class="hljs-comment">//    如果 empty == 0 (缓冲区已满)，则在此阻塞</span><br>    <span class="hljs-built_in">wait</span>(empty);<br><br>    <span class="hljs-comment">// 2. 获取缓冲区的访问权限 (加锁)</span><br>    <span class="hljs-built_in">wait</span>(mutex);<br><br>    <span class="hljs-comment">// --- 临界区开始 ---</span><br>    <span class="hljs-comment">// ... 将 item 放入缓冲区 ...</span><br>    <span class="hljs-comment">// --- 临界区结束 ---</span><br><br>    <span class="hljs-comment">// 3. 释放缓冲区的访问权限 (解锁)</span><br>    <span class="hljs-built_in">signal</span>(mutex);<br><br>    <span class="hljs-comment">// 4. 通知“满”槽位增加了一个</span><br>    <span class="hljs-built_in">signal</span>(full);<br><br>&#125; <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>);<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>消费者进程</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">do</span> &#123;<br>    <span class="hljs-comment">// 1. 等待“满”槽位 (等待有数据可取)</span><br>    <span class="hljs-comment">//    如果 full == 0 (缓冲区为空)，则在此阻塞</span><br>    <span class="hljs-built_in">wait</span>(full);<br><br>    <span class="hljs-comment">// 2. 获取缓冲区的访问权限 (加锁)</span><br>    <span class="hljs-built_in">wait</span>(mutex);<br><br>    <span class="hljs-comment">// --- 临界区开始 ---</span><br>    <span class="hljs-comment">// ... 从缓冲区取出一个 item ...</span><br>    <span class="hljs-comment">// --- 临界区结束 ---</span><br><br>    <span class="hljs-comment">// 3. 释放缓冲区的访问权限 (解锁)</span><br>    <span class="hljs-built_in">signal</span>(mutex);<br><br>    <span class="hljs-comment">// 4. 通知“空”槽位增加了一个</span><br>    <span class="hljs-built_in">signal</span>(empty);<br><br>    <span class="hljs-comment">// ... 消费这个 item ...</span><br><br>&#125; <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>);<br></code></pre></td></tr></table></figure>
+
+<h4><span id="662-readers-writers-problem">6.6.2 Readers-Writers Problem</span></h4><ul>
+<li>读者优先进行解决：<ul>
+<li>允许多个读者</li>
+<li>写者和读者互斥，写者之间也互斥</li>
+<li>读者优先：只要有任何读者在读，写者就必须等待，新来的读者的优先级高于写者。</li>
+</ul>
+</li>
+<li>定义了三个共享变量：<ul>
+<li>Semaphore mutex &#x3D; 1:这是一个互斥信号量（锁）。当读者需要执行 readcount++ 或 readcount– 时，必须先获取 mutex 锁，以防止两个读者同时修改 readcount 导致竞态条件（Race Condition）。</li>
+<li>Semaphore wrt &#x3D; 1:这也是一个互斥信号量（锁）。作用：它用来保证写者的独占访问，也是读者用来锁住写者的关键。</li>
+<li>Integer readcount &#x3D; 0:一个计数器，用来记录当前有多少个读者正在读取数据。</li>
+</ul>
+</li>
+<li>写者进程</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">do</span> &#123;<br>    <span class="hljs-built_in">wait</span>(wrt);<br>    <span class="hljs-comment">// ... writing is performed ...</span><br>    <span class="hljs-built_in">signal</span>(wrt);<br>&#125; <span class="hljs-keyword">while</span> (TRUE);<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>读者进程</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">do</span> &#123;<br>    <span class="hljs-comment">// 1. &quot;进入区&quot; (Entry Section)</span><br>    <span class="hljs-built_in">wait</span>(mutex);<br>    readcount++;<br>    <span class="hljs-keyword">if</span> (readcount == <span class="hljs-number">1</span>) &#123;<br>        <span class="hljs-built_in">wait</span>(wrt);  <span class="hljs-comment">// 第一个读者负责锁住“写锁”</span><br>    &#125;<br>    <span class="hljs-built_in">signal</span>(mutex);<br><br>    <span class="hljs-comment">// 2. &quot;读取区&quot; (Critical Section for Reading)</span><br>    <span class="hljs-comment">// ... reading is performed ...</span><br>    <br>    <span class="hljs-comment">// 3. &quot;退出区&quot; (Exit Section)</span><br>    <span class="hljs-built_in">wait</span>(mutex);<br>    readcount--;<br>    <span class="hljs-keyword">if</span> (readcount == <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-built_in">signal</span>(wrt); <span class="hljs-comment">// 最后一个读者负责释放“写锁”</span><br>    &#125;<br>    <span class="hljs-built_in">signal</span>(mutex);<br><br>&#125; <span class="hljs-keyword">while</span> (TRUE);<br></code></pre></td></tr></table></figure>
+
+<h4><span id="663-dining-philosophers-problem">6.6.3 Dining Philosophers Problem</span></h4><ul>
+<li>如果使用一般的方法就会导致死锁的情况</li>
+<li>可能的几种解决措施<ul>
+<li>允许最多四个哲学家参与拿筷子的过程</li>
+<li>只有两只筷子都可用时才能允许哲学家拿起来</li>
+<li>奇数序号的哲学家优先拿左侧的筷子；偶数序号的哲学家优先拿右侧的筷子。</li>
+</ul>
+</li>
+</ul>
+<h3><span id="67-monitors">6.7 Monitors</span></h3><h3><span id="68-os-synchronization">6.8 OS Synchronization</span></h3><h3><span id="chapter-6-review-questions">Chapter 6-review questions</span></h3><ul>
+<li>有一个东西方向的桥，东西方向都有行人通过，同一方向的行人可以连续过桥，另一方向的行人必须等待。</li>
+<li>创建三个信号量: x,mutexA,mutexB</li>
+<li>countA,countB为两个信号量的计数器</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//其中一个方向的代码</span><br><span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)<br>&#123;<br>  <span class="hljs-built_in">P</span>(mutexA);<br>  countA++;<br>  <span class="hljs-keyword">if</span>(countA==<span class="hljs-number">1</span>) <span class="hljs-built_in">P</span>(x);<br>  <span class="hljs-built_in">V</span>(mutexA);<br>  <span class="hljs-function">walk</span><br><span class="hljs-function">  <span class="hljs-title">P</span><span class="hljs-params">(mutexA)</span></span>;<br>  countA--;<br>  <span class="hljs-keyword">if</span>(countA==<span class="hljs-number">0</span>) <span class="hljs-built_in">V</span>(x);<br>  <span class="hljs-built_in">V</span>(mutexA);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2><span id="chapter-7deadlocks">Chapter 7:Deadlocks</span></h2><h3><span id="71-system-model">7.1 System Model</span></h3><h4><span id="the-deadlock-problem">The Deadlock Problem</span></h4><ul>
+<li>死锁：指多个进程因竞争共享资源而造成相互等待的一种僵局，若无外力作用，这些进程都将永远不能再向前推进</li>
+</ul>
+<h3><span id="72-deadlock-characterization">7.2 Deadlock Characterization</span></h3><ul>
+<li>死锁的必要条件：<ul>
+<li>Mutual exclusion:互斥</li>
+<li>Hold and Wait:占有资源并等待</li>
+<li>No preemption:不能抢占</li>
+<li>Circular Wait:循环等待</li>
+</ul>
+</li>
+</ul>
+<h4><span id="resource-allocation-graph">Resource-Allocation Graph</span></h4><ul>
+<li>图中的节点主要分为两类：进程节点集合 ($P$)：$P &#x3D; {P_1, P_2, \dots, P_n}$代表系统中所有活动的进程。图形表示：通常用圆圈 (Circle) 表示。资源节点集合（$R$）：$R &#x3D; {R_1, R_2, \dots, R_m}$代表系统中所有的资源类型（如 CPU、打印机、内存块、互斥锁等）。图形表示：通常用矩形 (Rectangle) 表示。</li>
+<li>有向边描述了进程与资源之间的交互关系：申请边 (Request Edge)：$P_i \to R_j$含义：进程 $P_i$ 想要申请资源 $R_j$ 的一个实例，目前正在等待。方向：从 圆圈 指向 矩形。分配边 (Assignment Edge)：$R_j \to P_i$含义：资源 $R_j$ 的一个实例已经分配给了进程 $P_i$。方向：从 矩形内的黑点 指向 圆圈。</li>
+<li>If graph contains no cycles：no deadlock.</li>
+<li>If graph contains a cycle<ul>
+<li>if only one instance per resource type, then deadlock.</li>
+<li>if several instances per resource type，possibility of deadlock.</li>
+</ul>
+</li>
+<li>资源分配图的简化:<ul>
+<li>先看系统还剩下多少资源没分配，再看有哪些进程是不阻塞的</li>
+<li>把不阻塞的进程的所有边都去掉，形成一个孤立的点，再把系统分配给这个进程的资源回收回来</li>
+<li>看剩下的进程有哪些是不阻塞的，然后又把它们逐个变成孤立的点。</li>
+<li>最后，所有的资源和进程都变成孤立的点。这样的图就叫做“可完全简化”。如果一个图可以完全简化则不会产生死锁</li>
+</ul>
+</li>
+</ul>
+<h3><span id="73-methods-for-handling-deadlocks">7.3 Methods for Handling Deadlocks</span></h3><h3><span id="74-deadlock-prevention">7.4 Deadlock Prevention</span></h3><ul>
+<li>互斥:not required for sharable resources; must hold for nonsharable resources.</li>
+<li>Hold and wait:must guarantee that whenever a process requests a resource, it does not hold any other resources.</li>
+<li>No preemption:<ul>
+<li>当一个进程（Process）已经持有了一些资源，并且它现在申请新的资源。如果这个新申请的资源不能立刻被满足,那么该进程当前持有的所有资源都会被强制释放</li>
+</ul>
+</li>
+<li>Circular Wait:<ul>
+<li>给每个资源赋予唯一的整数编号 $F(R)$,进程申请资源必须按照编号严格递增的顺序进行。如果你持有资源 $R_i$，你想申请 $R_j$，必须满足 $F(R_j) &gt; F(R_i)$</li>
+</ul>
+</li>
+</ul>
+<h3><span id="75-deadlock-avoidance">7.5 Deadlock Avoidance</span></h3><h4><span id="751-safe-state">7.5.1 Safe state</span></h4><ul>
+<li>安全状态是指系统的一种状态，在此状态开始系统能按某种顺序（如P1、P2……Pn）来为各个进程分配其所需资源，直至最大需求，使每个进程都可顺序地一个个地完成。这个序列（P1、P2…….Pn）称为安全序列。若系统此状态不存在一个安全序列，则称系统处于不安全状态。</li>
+<li>If a system is in safe state:no deadlocks.</li>
+<li>If a system is in unsafe state:possibility of deadlock.</li>
+<li>Avoidance:ensure that a system will never enter an unsafe state.</li>
+</ul>
+<h4><span id="752-resource-allocation-graph-algorithm">7.5.2 Resource-Allocation Graph Algorithm</span></h4><ul>
+<li>新的概念：需求边 (Claim Edge)为了进行预判，我们需要在标准的资源分配图中引入一种新的边：定义：$P_i \dashrightarrow R_j$ （虚线箭头）含义：表示进程 $P_i$ 在未来可能会申请资源 $R_j$。</li>
+<li>算法逻辑流程:<ul>
+<li>检查该请求边 ($P_i \to R_j$) 是否可以变为分配边 ($R_j \to P_i$)。前提是资源 $R_j$ 当前必须是空闲的</li>
+<li>试探性分配，修改图，再检测是否存在环(我们在检测环的时候，要把所有的需求边也考虑在内，当作实线来看待,这代表了“最坏情况”下的依赖关系)</li>
+<li>如果有环则系统处于不安全状态，拒绝分配。否则处于安全状态，正式分配资源给$P_i$</li>
+</ul>
+</li>
+</ul>
+<h4><span id="753-bankers-algorithm">7.5.3 Banker’s Algorithm</span></h4><ul>
+<li>四个关键数据结构,为了做出决策，操作系统需要维护以下数据：<ul>
+<li>Available（可利用资源向量）：系统中当前还剩下多少资源可用。例如：[3, 3, 2] 表示 A 类资源剩 3 个，B 类剩 3 个，C 类剩 2 个。</li>
+<li>Max（最大需求矩阵）：每个进程这辈子总共需要多少资源。这是进程启动前就声明好的“信用额度”。</li>
+<li>Allocation（分配矩阵）：每个进程目前已经手里拿着多少资源。</li>
+<li>Need（需求矩阵）：每个进程还需要多少资源才能完成任务。计算公式：Need &#x3D; Max - Allocation</li>
+</ul>
+</li>
+<li>算法主逻辑（资源请求算法）：<ul>
+<li>当进程 $P_i$ 发出资源请求向量 $Request_i$ 时：</li>
+<li>检查合法性：如果 $Request_i \le Need_i$，继续。否则，报错（请求超过了它声明的最大需求）。</li>
+<li>检查可用性：如果 $Request_i \le Available$，继续。否则，$P_i$ 等待（当前系统资源不足）。</li>
+<li>试探性分配 (Pretend to allocate)：修改系统状态，假设把资源分给它：$Available &#x3D; Available - Request_i$$Allocation_i &#x3D; Allocation_i + Request_i$$Need_i &#x3D; Need_i - Request_i$</li>
+<li>执行安全性检查 (Safety Algorithm)：如果结果为 Safe $\Rightarrow$ 正式分配资源。如果结果为 Unsafe $\Rightarrow$ $P_i$ 必须等待，系统恢复到原来的状态（Rollback）。</li>
+</ul>
+</li>
+<li>算法子逻辑即前面使用的安全性算法：<ul>
+<li>初始化工作向量：Work &#x3D; Available （表示当前可用于分配的资源副本）Finish &#x3D; 全为 false 的向量 （长度为 $n$，标记进程是否完成）</li>
+<li>寻找可执行进程：查找满足以下两个条件的下标 $i$：Finish[i] &#x3D;&#x3D; false （尚未完成）$Need_i \le Work$ （当前闲置资源足够满足该进程的需求）如果找不到这样的 $i$，跳转步骤 4。</li>
+<li>模拟进程执行与回收：Work &#x3D; Work + Allocation_i （进程完成，归还资源）Finish[i] &#x3D; true跳转回步骤 2。</li>
+<li>判断结果：如果所有 $i$ 的 Finish[i] 都为 true，则系统处于 安全状态 (Safe State)。否则，处于 不安全状态 (Unsafe State)。</li>
+</ul>
+</li>
+</ul>
+<h3><span id="76-deadlock-detection">7.6 Deadlock Detection</span></h3><h4><span id="761-single-instance-of-each-resource-type">7.6.1 Single Instance of Each Resource Type</span></h4><ul>
+<li>核心概念：等待图 (Wait-for Graph)等待图是资源分配图 (Resource-Allocation Graph) 的简化变形。节点 (Nodes)： 代表进程 ($P_i$)。边 (Edges)： $P_i \to P_j$ 表示 $P_i$ 正在等待被 $P_j$ 占用的资源。转换方法： 将资源分配图中“资源节点”去掉，直接将请求资源的进程指向持有资源的进程。</li>
+<li>检测算法规则： 系统定期调用算法在图中搜索环 (Cycle)。结论： 如果等待图中存在环，则系统存在死锁；环上的所有进程都是死锁进程。算法复杂度： $O(n^2)$，其中 $n$ 是顶点（进程）的数量。</li>
+</ul>
+<h4><span id="762-several-instances-of-a-resource-type">7.6.2 Several Instances of a Resource Type</span></h4><ul>
+<li>数据结构：<ul>
+<li>Available (向量 $m$)： 每种资源当前的空闲数量。</li>
+<li>Allocation (矩阵 $n \times m$)： 每个进程当前已持有的资源数量。</li>
+<li>Request (矩阵 $n \times m$)： 每个进程当前正在请求的资源数量。Request[i,j] &#x3D; k：进程 $P_i$ 正请求 $k$ 个 $R_j$ 资源。</li>
+</ul>
+</li>
+<li>检测流程：<ul>
+<li>初始化 (Initialization)：设置两个辅助向量 Work (长度 $m$) 和 Finish (长度 $n$)。</li>
+<li>寻找可满足的进程寻找一个下标 $i$，满足以下两个条件：Finish[i] &#x3D;&#x3D; false （尚未标记为完成）$Request_i \le Work$ （当前可用资源能满足它的请求）如果找不到这样的 $i$，跳转至步骤 4。</li>
+<li>模拟回收资源 假设该进程获得资源并运行结束：Work &#x3D; Work + Allocation[i] （回收它占用的资源）；Finish[i] &#x3D; true；跳转回步骤 2。</li>
+<li>判断死锁：如果存在某个i使得finishi[i] &#x3D;&#x3D; false，则系统处于死锁状态。</li>
+</ul>
+</li>
+</ul>
+<h2><span id="chapter-8-main-memory">Chapter 8: Main Memory</span></h2><h3><span id="81-background">8.1 Background</span></h3><h4><span id="地址绑定与重定位-address-binding">地址绑定与重定位 (Address Binding)</span></h4><ul>
+<li>即指令和数据如何绑定到具体的内存地址。这个过程可以在三个不同的阶段发生：<ul>
+<li>编译时 (Compile time):如果编译时就知道进程将驻留在内存的哪个位置，可以直接生成绝对代码 (Absolute code)。缺点: 如果起始地址发生变化，必须重新编译代码。</li>
+<li>加载时 (Load time):如果编译时不知道内存位置，编译器生成可重定位代码 (Relocatable code)。绑定推迟到加载时进行。</li>
+<li>执行时 (Execution time):如果进程在执行期间可以从一个内存段移动到另一个内存段，则绑定能延迟到运行时。要求: 需要特定的硬件支持（如基地址寄存器和界限寄存器）。现代通用操作系统大多采用这种方式。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="用户程序的处理流程">用户程序的处理流程</span></h4><ul>
+<li>源代码-编译器-目标代码-链接器-可执行文件-加载器-内存中的程序</li>
+</ul>
+<h4><span id="内存管理单元">内存管理单元</span></h4><ul>
+<li>MMU 是实现虚拟地址到物理地址映射的关键硬件设备。<ul>
+<li>核心机制: 在简单的 MMU 方案中，通过重定位寄存器 (Relocation Register) 来实现。</li>
+<li>计算方式: $物理地址 &#x3D; 逻辑地址 + 重定位寄存器的值$。当用户进程生成地址发送到内存时，硬件自动加上重定位寄存器的值</li>
+<li>重要概念: 用户程序只处理逻辑地址 (Logical Address)，永远看不到真实的物理地址。这提供了内存保护和抽象。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="动态加载和动态链接">动态加载和动态链接</span></h4><ul>
+<li>动态加载<ul>
+<li>只有在子程序被调用时才被加载到内存，所有程序以可重定位的形式存储在磁盘上。</li>
+</ul>
+</li>
+<li>动态链接<ul>
+<li>链接过程推迟到运行时。通常用于系统库</li>
+<li>技术层面：可执行文件中没有库函数的代码，只有一小段引用信息。真正的代码在程序运行时才由操作系统加载。</li>
+</ul>
+</li>
+<li>两者的区别：动态加载不需要操作系统而是由程序本身实现，它侧重于单个进程的内存优化。动态链接由操作系统负责，它侧重于多进程间的代码共享。</li>
+</ul>
+<h3><span id="82-swapping">8.2 Swapping</span></h3><ul>
+<li>定义: 进程可以暂时从内存中被<strong>换出（Swapped out）到备份存储中，随后再被换入（Brought back）</strong>内存继续执行。</li>
+<li>目的: 让物理内存能够承载比实际容量更多的并发进程。</li>
+</ul>
+<h3><span id="83-contiguous-allocation">8.3 Contiguous Allocation</span></h3><h4><span id="831-单一连续分配">8.3.1 单一连续分配</span></h4><ul>
+<li>内存布局:<ul>
+<li>内存被分为两个区域：驻留操作系统 (Resident OS): 通常放在低地址内存（Low memory），与中断向量表在一起。用户进程区: 放在高地址内存（High memory）。</li>
+<li>硬件保护 (Hardware Protection):<ul>
+<li>为了防止用户进程修改操作系统或其他进程的代码&#x2F;数据，需要硬件支持。</li>
+<li>重定位寄存器 (Relocation&#x2F;Base Register): 存放最小的物理地址值（基地址）。</li>
+<li>界限寄存器 (Limit Register): 存放逻辑地址的范围值（长度）。</li>
+<li>检查机制: 逻辑地址必须小于界限寄存器值，然后加上重定位寄存器值得到物理地</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4><span id="832-multiple-parttion-allocation">8.3.2 Multiple-parttion Allocation</span></h4><ul>
+<li>内存被划分为多个区域，每个分区容纳一个进程。</li>
+</ul>
+<h5><span id="固定分区">固定分区</span></h5><ul>
+<li>原理: 系统启动时将内存划分为若干个固定大小的分区（大小可以相等也可以不等）。</li>
+<li>缺点: 灵活性差，容易产生内部碎片（分区很大，进程很小，浪费了分区内的空间）。</li>
+</ul>
+<h5><span id="动态分区">动态分区</span></h5><ul>
+<li>管理: 操作系统必须维护两个表&#x2F;链表：<ul>
+<li>已分配分区表: 记录被占用的内存。</li>
+<li>空闲分区表 (Free partitions &#x2F; Holes): 记录可用的内存孔洞。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="833-动态分区算法">8.3.3 动态分区算法</span></h4><ul>
+<li>背景：当有一个大小为n的进程申请内存时，如何从空闲空洞列表中选择。</li>
+<li>First-Fit：从头开始查找，找到第一个足够大的孔洞就分配。</li>
+<li>Netx-Fit：类似于首次适应，但不是每次都从头找，而是从上次查找结束的位置开始继续往后找</li>
+<li>Best-Fit：搜索整个列表，找到最小的且适合这个进程的孔洞。</li>
+<li>Worst-Fit：搜索整个列表，找到最大的孔洞。</li>
+<li>速度与利用率: 在速度和存储利用率方面，First-fit (首次适应) 和 Best-fit (最佳适应) 通常优于 Worst-fit (最差适应)。</li>
+</ul>
+<h4><span id="834-碎片">8.3.4 碎片</span></h4><ul>
+<li>碎片的分类<ul>
+<li>内部碎片：分配给进程的内存块比进程实际需要的稍大。浪费发生在已分配的内存块内部。</li>
+<li>外部碎片：系统中总的空闲内存足够满足新的请求，但这些空闲内存不连续，分散在各处，导致无法分配。</li>
+</ul>
+</li>
+<li>外部碎片的解决方法：紧缩（compaction）<ul>
+<li>移动内存中正在运行的进程，将所有分散的小空闲块“挤”到一起，合并成一个大的空闲块。</li>
+<li>必须支持动态重定位 (Dynamic Relocation): 地址绑定必须在执行时 (Execution time) 进行。</li>
+<li>代价昂贵：紧缩需要大量的CPU时间复制内存数据。</li>
+</ul>
+</li>
+</ul>
+<h3><span id="84-paging">8.4 Paging</span></h3><h4><span id="implementation-of-page-table">Implementation of Page Table</span></h4><h5><span id="effective-access-time-eat">Effective Access Time (EAT)</span></h5><p><strong>1. Without TLB (Translation Lookaside Buffer):</strong></p>
+<p>每次数据&#x2F;指令访问需要 <strong>2次</strong> 内存访问：</p>
+<ol>
+<li>访问页表 (Page Table) 获取物理帧号。</li>
+<li>访问实际物理地址获取数据。</li>
+</ol>
+<blockquote>
+<p><strong>Example:</strong><br>If a memory reference takes <strong>50 nanoseconds</strong>:<br>Paged memory reference time &#x3D; 50ns (page table) + 50ns (data) &#x3D; <strong>100 nanoseconds</strong>.<br>性能降低了 100% (慢了一倍)。</p>
+</blockquote>
+<p><strong>2. With TLB:</strong></p>
+<p>为了解决上述速度问题，引入了 **TLB (快表)**。</p>
+<ul>
+<li>Associative Lookup &#x3D; $\epsilon$ time unit （快表访问时间）</li>
+<li>Assume memory cycle time is $t$ （内存访问时间）</li>
+<li>Hit ratio &#x3D; $\alpha$ （命中率）</li>
+<li><strong>Effective Access Time (EAT)</strong>:<br>$$ \text{EAT} &#x3D; (t + \epsilon)\alpha + (2t + \epsilon)(1 - \alpha) $$<ul>
+<li><strong>Hit</strong>: TLB lookup ($\epsilon$) + Memory access ($t$)</li>
+<li><strong>Miss</strong>: TLB lookup ($\epsilon$) + Page table access ($t$) + Memory access ($t$)</li>
+</ul>
+</li>
+</ul>
+<h4><span id="structure-of-the-page-table">Structure of the Page Table</span></h4><h5><span id="hierarchical-page-table">Hierarchical Page Table</span></h5><h5><span id="hashed-page-table">Hashed Page Table</span></h5><h5><span id="inverted-page-table">Inverted Page Table</span></h5><p>通常每个进程都有一个页表，页表项的数量取决于虚拟地址空间的大小。对于 64 位系统，虚拟地址空间非常大，导致页表占用大量内存。</p>
+<p><strong>反向页表 (Inverted Page Table)</strong> 的设计思路是：</p>
+<ul>
+<li><strong>全局唯一</strong>：整个系统只有一个页表。</li>
+<li><strong>基于物理内存</strong>：页表项的数量等于物理内存帧 (Frame) 的数量，而不是虚拟页面的数量。</li>
+<li><strong>表项内容</strong>：每个表项包含：<ul>
+<li>存储在该物理帧中的虚拟页号 (Virtual Page Number)。</li>
+<li>拥有该页面的进程 ID (Process ID, pid)。</li>
+</ul>
+</li>
+</ul>
+<p><strong>地址转换过程</strong>：</p>
+<ol>
+<li>虚拟地址包含 <code>&lt;pid, page_number, offset&gt;</code>。</li>
+<li>系统在反向页表中搜索匹配 <code>&lt;pid, page_number&gt;</code> 的表项。</li>
+<li>如果找到匹配项位于索引 <code>i</code>，则物理地址为 <code>&lt;frame_i, offset&gt;</code>。</li>
+<li>如果未找到，则发生非法访问。</li>
+</ol>
+<p><strong>优缺点</strong>：</p>
+<ul>
+<li><strong>优点</strong>：大幅减少了页表占用的内存空间（只与物理内存大小有关）。</li>
+<li><strong>缺点</strong>：查找速度慢（最坏情况需要遍历整个表）。通常配合 <strong>哈希表 (Hash Table)</strong> 来加速查找。共享内存实现较困难。</li>
+</ul>
+<h3><span id="85-segmentation">8.5 Segmentation</span></h3><h2><span id="chapter-9-virtual-memory">Chapter 9: Virtual Memory</span></h2><h3><span id="91-background">9.1 Background</span></h3><h3><span id="92-demand-paging">9.2 Demand Paging</span></h3><ul>
+<li>如果这个页需要并且不在内存中，才从磁盘调入内存，这种方式称为需求分页 (Demand Paging)。</li>
+</ul>
+<h4><span id="page-fault">Page Fault</span></h4><ol>
+<li>如果有对一个页的访问，第一次访问要陷入OS缺页，检查进程的页表，以确定该引用是合法还是非法的地址访问。</li>
+<li>如果引用非法，那么终止进程。如果引用有效但是尚未调入页面，那么现在应调入。</li>
+<li>找到一个空闲帧（从空闲帧链表中取一个）：如果没有空闲帧时，就需要使用页置换。</li>
+<li>调度磁盘操作，以便将所需要的页调入刚分配的帧</li>
+<li>当磁盘读操作完成后，修改进程的内部表和页表，以表示该页已在内存中。</li>
+<li>重新开始因非法地址陷阱而中断的指令。进程现在能访问所需的页，就好像它似乎总在内存中。</li>
+<li>Three major components of the page-fault service time<br>  Service the page-fault interrupt(缺页中断服务时间)<br>  Read in the page(将缺页读入时间)<br>  Restart the process(重新启动进程时间)</li>
+</ol>
+<h3><span id="93-process-creation">9.3 Process Creation</span></h3><h4><span id="copy-on-write">Copy-on-Write</span></h4><p>Copy-on-Write (COW) 是一种优化策略，用于在 <code>fork()</code> 系统调用时减少开销。</p>
+<ul>
+<li><p><strong>基本原理</strong>：</p>
+<ul>
+<li>传统的 <code>fork()</code> 会创建子进程并完整复制父进程的地址空间（代码段、数据段、堆栈等），这非常耗时且浪费内存。</li>
+<li>使用 COW 技术，<code>fork()</code> 之后，父子进程<strong>共享</strong>相同的物理内存页面，而不是立即复制。</li>
+<li>这些共享页面被标记为**只读 (read-only)**。</li>
+</ul>
+</li>
+<li><p><strong>写时复制过程</strong>：</p>
+<ul>
+<li>如果父进程或子进程只是读取页面，它们继续共享物理内存。</li>
+<li>当任一进程尝试<strong>修改 (write)</strong> 共享页面时，硬件会触发一个保护故障（trap）。</li>
+<li>操作系统捕获该故障，分配一个新的物理帧，将该页面的内容复制到新帧中。</li>
+<li>更新执行写操作进程的页表，使其指向新的物理帧，并将页面标记为**可读写 (read-write)**。</li>
+<li>此时，两个进程各自拥有该页面的私有副本，互不干扰。</li>
+</ul>
+</li>
+<li><p><strong>优点</strong>：</p>
+<ul>
+<li><strong>效率高</strong>：<code>fork()</code> 速度极快，因为只需复制页表，不需要复制大量数据。</li>
+<li><strong>节省内存</strong>：如果子进程（如紧接着调用 <code>exec()</code>）不修改数据，就永远不需要复制物理页面。</li>
+</ul>
+</li>
+<li><p>**vfork()**：</p>
+<ul>
+<li>在 COW 出现之前，为了优化 <code>fork()</code> 后立即 <code>exec()</code> 的场景，引入了 <code>vfork()</code>。</li>
+<li><code>vfork()</code> 不复制页表，子进程直接在父进程的地址空间运行，父进程被挂起直到子进程调用 <code>exec()</code> 或 <code>exit()</code>。</li>
+<li>随着 COW 的普及，<code>vfork()</code> 的优势已不明显，且容易出错（子进程修改变量会影响父进程）。</li>
+</ul>
+</li>
+</ul>
+<h3><span id="94-page-replacement">9.4 Page Replacement</span></h3><h4><span id="1-概念与需求">1. 概念与需求</span></h4><p>在进程运行过程中，如果发生缺页 (Page Fault)，此时内存中又无空闲块 (Free Frame) 时，为了保证进程能正常运行，就必须从内存中调出一页程序或数据送磁盘的交换区。</p>
+<ul>
+<li><strong>功能</strong>：需要调入页时，选择内存中哪个页被置换。这称为 **置换策略 (Replacement Policy)**。</li>
+<li><strong>出发点</strong>：把未来不再使用的或短期内较少使用的页调出，通常只能在局部性原理指导下依据过去的统计数据进行预测。</li>
+<li><strong>目标</strong>：从理论上讲，应将那些以后不再被访问的页换出，或把那些在较长时间内不会再被访问的页换出。</li>
+</ul>
+<h4><span id="2-basic-page-replacement-基本页面置换过程">2. Basic Page Replacement (基本页面置换过程)</span></h4><ol>
+<li>找到需要的页在磁盘上的位置。</li>
+<li>找到一个空闲帧 (Find a free frame):<br>a. 如果有一个空闲帧，使用它。<br>b. 如果没有空闲帧，使用 <strong>页面置换算法</strong> 选择一个 **牺牲帧 (victim frame)**。<br>c. 将牺牲帧的内容写入磁盘（如果它被修改过），并修改页表和帧表。</li>
+<li>将需要的页读入到 (最新腾出的) 空闲帧中。更新页表和帧表。</li>
+<li>重启进程 (Restart process)。</li>
+</ol>
+<h4><span id="3-优化与评估">3. 优化与评估</span></h4><ul>
+<li><p><strong>Modify Bit (Dirty Bit)</strong>:</p>
+<ul>
+<li>为了减少开销，使用修改位 (modify bit &#x2F; dirty bit)。</li>
+<li>只有被修改过的页面 (modified pages) 才需要写回磁盘。如果页面未被修改，直接丢弃即可（因为磁盘上已有副本）。</li>
+<li>页面置换完成了逻辑内存与物理内存的分离，使得可以在较小的物理内存上提供巨大的虚拟内存。</li>
+</ul>
+</li>
+<li><p><strong>算法评估 (Algorithm Evaluation)</strong>:</p>
+<ul>
+<li><strong>目标</strong>：最低的缺页率 (lowest page-fault rate)。</li>
+<li><strong>方法</strong>：在特定的 <strong>引用串 (reference string)</strong> 上运行算法，计算缺页次数。</li>
+<li><strong>引用串示例</strong>：<code>1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5</code></li>
+</ul>
+</li>
+</ul>
+<h4><span id="4页面置换算法">4.页面置换算法</span></h4><p>页面置换算法用于选择哪个页面被置换出内存。好的算法应尽可能减少缺页率。以下是常见的页面置换算法。</p>
+<h5><span id="1-fifo-page-replacement-先进先出">1. FIFO Page Replacement (先进先出)</span></h5><ul>
+<li><p><strong>描述</strong>：选择最早进入内存的页面进行置换。维护一个队列，新页面加入队尾，置换队头页面。</p>
+</li>
+<li><p><strong>优点</strong>：简单，易于实现。</p>
+</li>
+<li><p><strong>缺点</strong>：可能置换频繁使用的页面（Belady 异常：增加帧数可能增加缺页率）。</p>
+</li>
+<li><p><strong>例子</strong>：引用串 <code>1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5</code>，3 帧。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs text">引用 | 帧内容          | 缺页?<br>1     | 1               | 是<br>2     | 1 2             | 是<br>3     | 1 2 3           | 是<br>4     | 2 3 4           | 是 (置换 1)<br>1     | 3 4 1           | 是 (置换 2)<br>2     | 4 1 2           | 是 (置换 3)<br>5     | 1 2 5           | 是 (置换 4)<br>1     | 2 5 1           | 是 (置换 2)<br>2     | 5 1 2           | 是 (置换 5)<br>3     | 1 2 3           | 是 (置换 1)<br>4     | 2 3 4           | 是 (置换 2)<br>5     | 3 4 5           | 是 (置换 3)<br>总缺页数: 12<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h5><span id="2-optimal-page-replacement-最优置换">2. Optimal Page Replacement (最优置换)</span></h5><ul>
+<li><p><strong>描述</strong>：选择未来最长时间不会被访问的页面进行置换。需要预知未来引用串。</p>
+</li>
+<li><p><strong>优点</strong>：缺页率最低，理论最优。</p>
+</li>
+<li><p><strong>缺点</strong>：无法实现（需要预知未来），仅用于比较其他算法。</p>
+</li>
+<li><p><strong>例子</strong>：同上引用串，3 帧。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs text">引用 | 帧内容          | 缺页?<br>1     | 1               | 是<br>2     | 1 2             | 是<br>3     | 1 2 3           | 是<br>4     | 1 2 4           | 是 (置换 3, 3 下次在 10)<br>1     | 1 2 4           | 否<br>2     | 1 2 4           | 否<br>5     | 1 2 5           | 是 (置换 4, 4 下次在 11)<br>1     | 1 2 5           | 否<br>2     | 1 2 5           | 否<br>3     | 1 2 3           | 是 (置换 5, 5 下次在 12)<br>4     | 1 4 3           | 是 (置换 2, 2 已无未来)<br>5     | 5 4 3           | 是 (置换 1, 1 已无未来)<br>总缺页数: 7<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h5><span id="3-lru-page-replacement-最近最少使用">3. LRU Page Replacement (最近最少使用)</span></h5><ul>
+<li><p><strong>描述</strong>：选择最长时间未被访问的页面进行置换。基于局部性原理。</p>
+</li>
+<li><p><strong>优点</strong>：性能好，近似最优。</p>
+</li>
+<li><p><strong>缺点</strong>：实现复杂，需要硬件支持（如栈或时间戳）。</p>
+</li>
+<li><p><strong>例子</strong>：同上引用串，3 帧。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs text">引用 | 帧内容          | 缺页?<br>1     | 1               | 是<br>2     | 1 2             | 是<br>3     | 1 2 3           | 是<br>4     | 2 3 4           | 是 (置换 1, 1 最久未用)<br>1     | 3 4 1           | 是 (置换 2, 2 最久未用)<br>2     | 4 1 2           | 是 (置换 3, 3 最久未用)<br>5     | 1 2 5           | 是 (置换 4, 4 最久未用)<br>1     | 2 5 1           | 否 (1 最近使用)<br>2     | 5 1 2           | 否 (2 最近使用)<br>3     | 1 2 3           | 是 (置换 5, 5 最久未用)<br>4     | 2 3 4           | 是 (置换 1, 1 最久未用)<br>5     | 3 4 5           | 是 (置换 2, 2 最久未用)<br>总缺页数: 10<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h5><span id="4-clock-page-replacement-时钟算法">4. Clock Page Replacement (时钟算法)</span></h5><ul>
+<li><strong>描述</strong>：改进的 FIFO，使用访问位。页面形成环形，指针扫描，置换访问位为 0 的页面。</li>
+<li><strong>优点</strong>：简单，性能接近 LRU。</li>
+<li><strong>缺点</strong>：仍可能置换有用页面。</li>
+<li><strong>步骤</strong>：<ol>
+<li>扫描，访问位为 1 设为 0，继续。</li>
+<li>找到访问位为 0 的页面置换。</li>
+</ol>
+</li>
+</ul>
+<h5><span id="算法比较">算法比较</span></h5><table>
+<thead>
+<tr>
+<th>算法</th>
+<th>优点</th>
+<th>缺点</th>
+<th>缺页率 (示例)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FIFO</td>
+<td>简单</td>
+<td>Belady 异常</td>
+<td>高</td>
+</tr>
+<tr>
+<td>OPT</td>
+<td>最优</td>
+<td>不可实现</td>
+<td>最低</td>
+</tr>
+<tr>
+<td>LRU</td>
+<td>性能好</td>
+<td>复杂</td>
+<td>中等</td>
+</tr>
+<tr>
+<td>Clock</td>
+<td>平衡</td>
+<td>近似 LRU</td>
+<td>中等</td>
+</tr>
+</tbody></table>
+<h5><span id="5-附加引用算法-additional-reference-bits-algorithm">5. 附加引用算法 (Additional Reference Bits Algorithm)</span></h5><ul>
+<li><strong>描述</strong>：在 Clock 算法基础上，为每个页面维护一个 8 位引用计数器。每当页面被访问时，最高位设为 1，其他位右移。选择计数器值最小的页面置换。</li>
+<li><strong>优点</strong>：近似 LRU，考虑近期访问历史。</li>
+<li><strong>缺点</strong>：实现复杂，需要计数器。</li>
+<li><strong>例子</strong>：页面访问时更新计数器，选择最小值置换。</li>
+</ul>
+<h5><span id="6-二次机会算法-second-chance-algorithm">6. 二次机会算法 (Second Chance Algorithm)</span></h5><ul>
+<li><strong>描述</strong>：Clock 算法的别名。页面形成环形队列，指针扫描。如果页面访问位为 1，清零并继续；为 0 则置换。</li>
+<li><strong>优点</strong>：简单，改进 FIFO，避免置换有用页面。</li>
+<li><strong>缺点</strong>：仍可能不准确。</li>
+<li><strong>步骤</strong>：<ol>
+<li>检查当前页面访问位。</li>
+<li>如果 1，清零，继续下一个。</li>
+<li>如果 0，置换。</li>
+</ol>
+</li>
+</ul>
+<h5><span id="7-计数算法-counting-based-algorithms">7. 计数算法 (Counting-Based Algorithms)</span></h5><p>计数算法使用访问计数器跟踪页面使用频率。</p>
+<ul>
+<li><p>**LFU (Least Frequently Used)**：</p>
+<ul>
+<li><strong>描述</strong>：选择访问次数最少的页面置换。维护每个页面的访问计数器。</li>
+<li><strong>优点</strong>：基于长期使用频率，避免短期突发。</li>
+<li><strong>缺点</strong>：可能保留旧页面，新页面难以进入；实现开销大。</li>
+<li><strong>例子</strong>：页面 A 访问 10 次，B 访问 5 次，置换 B。</li>
+</ul>
+</li>
+<li><p>**MFU (Most Frequently Used)**：</p>
+<ul>
+<li><strong>描述</strong>：选择访问次数最多的页面置换。假设频繁使用的页面近期不会再用。</li>
+<li><strong>优点</strong>：适合某些工作负载。</li>
+<li><strong>缺点</strong>：反直觉，可能置换有用页面；不如 LFU 常用。</li>
+<li><strong>例子</strong>：页面 A 访问 10 次，B 访问 5 次，置换 A。</li>
+</ul>
+</li>
+</ul>
+<h3><span id="95-allocation-of-frames">9.5 Allocation of frames</span></h3><p>帧分配决定如何将物理内存帧分配给进程。主要考虑公平性和效率。</p>
+<h4><span id="1-固定分配-vs-动态分配">1. 固定分配 vs. 动态分配</span></h4><ul>
+<li><p>**固定分配 (Fixed Allocation)**：</p>
+<ul>
+<li>每个进程分配固定数量的帧。</li>
+<li><strong>优点</strong>：简单，易管理。</li>
+<li><strong>缺点</strong>：不灵活，可能浪费或不足。</li>
+</ul>
+</li>
+<li><p>**动态分配 (Dynamic Allocation)**：</p>
+<ul>
+<li>根据进程需要动态调整帧数。</li>
+<li><strong>优点</strong>：灵活，提高利用率。</li>
+<li><strong>缺点</strong>：复杂，可能导致颠簸。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="2-局部置换-vs-全局置换">2. 局部置换 vs. 全局置换</span></h4><ul>
+<li><p>**局部置换 (Local Replacement)**：</p>
+<ul>
+<li>进程只能置换自己的帧。</li>
+<li><strong>优点</strong>：保护进程间干扰。</li>
+<li><strong>缺点</strong>：可能低效。</li>
+</ul>
+</li>
+<li><p>**全局置换 (Global Replacement)**：</p>
+<ul>
+<li>进程可以置换任何帧。</li>
+<li><strong>优点</strong>：灵活，高利用率。</li>
+<li><strong>缺点</strong>：可能影响其他进程。</li>
+</ul>
+</li>
+</ul>
+<h4><span id="3-分配算法">3. 分配算法</span></h4><ul>
+<li>**相等分配 (Equal Allocation)**：每个进程分配相同帧数。</li>
+<li>**比例分配 (Proportional Allocation)**：根据进程大小比例分配。</li>
+<li>**优先级分配 (Priority Allocation)**：高优先级进程分配更多帧。</li>
+</ul>
+<h4><span id="4-工作集模型-working-set-model">4. 工作集模型 (Working Set Model)</span></h4><ul>
+<li><strong>定义</strong>：工作集是进程近期访问的页面集合。</li>
+<li><strong>分配</strong>：根据工作集大小分配帧，避免颠簸。</li>
+<li><strong>优点</strong>：适应进程行为。</li>
+</ul>
+<h4><span id="5-缺页频率-page-fault-frequency">5. 缺页频率 (Page-Fault Frequency)</span></h4><ul>
+<li><strong>机制</strong>：根据缺页率调整帧数。</li>
+<li><strong>上界和下界</strong>：缺页率过高增加帧，过低减少帧。</li>
+</ul>
+<h3><span id="96-thrashing">9.6 Thrashing</span></h3><ul>
+<li>Thrashing  a process is busy swapping pages in and out.</li>
+</ul>
+<h2><span id="chapter-10-file-system-interface">Chapter 10: File-System Interface</span></h2><h3><span id="101-file-concept">10.1 File Concept</span></h3><p>文件是存储在某种介质上（如磁盘、光盘、SSD等）并具有文件名的一组相关信息的集合。</p>
+<h4><span id="file-attributes">File Attributes</span></h4><p>文件属性是操作系统用来管理文件的关键信息。以下是常见的文件属性：</p>
+<ul>
+<li><strong>Name</strong>: 唯一的人类可读标识符，用于标识文件。</li>
+<li><strong>Identifier</strong>: 文件系统内部的唯一数字标签，用于系统识别。</li>
+<li><strong>Type</strong>: 文件类型（如文本、图像等），用于支持不同类型的文件系统。</li>
+<li><strong>Location</strong>: 文件在设备上的位置指针。</li>
+<li><strong>Size</strong>: 文件的当前大小（以字节为单位）。</li>
+<li><strong>Protection</strong>: 访问控制信息，决定谁可以读取、写入或执行文件。</li>
+<li><strong>Time, date, and user identification</strong>: 时间戳和用户标识，用于保护、安全和使用监控。</li>
+</ul>
+<p>这些属性信息通常存储在目录结构中，并保存在磁盘上。</p>
+<h4><span id="file-operations">File Operations</span></h4><p>（待补充：常见的文件操作如创建、打开、读取、写入、关闭等）</p>
+<h4><span id="file-types">File Types</span></h4><p>从操作系统角度，文件可以根据其性质和用途进行分类，主要包括：</p>
+<ul>
+<li><strong>普通文件 (Regular Files)</strong>: 包含数据或程序的普通文件，如文本文件、二进制可执行文件等。</li>
+<li><strong>目录文件 (Directories)</strong>: 包含其他文件和目录信息的文件，用于组织文件系统结构。</li>
+<li><strong>特殊文件 (Special Files)</strong>:<ul>
+<li>字符设备文件 (Character Device Files): 如终端、打印机等，按字符流访问。</li>
+<li>块设备文件 (Block Device Files): 如磁盘，按块访问。</li>
+<li>管道文件 (Pipes&#x2F;FIFOs): 用于进程间通信。</li>
+<li>套接字文件 (Sockets): 用于网络通信。</li>
+<li>符号链接 (Symbolic Links): 指向其他文件的指针。</li>
+</ul>
+</li>
+</ul>
+<p>从用户角度，使用文件扩展名分类文件。</p>
+<h4><span id="file-structure">File Structure</span></h4><ul>
+<li><strong>None (流文件结构)</strong>: 序列化的字或字节，无结构。</li>
+<li><strong>Simple record structure (记录文件结构)</strong>: 固定长度或可变长度的记录。</li>
+<li><strong>复杂结构</strong>: 如树状或数据库结构。</li>
+</ul>
+<h3><span id="102-access-methods">10.2 Access Methods</span></h3><ul>
+<li><strong>顺序访问 (Sequential Access)</strong>: 文件按顺序从头到尾访问。</li>
+<li><strong>直接存取 (Direct Access)</strong>: 可以随机访问文件中的任意位置。</li>
+</ul>
+<h3><span id="103-directory-structure">10.3 Directory Structure</span></h3><p>目录结构是文件系统中用于组织和管理文件的层次结构。它包含了所有文件的相关信息，并与文件一起存储在磁盘上。目录结构的备份通常保存在磁带上。</p>
+<h4><span id="目录的概念">目录的概念</span></h4><ul>
+<li>目录是一个节点集合，包含所有文件的相关信息。</li>
+<li>目录和文件都驻留在磁盘上。</li>
+</ul>
+<h4><span id="磁盘结构">磁盘结构</span></h4><ul>
+<li>磁盘可以划分为分区（partitions）。</li>
+<li>分区可以是RAID保护的，以防止故障。</li>
+<li>分区可以是原始的（无文件系统）或格式化为文件系统。</li>
+<li>包含文件系统的实体称为卷（volume）。</li>
+<li>每个卷跟踪文件系统信息在设备目录或卷目录中。</li>
+<li>除了通用文件系统，还有许多专用文件系统。</li>
+</ul>
+<h4><span id="目录操作">目录操作</span></h4><p>目录支持以下操作：</p>
+<ul>
+<li>搜索文件</li>
+<li>创建文件</li>
+<li>删除文件</li>
+<li>列出目录</li>
+<li>重命名文件</li>
+<li>遍历文件系统</li>
+</ul>
+<h4><span id="目录组织方式">目录组织方式</span></h4><p>目录组织的目标包括：</p>
+<ul>
+<li><strong>效率</strong>: 快速定位文件。</li>
+<li><strong>命名</strong>: 方便用户，避免重名问题（不同用户可有相同文件名，同一文件可有多个名称）。</li>
+<li><strong>分组</strong>: 根据属性逻辑分组文件（如所有Java程序、游戏等）。</li>
+</ul>
+<h5><span id="单级目录-single-level-directory">单级目录 (Single-Level Directory)</span></h5><ul>
+<li>所有用户共享一个目录。</li>
+<li>存在命名冲突和分组问题。</li>
+</ul>
+<h5><span id="二级目录-two-level-directory">二级目录 (Two-Level Directory)</span></h5><ul>
+<li>每个用户有单独的目录。</li>
+<li>支持路径名。</li>
+<li>允许不同用户有相同文件名。</li>
+<li>搜索高效，但缺乏分组能力。</li>
+</ul>
+<h5><span id="树型目录-tree-structured-directories">树型目录 (Tree-Structured Directories)</span></h5><ul>
+<li>高效搜索。</li>
+<li>支持分组。</li>
+<li>有当前目录（工作目录）概念。</li>
+<li>支持绝对路径和相对路径。</li>
+<li>创建&#x2F;删除文件和子目录在当前目录中。</li>
+<li>删除目录会删除整个子树。</li>
+</ul>
+<h5><span id="无环图目录-acyclic-graph-directories">无环图目录 (Acyclic-Graph Directories)</span></h5><ul>
+<li>允许共享子目录和文件（硬链接）。</li>
+<li>支持别名（多个名称指向同一文件）。</li>
+<li>删除时可能导致悬空指针。</li>
+<li>解决方案：逆向指针、菊花链组织、表项保留计数（Unix&#x2F;Linux中的硬链接）。</li>
+</ul>
+<h5><span id="普通图目录-general-graph-directory">普通图目录 (General Graph Directory)</span></h5><ul>
+<li>允许更复杂的链接。</li>
+<li>可能形成环。</li>
+<li>保证无环的方法：只允许链接到文件而非子目录、使用垃圾回收、每次添加链接时运行环检测算法。</li>
+<li>快捷方式和符号链接可能形成环。</li>
+</ul>
+<h3><span id="104-file-system-mounting">10.4 File System Mounting</span></h3><p>文件系统挂载（Mounting）是将一个文件系统附加到现有目录树中的过程，使得该文件系统上的文件和目录可以被访问。</p>
+<h4><span id="挂载的概念">挂载的概念</span></h4><ul>
+<li><strong>挂载点 (Mount Point)</strong>: 目录树中的一个目录，用于挂载文件系统。</li>
+<li><strong>挂载 (Mount)</strong>: 将设备（如磁盘分区、USB驱动器）上的文件系统连接到挂载点。</li>
+<li><strong>卸载 (Unmount)</strong>: 断开文件系统与挂载点的连接。</li>
+</ul>
+<h4><span id="挂载的目的">挂载的目的</span></h4><ul>
+<li>允许操作系统访问不同存储设备上的文件系统。</li>
+<li>提供统一的目录视图，无论文件存储在哪个物理设备上。</li>
+</ul>
+<h4><span id="示例">示例</span></h4><p>在Linux中，使用 <code>mount</code> 命令挂载文件系统：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">mount /dev/sdb1 /mnt<br></code></pre></td></tr></table></figure>
+
+<p>这将 <code>/dev/sdb1</code> 分区挂载到 <code>/mnt</code> 目录。</p>
+<h3><span id="105-file-sharing">10.5 File Sharing</span></h3><p>（待补充：文件共享机制，如多用户访问、权限控制等）</p>
+<h3><span id="106-protection">10.6 Protection</span></h3><p>（待补充：文件保护机制，如访问控制列表、权限位等）</p>
+<h2><span id="chapter-11-file-system-implementation">Chapter 11: File System Implementation</span></h2><p>（重要章节: 11.4, 11.5）</p>
+<h3><span id="111-file-system-structure">11.1 File-System Structure</span></h3><p>文件系统采用分层设计：</p>
+<ul>
+<li>最顶层为应用程序</li>
+<li>逻辑文件系统：通过文件控制块维护文件结构（内存）</li>
+<li>文件组织模块（外存）</li>
+<li>基本文件系统：向合适的设备驱动程序发送一般命令就可对磁盘上的物理块进行读写</li>
+<li>I&#x2F;O控制</li>
+</ul>
+<h4><span id="file-system-types">File System Types</span></h4><p>文件系统类型多种多样，根据操作系统和用途而异。以下是常见的文件系统类型：</p>
+<ul>
+<li><strong>FAT (File Allocation Table)</strong>: 简单、兼容性好，用于USB驱动器和早期Windows系统。支持文件大小有限（最大4GB）。</li>
+<li><strong>NTFS (New Technology File System)</strong>: Windows现代文件系统，支持大文件、权限控制、加密和压缩。</li>
+<li><strong>ext4 (Fourth Extended File System)</strong>: Linux主流文件系统，支持大容量、日志记录和性能优化。</li>
+<li><strong>APFS (Apple File System)</strong>: macOS文件系统，支持快照、加密和空间共享。</li>
+<li><strong>ZFS (Zettabyte File System)</strong>: 高可靠性文件系统，支持RAID、快照和数据完整性检查，常用于服务器。</li>
+<li><strong>Btrfs (B-Tree File System)</strong>: Linux文件系统，支持快照、子卷和动态调整。</li>
+<li><strong>HFS+ (Hierarchical File System Plus)</strong>: 旧版macOS文件系统，现被APFS取代。</li>
+</ul>
+<h4><span id="in-memory-file-system-structures">In-Memory File System Structures</span></h4><p>内存中的文件系统结构用于运行时管理，提高性能。这些结构包括：</p>
+<ul>
+<li><strong>In-Memory Partition Table (分区表)</strong>: 记录磁盘分区的映射信息，帮助操作系统快速定位文件系统位置。</li>
+<li><strong>In-Memory Directory Structure (目录结构)</strong>: 缓存目录项的副本，用于快速解析路径和查找文件，避免每次从磁盘读取。</li>
+<li><strong>System-Wide Open-File Table (系统打开文件表)</strong>: 全局表，记录所有打开文件的元数据，如文件指针、访问模式和引用计数。确保文件一致性。</li>
+<li><strong>Per-Process Open-File Table (进程打开文件表)</strong>: 每个进程的私有表，指向系统表的条目，支持进程级文件描述符管理。</li>
+</ul>
+<p>这些结构通过缓存减少I&#x2F;O操作，提升文件访问速度。示例：Linux VFS (Virtual File System) 抽象了不同文件系统的接口，实现统一访问。</p>
+<h3><span id="113-directory-implementation">11.3 Directory Implementation</span></h3><h3><span id="114-allocation-methods">11.4 Allocation Methods</span></h3><p>文件系统中的分配方法决定如何在磁盘上为文件分配物理块。常见方法包括连续分配、链接分配和索引分配。</p>
+<h4><span id="contiguous-allocation">Contiguous Allocation</span></h4><ul>
+<li><strong>描述</strong>: 每个文件占据磁盘上的一组连续的物理块。只需记录文件的起始块号和长度。</li>
+<li><strong>优点</strong>:<ul>
+<li>简单实现。</li>
+<li>访问文件容易，寻道时间最少（顺序访问高效）。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>:<ul>
+<li>为新文件找连续空间困难（类似内存的连续分配）。</li>
+<li>文件增长困难（需预留空间或移动文件）。</li>
+</ul>
+</li>
+<li><strong>应用</strong>: CP&#x2F;M、一些嵌入式文件系统。</li>
+</ul>
+<h4><span id="linked-allocation">Linked Allocation</span></h4><ul>
+<li><strong>描述</strong>: 每个文件是磁盘块的链表，块可分布在磁盘任何地方。使用指针链接块。</li>
+<li><strong>优点</strong>:<ul>
+<li>简单，只需起始位置。</li>
+<li>文件创建和增长容易，无需连续空间。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>:<ul>
+<li>不能随机访问（也就是说不能像contiguous allocation一样随机访问文件的某个块），必须遍历链表。</li>
+<li>指针占用空间（每个块需存储指针）。</li>
+<li>可靠性低（指针损坏会导致文件丢失）。</li>
+</ul>
+</li>
+<li><strong>改进</strong>: 使用簇（Cluster，将多个块组合），减少指针开销，提高访问效率。如Windows FAT。</li>
+<li><strong>应用</strong>: FAT文件系统家族、部分Unix File System (UFS)。</li>
+</ul>
+<h5><span id="fat-file-allocation-table">FAT (File Allocation Table)</span></h5><p>FAT是FAT32最关键的数据结构，用于管理磁盘空间分配和文件链。以下是关键点：</p>
+<ul>
+<li><strong>位置</strong>: 位于保留区之后，通常有两个副本（FAT1和FAT2）以防损坏。FAT从卷的第N个扇区开始（N由BPB指定）。</li>
+<li><strong>结构</strong>: 一个数组，每个条目对应一个簇（cluster，通常4KB）。条目值表示：<ul>
+<li>0: 空闲簇。</li>
+<li>非0: 下一个簇号（形成文件链）。</li>
+<li>特殊值: 如0x0FFFFFF8表示文件结束，0x0FFFFFF7表示坏簇。</li>
+</ul>
+</li>
+<li><strong>作用</strong>:<ul>
+<li><strong>分配</strong>: 创建文件时，从FAT找空簇，标记为已用。</li>
+<li><strong>链接</strong>: 文件的簇通过FAT链起来，支持文件增长。</li>
+<li><strong>释放</strong>: 删除文件时，清空FAT条目，回收簇。</li>
+<li><strong>性能</strong>: FAT常驻内存，减少磁盘访问。</li>
+</ul>
+</li>
+<li><strong>为什么关键</strong>: FAT使FAT32支持非连续分配（链接分配），平衡了灵活性和访问效率。FAT损坏会导致数据丢失，因此有备份。</li>
+</ul>
+<h5><span id="fat32-磁盘结构">FAT32 磁盘结构</span></h5><p>FAT32磁盘结构基于MBR分区方案，分为多个区域。以下是FAT32卷（分区）的典型布局（从分区起始扇区开始）：</p>
+<ul>
+<li><strong>保留区 (Reserved Area)</strong>: 包括引导扇区（Boot Sector，第一个扇区），存储FAT32的引导代码、BPB（BIOS Parameter Block，包含卷信息如扇区大小、簇大小、FAT位置等）和备份引导扇区。</li>
+<li><strong>FAT区 (FAT Area)</strong>: 包含主FAT表和备份FAT表（FAT2）。FAT是文件分配表，记录簇的分配和链接。</li>
+<li><strong>根目录区 (Root Directory Area)</strong>: 在FAT32中，根目录是普通目录，存储在数据区的一个簇中（不像FAT16有固定位置）。</li>
+<li><strong>数据区 (Data Area)</strong>: 存储文件和目录数据，按簇分配。</li>
+</ul>
+<p><strong>启动过程</strong>: BIOS加载MBR（分区表）→ 激活分区的引导扇区 → 加载FAT32引导代码 → 操作系统初始化。</p>
+<h5><span id="fat32-目录项结构">FAT32 目录项结构</span></h5><p><strong>目录项（Directory Entry）</strong> 是文件系统中目录的组成部分，每个目录项是一个固定大小的记录（在FAT32中为32字节），用于存储文件或子目录的元数据信息。它相当于目录中的“条目”，描述了文件&#x2F;目录的名称、属性、位置、大小等，帮助操作系统快速查找和管理文件。</p>
+<ul>
+<li><strong>每个目录项32字节</strong>：这是FAT32的标准大小，确保一致性和效率。</li>
+<li><strong>短文件名项</strong>（Short File Name Entry）：用于兼容旧系统，存放基本信息。<ul>
+<li>文件名（8字节 + 3字节扩展名）。</li>
+<li>属性（1字节）：如只读、隐藏、系统、目录等（属性值0x20表示普通文件）。</li>
+<li>起始簇号（2字节）：文件数据的起始位置。</li>
+<li>文件大小（4字节）：以字节为单位。</li>
+<li>时间戳：包括创建时间、修改时间、最后访问日期等。</li>
+</ul>
+</li>
+<li><strong>长文件名项</strong>（Long File Name Entry）：支持超过8.3格式的长文件名，使用Unicode编码。<ul>
+<li>由多个32字节项组成（每个项存放13个Unicode字符）。</li>
+<li>属性：固定为0x0F，表示长文件名项。</li>
+<li>校验和：用于验证短文件名项的完整性（防止不匹配）。</li>
+<li>顺序标记：低5位表示项的顺序（如00001为第一项），第6位为1表示最后项。</li>
+<li>多余空间：用0x00结束，然后用0xFF填充。</li>
+</ul>
+</li>
+</ul>
+<p>目录项存储在目录的簇中，形成目录的内容。操作系统通过解析这些项来列出目录或访问文件。</p>
+<h4><span id="indexed-allocation">Indexed Allocation</span></h4><p>索引分配（Indexed Allocation）是一种文件分配方法，每个文件使用一个索引块（index block）来存储指向数据块的指针数组。索引块本身存储在磁盘上，其位置记录在文件的inode或目录项中。</p>
+<ul>
+<li><strong>描述</strong>: 文件的数据块可以分散在磁盘上，但通过索引块集中管理指针。要访问文件的第n个块，直接从索引块的第n个指针读取，无需遍历。</li>
+<li><strong>优点</strong>:<ul>
+<li>支持随机访问：可以直接跳转到任意块，提高性能。</li>
+<li>灵活：文件块无需连续，易于增长。</li>
+<li>无外部碎片：块分散但通过索引统一。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>:<ul>
+<li>索引块占用额外空间：对于小文件，索引块可能浪费（例如，一个块的文件仍需一个索引块）。</li>
+<li>复杂性：需要管理索引块，可能导致内部碎片。</li>
+<li>大文件问题：如果索引块满，需要多级索引（如间接块）。</li>
+</ul>
+</li>
+<li><strong>变体</strong>:<ul>
+<li><strong>单级索引</strong>: 索引块直接指向所有数据块。</li>
+<li><strong>多级索引</strong>: 索引块指向其他索引块，形成树状结构，支持超大文件（如Unix的inode使用直接、间接、双间接指针）。</li>
+</ul>
+</li>
+<li><strong>应用</strong>: Unix文件系统（UFS）、NTFS的部分实现。适合需要随机访问的应用，如数据库文件。</li>
+</ul>
+<h3><span id="115-free-space-management">11.5 Free-Space Management</span></h3><ul>
+<li>为了记录空闲磁盘空间，系统需要维护一个空闲空间链表，它记录了所有空闲磁盘空间，即未分配给文件或目录的空间。（不一定以链表的方式实现）</li>
+</ul>
+<!-- markdownlint-disable MD033 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<!-- markdownlint-enable MD033 -->
 
 	</article>
 
